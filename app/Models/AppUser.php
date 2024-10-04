@@ -16,4 +16,9 @@ class AppUser extends Model
         'password',
         'phone_number'
     ];
+
+    public function UserToProperty()
+    {
+        return $this->hasMany(Property::class, 'user_id', 'user_id');
+    }
 }
