@@ -22,6 +22,7 @@
                     <img src="{{ asset('images/Search Icon.png') }}" alt="search">
                 </button>
             </form>
+
             <li class="nav-item">
                 <a class="nav-link" href="#">Sign In</a>
             </li>
