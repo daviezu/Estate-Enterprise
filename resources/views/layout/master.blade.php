@@ -25,13 +25,17 @@
     </script>
 
     {{-- navbar  --}}
-    @include('layout.navbar')
+    <div class="d-flex flex-column min-vh-100">
 
-    <div>
-        @yield('content')
+        @include('layout.navbar')
+
+        <div class="container-fluid px-0 flex-grow-1 pt-5">
+            @yield('content')
+        </div>
+        {{-- footer  --}}
+        @include('layout.footer')
+
     </div>
-    {{-- footer  --}}
-    @include('layout.footer')
 </body>
 
 </html>

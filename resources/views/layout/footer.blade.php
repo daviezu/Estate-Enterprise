@@ -1,6 +1,6 @@
-<div class="container footer-box d-flex">
+<div class="mt-4 container footer-box d-flex justify-content-between gap-5">
     <div class="contact-info">
-        <a class="navbar-brand nav-link active aria-current="page" href="{{ '' }}">
+        <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
             <img src="{{ asset('images/EstateVerse Logo.png') }}" alt="Logo">
         </a>
         <p>
@@ -9,17 +9,20 @@
             Email: admin@estaverse.com
         </p>
     </div>
-    <div class="property-type d-flex flex-column">
+    <div class="property-type d-flex flex-column flex-grow-1 ms-5">
         <h5 class="property-title">Property</h5>
         <a class="property-type-link" href="#">House</a>
         <a class="property-type-link" href="#">Apartment</a>
         <a class="property-type-link" href="#">Villa</a>
         <a class="property-type-link" href="#">Hotel</a>
     </div>
-    <div class="contact-form">
+    <div class="contact-form d-flex flex-column
+    
+     flex-grow-1">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="contact-label">ASK FOR HELP</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+            <label for="exampleFormControlInput1" class="contact-label d-flex justify-content-end">ASK FOR HELP</label>
+            <input type="email" class="form-control form-control-lg" id="exampleFormControlInput1"
+                placeholder="Email">
         </div>
         <div class="mb-3">
             {{-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> --}}
