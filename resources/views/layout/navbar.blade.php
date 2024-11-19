@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand style="background-color: #ffffff">
+<nav class="navbar navbar-expand pt-3 style="background-color: #ffffff">
     <div class="container">
-        <a class="navbar-brand nav-link active aria-current="page" href="{{ '' }}">
+        <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
             <img src="{{ asset('images/EstateVerse Logo.png') }}" alt="Logo">
         </a>
         <ul class="navbar-nav">
@@ -22,6 +22,7 @@
                     <img src="{{ asset('images/Search Icon.png') }}" alt="search">
                 </button>
             </form>
+
             <li class="nav-item">
                 <a class="nav-link" href="#">Sign In</a>
             </li>

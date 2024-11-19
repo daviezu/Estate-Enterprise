@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
     {{-- bootstrap css --}}
@@ -25,13 +25,17 @@
     </script>
 
     {{-- navbar  --}}
-    @include('layout.navbar')
+    <div class="d-flex flex-column min-vh-100">
 
-    <div>
-        @yield('content')
+        @include('layout.navbar')
+
+        <div class="container-fluid px-0 flex-grow-1 pt-5">
+            @yield('content')
+        </div>
+        {{-- footer  --}}
+        @include('layout.footer')
+
     </div>
-    {{-- footer  --}}
-    @include('layout.footer')
 </body>
 
 </html>
