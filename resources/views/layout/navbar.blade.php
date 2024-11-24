@@ -36,11 +36,14 @@
     
     
     .navbar{
-        height:80px;
+        border-bottom: solid;
+        border-width: 1px;
+        padding-bottom: 16px;
     }
     
     .search-container{
         width: 300px;
+        height: 40px;
         border: solid;
         border-width: 1px;
         border-color: rgb(168, 168, 168);

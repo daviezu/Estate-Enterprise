@@ -36,6 +36,10 @@ class UserController extends Controller
         return redirect()->route('login.index');
     }
 
+    public function agentList(){
+        return view('agentlist');
+    }
+
     public function indexRegister()
     {
         return view('register');
