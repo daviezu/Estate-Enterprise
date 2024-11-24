@@ -24,9 +24,4 @@
 
         </div>
     </div>
-    <style>
-        .login-box {
-            min-width: 50vh;
-        }
-    </style>
 @endsection
