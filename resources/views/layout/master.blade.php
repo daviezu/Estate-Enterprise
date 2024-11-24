@@ -29,9 +29,15 @@
 
         @include('layout.navbar')
 
-        <div class="container-fluid px-0 flex-grow-1 pt-5">
-            @yield('content')
-        </div>
+        @if (request()->routeIs('login.index', 'register.index'))
+            <div class="container-fluid px-0 flex-grow-1 pt-5" style="background-color: #44D7B5;">
+                @yield('content')
+            </div>
+        @else
+            <div class="container-fluid px-0 flex-grow-1 pt-5">
+                @yield('content')
+            </div>
+        @endif
         {{-- footer  --}}
         @include('layout.footer')
 
