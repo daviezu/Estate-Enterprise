@@ -1,7 +1,29 @@
 <div class="spacing"></div>
-<div class="footer">
-    <div class="mt-4 container footer-box d-flex justify-content-between gap-5">
-        <div class="contact-info">
+<div class="mt-4 container footer-box d-flex justify-content-between gap-5" style="z-index: 1000">
+    <div class="contact-info">
+        <div class="spacing">
+            <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
+                <img src="{{ asset('images/EstateVerse Logo.png') }}" width='200px' alt="Logo">
+            </a>
+        </div>
+        
+        <p>
+            Kebon Jeruk, Jakarta Barat <br>
+            Indonesia. <br>
+            Email: admin@estaverse.com
+        </p>
+    </div>
+    <div class="property-type d-flex flex-column flex-grow-1 ms-5">
+        <h5 class="property-title">Property</h5>
+        <a class="property-type-link" href="#">House</a>
+        <a class="property-type-link" href="#">Apartment</a>
+        <a class="property-type-link" href="#">Villa</a>
+        <a class="property-type-link" href="#">Hotel</a>
+    </div>
+    <div class="contact-form d-flex flex-column
+    
+     flex-grow-1">
+        <div class="mb-3">
             <div class="spacing">
                 <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
                     <img src="{{ asset('images/EstateVerse Logo.png') }}" width='200px' alt="Logo">
