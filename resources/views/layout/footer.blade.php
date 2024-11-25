@@ -1,8 +1,12 @@
+<div class="spacing"></div>
 <div class="mt-4 container footer-box d-flex justify-content-between gap-5" style="z-index: 1000">
     <div class="contact-info">
-        <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
-            <img src="{{ asset('images/EstateVerse Logo.png') }}" alt="Logo">
-        </a>
+        <div class="spacing">
+            <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
+                <img src="{{ asset('images/EstateVerse Logo.png') }}" width='200px' alt="Logo">
+            </a>
+        </div>
+        
         <p>
             Kebon Jeruk, Jakarta Barat <br>
             Indonesia. <br>
@@ -20,7 +24,9 @@
     
      flex-grow-1">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="contact-label d-flex justify-content-end">ASK FOR HELP</label>
+            <div class="spacing">
+                <label for="exampleFormControlInput1" class="contact-label d-flex justify-content-end">ASK FOR HELP</label>
+            </div>
             <input type="email" class="form-control form-control-lg" id="exampleFormControlInput1"
                 placeholder="Email">
         </div>
@@ -28,19 +34,49 @@
             {{-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> --}}
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
         </div>
+        <div class="text-end">
+            <button class="send-btn">
+              Send
+            </button>
+          </div>
+          
+        <div class="spacing"></div>
+        <div class="spacing"></div>
     </div>
 </div>
 
 <style>
+
+    .text-end {
+    text-align: right;
+    }
+
+    .send-btn{
+        color: white;
+        background-color: rgb(68, 215, 181);
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+        border: none;
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
     .footer-box {
         font-family: "Montserrat", sans-serif;
     }
 
     .property-type-link,
     .contact-info {
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 400;
         color: #000000;
+        text-decoration: none;
+    }
+    
+    .property-type-link:hover{
+        color: rgb(68, 215, 181);
     }
 
     .property-title,
@@ -48,7 +84,18 @@
         font-weight: 700;
     }
 
+    .form-control{
+        font-size: 15px;
+        border: solid;
+        border-width: 1px;
+        border-radius: 0px;
+    }
+
     .contact-form {
-        font-size: 20px
+        font-size: 20px;
+    }
+
+    .spacing{
+        margin-bottom: 20px;
     }
 </style>
