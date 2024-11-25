@@ -1,4 +1,4 @@
-<div class="mt-4 container footer-box d-flex justify-content-between gap-5">
+<div class="mt-4 container footer-box d-flex justify-content-between gap-5" style="z-index: 1000">
     <div class="contact-info">
         <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
             <img src="{{ asset('images/EstateVerse Logo.png') }}" alt="Logo">
