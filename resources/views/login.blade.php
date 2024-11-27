@@ -25,7 +25,7 @@
             <div class="password-form">
                 <input type="password" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="Password" required>
             </div>
-                    <div class="d-flex justify-content-between align-items-center mb-4" style="width: 283px;">
+                    <div class="d-flex justify-content-between align-items-center mb-4" style="width: 283px;">  
                         
                         <!-- "Ingat saya" -->
                         <div class="form-check d-flex align-items-center" style="margin-top: -5px;">

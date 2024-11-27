@@ -43,7 +43,7 @@
 <body>
     {{-- Navbar --}}
     <div class="d-flex flex-column min-vh-100">
-        @include('layout.navbar')
+        @include('layout.navbarlogin')
 
         {{-- Content --}}
         @if (request()->routeIs('login.index', 'register.index'))

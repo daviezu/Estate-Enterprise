@@ -29,7 +29,7 @@ class UserController extends Controller
 
         // if success, return to dashboard
         if ($user) {
-            return redirect()->route('home');
+            return redirect()->route('homelogin');
         }
 
         // user doesn't exist
@@ -40,10 +40,25 @@ class UserController extends Controller
         return view('agentlist');
     }
 
+    public function homeLogin() {
+        return view('homelogin');
+    }
+
+
+    public function propertyListBeforeLogin() {
+        return view('property');
+    }
+
+    public function propertyListAfterLogin() {
+        return view('propertylogin');
+    }
+
+
     public function indexRegister()
     {
         return view('register');
     }
+
 
     public function register(Request $request)
     {

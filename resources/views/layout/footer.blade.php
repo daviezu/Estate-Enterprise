@@ -1,4 +1,4 @@
-<div class="spacing"></div>
+<div class="footer spacing"></div>
 <div class="mt-4 container footer-box d-flex justify-content-between gap-5" style="z-index: 1000">
     <div class="contact-info">
         <div class="spacing">
@@ -9,7 +9,7 @@
 
         <p>
             Kebon Jeruk, Jakarta Barat <br>
-            Indonesia. <br>
+            Indonesia. <br> <br>
             Email: admin@estaverse.com
         </p>
     </div>
@@ -85,6 +85,10 @@
         text-decoration: none;
     }
 
+    .property-type-link {
+        margin-top: 10px;
+    }
+
     .property-type-link:hover {
         color: rgb(68, 215, 181);
     }
@@ -106,6 +110,6 @@
     }
 
     .spacing {
-        margin-bottom: 20px;
+        margin-bottom: 45px;
     }
 </style>
