@@ -23,11 +23,11 @@
                 <input type="text" class="form-control" style="margin-top: 15px; margin-bottom: 20px; width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="First Name" required>
             </div>
             <div class="lastname-form">
-                <input type="password" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="Last Name" required>
+                <input type="text" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="Last Name" required>
             </div>
 
             <div class="email-form">
-                <input type="password" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="E-mail" required>
+                <input type="text" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="E-mail" required>
             </div>
 
             <div class="password-form">
@@ -76,7 +76,7 @@
 
     .segitigacontainer {
         position: absolute; 
-        top: 78px; 
+        top: 73px; 
         right: 0; 
         display: flex; 
         justify-content: flex-end;
