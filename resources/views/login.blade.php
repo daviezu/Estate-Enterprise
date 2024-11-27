@@ -16,8 +16,8 @@
 
 <!-- Card Login -->
 <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
-    <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center" style="width: 410px; height: 355px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
-        <h3 class="text-center mb-4" style="width: 59px; height: 24px; margin-top: -45px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">Login</h3>
+    <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center" style="width: 410px; height: 340px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
+        <h3 class="text-center mb-4" style="width: 59px; height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">Login</h3>
         <form class="w-100 d-flex flex-column align-items-center">
             <div class="username-form">
                 <input type="text" class="form-control" style="margin-top: 15px; margin-bottom: 20px; width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="Username" required>
