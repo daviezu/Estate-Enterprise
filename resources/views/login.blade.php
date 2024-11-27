@@ -93,7 +93,7 @@
 <style>
     .segitigacontainer {
         position: absolute;
-        top: 78px;
+        top: 73px;
         right: 0;
         display: flex;
         justify-content: flex-end;

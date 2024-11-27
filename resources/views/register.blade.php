@@ -52,6 +52,11 @@
                     <input type="password" class="form-control"
                         style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
                         placeholder="Confirm Password" required>
+                    <div class="phonenumber-form">
+                        <input type="text" class="form-control"
+                            style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
+                            placeholder="Phone Number" required>
+                    </div>
                 </div>
 
 
@@ -98,7 +103,7 @@
 <style>
     .segitigacontainer {
         position: absolute;
-        top: 78px;
+        top: 73px;
         right: 0;
         display: flex;
         justify-content: flex-end;
