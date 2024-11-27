@@ -16,18 +16,18 @@
 
 <!-- Card Register -->
 <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
-    <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center" style="width: 410px; height: 444px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
-        <h3 class="text-center mb-4" style="width: 82px; height: 24px; margin-top: -2px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">Sign Up</h3>
+    <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center" style="width: 410px; height: 500px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
+        <h3 class="text-center mb-4" style="width: 82px; height: 24px; margin-top: 40px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">Sign Up</h3>
         <form class="w-100 d-flex flex-column align-items-center">
             <div class="firstname-form">
                 <input type="text" class="form-control" style="margin-top: 15px; margin-bottom: 20px; width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="First Name" required>
             </div>
             <div class="lastname-form">
-                <input type="password" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="Last Name" required>
+                <input type="text" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="Last Name" required>
             </div>
 
             <div class="email-form">
-                <input type="password" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="E-mail" required>
+                <input type="text" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="E-mail" required>
             </div>
 
             <div class="password-form">
@@ -36,6 +36,10 @@
 
             <div class="confirm-form">
                 <input type="password" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="Confirm Password" required>
+            </div>
+
+            <div class="phonenumber-form">
+                <input type="text" class="form-control" style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px" placeholder="Phone Number" required>
             </div>
 
                                
@@ -76,7 +80,7 @@
 
     .segitigacontainer {
         position: absolute; 
-        top: 78px; 
+        top: 73px; 
         right: 0; 
         display: flex; 
         justify-content: flex-end;
