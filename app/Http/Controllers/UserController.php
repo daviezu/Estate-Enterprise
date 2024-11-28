@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\AppUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -25,7 +25,7 @@ class UserController extends Controller
             'password' => $validate['password'],
         ];
 
-        $user = User::where('email', $credentials['email'])->first();
+        $user = AppUser::where('email', $credentials['email'])->first();
 
         // if success, return to dashboard
         if ($user) {
@@ -36,7 +36,8 @@ class UserController extends Controller
         return redirect()->route('login.index');
     }
 
-    public function agentList(){
+    public function agentList()
+    {
         return view('agentlist');
     }
 
@@ -48,11 +49,12 @@ class UserController extends Controller
     public function register(Request $request)
     {
         $validate = $request->validate([
-            'name' => 'required|string',
+            'firstName' => 'required|string',
+            'lastName' => 'required|string',
             'email' => 'required|string',
             'password' => 'required|string',
             'confirmPassword' => 'required|string',
-            'phone_number' => 'required|string'
+            'phoneNumber' => 'required|string'
         ]);
 
         // check password
@@ -61,7 +63,7 @@ class UserController extends Controller
         }
 
         // check IF email EXIST
-        $email = User::where('Email', $validate['email'])->first();
+        $email = AppUser::where('Email', $validate['email'])->first();
 
         // email exist
         if ($email) {
@@ -74,13 +76,14 @@ class UserController extends Controller
             'password' => Hash::make($validate['password'])
         ];
 
-        $user = User::create([
-            'name' => $validate['name'],
+
+        $user = AppUser::create([
+            'name' => $validate['firstName'] . ' ' . $validate['lastName'],
             'email' => $validate['email'],
             'password' => $validate['password'],
-            'phone_number' => $validate['phone_number']
+            'phone_number' => $validate['phoneNumber']
         ]);
 
-        return view('login');
+        return view('home');
     }
 }

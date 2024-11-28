@@ -24,14 +24,15 @@
             <h3 class="text-center mb-4"
                 style="width: 59px; height: 24px; margin-top: -45px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">
                 Login</h3>
-            <form class="w-100 d-flex flex-column align-items-center">
+            <form action="{{ route('login.post') }}" method="POST" class="w-100 d-flex flex-column align-items-center">
+                @csrf
                 <div class="username-form">
-                    <input type="text" class="form-control"
+                    <input name="email" type="text" class="form-control"
                         style="margin-top: 15px; margin-bottom: 20px; width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
                         placeholder="Username" required>
                 </div>
                 <div class="password-form">
-                    <input type="password" class="form-control"
+                    <input name="password" type="password" class="form-control"
                         style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
                         placeholder="Password" required>
                 </div>
@@ -49,13 +50,10 @@
                 </div>
 
                 {{-- Login Button --}}
-                <form action="{{ route('login.post') }}" method="POST">
-                    @csrf
-                    <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
-                        <button type="submit" class="btn btn-primary"
-                            style="width: 106px; height: 32px; background-color: #44D7B5; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Login</button>
-                    </div>
-                </form>
+                <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 106px; height: 32px; background-color: #44D7B5; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Login</button>
+                </div>
             </form>
         </div>
     </div>
