@@ -40,7 +40,8 @@
 
                     <!-- "Ingat saya" -->
                     <div class="form-check d-flex align-items-center" style="margin-top: -5px;">
-                        <input class="form-check-input me-2" style="border-color: #40C9A9;" type="checkbox" id="rememberMe">
+                        <input class="form-check-input me-2" style="border-color: #40C9A9;" type="checkbox"
+                            name="rememberMe" id="rememberMe">
                         <label class="form-check-label" style="font-size: 12px;" for="rememberMe">Ingat saya</label>
                     </div>
 

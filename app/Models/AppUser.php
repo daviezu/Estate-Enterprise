@@ -9,12 +9,14 @@ class AppUser extends Model
 {
     use HasFactory;
     protected $table = 'app_user';
+    protected $primaryKey = 'user_id';
 
     protected $fillable = [
         'name',
         'email',
         'password',
-        'phone_number'
+        'phone_number',
+        'remember_token'
     ];
 
     public function UserToProperty()

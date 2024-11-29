@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\AppUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -26,9 +28,22 @@ class UserController extends Controller
         ];
 
         $user = AppUser::where('email', $credentials['email'])->first();
+        if ($user && Hash::check($credentials['password'], $user->password)) {
 
-        // if success, return to dashboard
-        if ($user) {
+            // remember me cookies
+            if ($request->has('rememberMe')) {
+
+                // generate unique token
+                $token = Str::random(50);
+                $user->remember_token = $token;
+                $user->save();
+
+                // set cookie for token
+                Cookie::queue('remember_token', $token, 60 * 24 * 3); // 3 days
+            }
+
+            // store user id in session
+            session(['user_id' => $user->user_id]);
             return redirect()->route('home');
         }
 
@@ -76,11 +91,10 @@ class UserController extends Controller
             'password' => Hash::make($validate['password'])
         ];
 
-
         $user = AppUser::create([
             'name' => $validate['firstName'] . ' ' . $validate['lastName'],
             'email' => $validate['email'],
-            'password' => $validate['password'],
+            'password' => $credentials['password'],
             'phone_number' => $validate['phoneNumber']
         ]);
 
