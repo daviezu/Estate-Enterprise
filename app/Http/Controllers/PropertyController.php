@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Hash;
 
 class PropertyController extends Controller
 {
+
+    
+   
     public function propertyList()
     {
         return view('property');
