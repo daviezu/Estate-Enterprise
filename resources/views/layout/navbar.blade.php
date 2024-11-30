@@ -25,9 +25,15 @@
                 </form>
             </div>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('login.index') }}">Sign In</a>
-            </li>
+            @if (session('is_logged_in', false))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register.index') }}">Profile</a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login.index') }}">Sign In</a>
+                </li>
+            @endif
         </ul>
     </div>
 </nav>

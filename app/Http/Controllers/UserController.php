@@ -39,11 +39,11 @@ class UserController extends Controller
                 $user->save();
 
                 // set cookie for token
-                Cookie::queue('remember_token', $token, 60 * 24 * 3); // 3 days
+                Cookie::queue('remember_token', $token, 60 * 24 * 1); // 1 days
             }
 
             // store user id in session
-            session(['user_id' => $user->user_id]);
+            session(['user_id' => $user->user_id, 'is_logged_in' => true]);
             return redirect()->route('home');
         }
 
@@ -98,6 +98,9 @@ class UserController extends Controller
             'phone_number' => $validate['phoneNumber']
         ]);
 
-        return view('home');
+        if ($user) {
+
+            return redirect()->route('login.index')->with('success', 'Registration Successful');
+        }
     }
 }
