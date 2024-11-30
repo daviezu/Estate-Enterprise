@@ -69,7 +69,8 @@
         {{-- isi Content --}}
         <div class="content-section">
             <h2 class="text-center mb-4"
-                style="margin-top: -45px; margin-bottom: 100px; color: #43D3B2; font-weight: bold; font-size: 25px">Belum
+                style="margin-top: -45px; margin-bottom: 100px; color: #43D3B2; font-weight: bold; font-size: 25px">
+                Belum
                 punya akun?</h2>
             <p>Daftar untuk mengakses akun Anda dan nikmati fitur-fitur terbaik kami.</p>
 
