@@ -39,7 +39,7 @@
                     
                     {{-- Login Button --}}
                     <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
-                        <button type="submit" class="btn btn-primary" style="width: 106px; height: 32px; background-color: #44D7B5; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Login</button>
+                        <button type="submit" class="btn btn-primary-login" style="width: 106px; height: 32px; background-color: #44D7B5; border: none; border-radius: 5px; font-size: 12px; font-weight: bold; color: #FFFFFF">Login</button>
                     </div>  
                 </form>
             </div>
@@ -58,7 +58,7 @@
                 <p>Daftar untuk mengakses akun Anda dan nikmati fitur-fitur terbaik kami.</p>
 
                 <div class="d-flex justify-content-end" style="width: 283px; margin-top: 50px;">
-                <button type="submit" class="btn btn-primary" style="width: 106px; height: 32px; background-color: black;  border-color:#44D7B5; border-radius: 5px; font-size: 12px; font-weight: bold;">Register</button>
+                <button type="submit" class="btn btn-primary-register" style="width: 106px; height: 32px; background-color: black;  border-color:#44D7B5; border-radius: 5px; font-size: 12px; font-weight: bold; color: #FFFFFF">Register</button>
                 </div>
 
 
@@ -70,6 +70,26 @@
 {{-- Additional CSS --}}
 
 <style>
+
+    .text-decoration-none:hover {
+        color: #28bc99 !important;
+    }
+
+    .btn-primary-login{
+        transition-duration: 0.4s !important;
+    }
+
+    .btn-primary-register{
+        transition-duration: 0.4s !important;
+    }
+
+    .btn-primary-login:hover {
+        background-color: #28bc99 !important;
+    }
+
+    .btn-primary-register:hover {
+        background-color: #44D7B5 !important;
+    }
 
     .segitigacontainer {
         position: absolute; 

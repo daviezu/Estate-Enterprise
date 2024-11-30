@@ -176,17 +176,6 @@
             </div>
 
 
-            {{-- <nav>
-                <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav> --}}
-
-
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center mt-5 mb-5">
                   <li class="page-item">
@@ -211,6 +200,13 @@
 
 <style>
 
+    .btn-primary {
+      transition-duration: 0.4s !important;
+    }
+
+    .btn-primary:hover {
+      background-color: #28bc99 !important; 
+    }
 
     .tittle {
         font-family: 'Monserrat', sans-serif;

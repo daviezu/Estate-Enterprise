@@ -44,13 +44,8 @@ class UserController extends Controller
         return view('homelogin');
     }
 
-
-    public function propertyListBeforeLogin() {
-        return view('property');
-    }
-
-    public function propertyListAfterLogin() {
-        return view('propertylogin');
+    public function profileLogin() {
+        return view('profile');
     }
 
 

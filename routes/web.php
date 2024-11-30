@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +28,10 @@ Route::prefix('register')->group(function () {
 Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist');
 
 // Property List Before Login
-Route::get('/property', [UserController::class, 'propertyListBeforeLogin'])->name('property');
+Route::get('/property', [PropertyController::class, 'propertyListBeforeLogin'])->name('property');
 
 // Property List After Login
-Route::get('/propertylogin', [UserController::class, 'propertyListAfterLogin'])->name('propertylogin');
+Route::get('/propertylogin', [PropertyController::class, 'propertyListAfterLogin'])->name('propertylogin');
+
+// Profile 
+Route::get('/profile', [UserController::class, 'profileLogin'])->name('profile');
