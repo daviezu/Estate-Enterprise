@@ -71,6 +71,11 @@
         width: 100px;
         height: 40px;
         border-radius: 10px;
+        transition-duration: 0.4s;
+    }
+
+    .send-btn:hover {
+        background-color: #28bc99;
     }
 
     .footer-box {
@@ -110,6 +115,6 @@
     }
 
     .spacing {
-        margin-bottom: 45px;
+        margin-bottom: 30px;
     }
 </style>
