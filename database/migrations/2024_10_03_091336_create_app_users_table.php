@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string("password");
             $table->string('phone_number');
+            $table->string('remember_token', 100)->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('app_users');
+        Schema::dropIfExists('app_user');
     }
 };

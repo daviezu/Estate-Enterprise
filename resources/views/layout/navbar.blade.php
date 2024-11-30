@@ -25,23 +25,27 @@
                 </form>
             </div>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sign In</a>
-            </li>
+            @if (session('is_logged_in', false))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register.index') }}">Profile</a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login.index') }}">Sign In</a>
+                </li>
+            @endif
         </ul>
     </div>
 </nav>
 
 <style>
-    
-    
-    .navbar{
+    .navbar {
         border-bottom: solid;
         border-width: 1px;
         padding-bottom: 16px;
     }
-    
-    .search-container{
+
+    .search-container {
         width: 300px;
         height: 40px;
         border: solid;
@@ -53,14 +57,14 @@
     }
 
 
-    .form-control.me-2{
+    .form-control.me-2 {
         color: rgb(0, 0, 0);
         border: none;
         font-size: 15px;
         margin-left: 10px;
     }
-    
-    .form-control:focus{
+
+    .form-control:focus {
         outline: none;
         box-shadow: none;
     }

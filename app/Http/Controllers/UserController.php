@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\AppUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -25,18 +27,35 @@ class UserController extends Controller
             'password' => $validate['password'],
         ];
 
-        $user = User::where('email', $credentials['email'])->first();
+        $user = AppUser::where('email', $credentials['email'])->first();
+        if ($user && Hash::check($credentials['password'], $user->password)) {
 
         // if success, return to dashboard
         if ($user) {
             return redirect()->route('homelogin');
+            // remember me cookies
+            if ($request->has('rememberMe')) {
+
+                // generate unique token
+                $token = Str::random(50);
+                $user->remember_token = $token;
+                $user->save();
+
+                // set cookie for token
+                Cookie::queue('remember_token', $token, 60 * 24 * 1); // 1 days
+            }
+
+            // store user id in session
+            session(['user_id' => $user->user_id, 'is_logged_in' => true]);
+            return redirect()->route('home');
         }
 
         // user doesn't exist
         return redirect()->route('login.index');
     }
 
-    public function agentList(){
+    public function agentList()
+    {
         return view('agentlist');
     }
 
@@ -58,11 +77,12 @@ class UserController extends Controller
     public function register(Request $request)
     {
         $validate = $request->validate([
-            'name' => 'required|string',
+            'firstName' => 'required|string',
+            'lastName' => 'required|string',
             'email' => 'required|string',
             'password' => 'required|string',
             'confirmPassword' => 'required|string',
-            'phone_number' => 'required|string'
+            'phoneNumber' => 'required|string'
         ]);
 
         // check password
@@ -71,7 +91,7 @@ class UserController extends Controller
         }
 
         // check IF email EXIST
-        $email = User::where('Email', $validate['email'])->first();
+        $email = AppUser::where('Email', $validate['email'])->first();
 
         // email exist
         if ($email) {
@@ -84,13 +104,16 @@ class UserController extends Controller
             'password' => Hash::make($validate['password'])
         ];
 
-        $user = User::create([
-            'name' => $validate['name'],
+        $user = AppUser::create([
+            'name' => $validate['firstName'] . ' ' . $validate['lastName'],
             'email' => $validate['email'],
-            'password' => $validate['password'],
-            'phone_number' => $validate['phone_number']
+            'password' => $credentials['password'],
+            'phone_number' => $validate['phoneNumber']
         ]);
 
-        return view('login');
+        if ($user) {
+
+            return redirect()->route('login.index')->with('success', 'Registration Successful');
+        }
     }
 }

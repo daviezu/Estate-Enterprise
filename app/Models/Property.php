@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'property_id';
+
 
     protected $fillable = [
         'user_id',

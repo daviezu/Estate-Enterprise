@@ -1,8 +1,6 @@
 @extends('layout.master')
 @section('content')
 
-
-
 {{-- Assset  --}}
 <div class="triangle-asset" style="height: 0px;">
     <img src="{{asset('images/Triangle.png')}}" alt="triangleasset" style="width: 15%; position: relative; left: 300px; bottom: 200px; z-index: 1;">
@@ -44,26 +42,32 @@
                 </form>
             </div>
         </div>
+    </div>
 
 
-        {{-- Segitiga --}}
-        <div class="segitigacontainer">
-            <div>
-                <img src="{{asset('images/SegitigaBackground.png')}}" alt="Background" class="segitiga">
-            </div>
-
-            {{-- isi Content --}}
-            <div class="content-section">
-                <h2 class="text-center mb-4" style="margin-top: -45px; margin-bottom: 100px; color: #43D3B2; font-weight: bold; font-size: 25px">Belum punya akun?</h2>
-                <p>Daftar untuk mengakses akun Anda dan nikmati fitur-fitur terbaik kami.</p>
+    {{-- Segitiga --}}
+    <div class="segitigacontainer">
+        <div>
+            <img src="{{ asset('images/SegitigaBackground.png') }}" alt="Background" class="segitiga">
+        </div>
 
                 <div class="d-flex justify-content-end" style="width: 283px; margin-top: 50px;">
+                <a href="{{ route('register.index') }}">
                 <button type="submit" class="btn btn-primary-register" style="width: 106px; height: 32px; background-color: black;  border-color:#44D7B5; border-radius: 5px; font-size: 12px; font-weight: bold; color: #FFFFFF">Register</button>
                 </div>
+                </a>
+
+        {{-- isi Content --}}
+        <div class="content-section">
+            <h2 class="text-center mb-4"
+                style="margin-top: -45px; margin-bottom: 100px; color: #43D3B2; font-weight: bold; font-size: 25px">
+                Belum
+                punya akun?</h2>
+            <p>Daftar untuk mengakses akun Anda dan nikmati fitur-fitur terbaik kami.</p>
 
 
-            </div>
         </div>
+    </div>
 @endsection
 
 
@@ -90,43 +94,34 @@
     .btn-primary-register:hover {
         background-color: #44D7B5 !important;
     }
-
     .segitigacontainer {
-        position: absolute; 
-        top: 73px; 
-        right: 0; 
-        display: flex; 
+        position: absolute;
+        top: 73px;
+        right: 0;
+        display: flex;
         justify-content: flex-end;
         overflow: hidden;
         z-index: 3;
     }
-  
-    .segitiga{
-        width: 740px; 
+
+    .segitiga {
+        width: 740px;
         object-fit: cover;
     }
 
-    .content-section{
-            font-family: 'Montserrat', sans-serif;
-            position: absolute;
-            right: 7%;
-            top: 32%;
-            transform: translateY(-50%);            
-        }
+    .content-section {
+        font-family: 'Montserrat', sans-serif;
+        position: absolute;
+        right: 7%;
+        top: 32%;
+        transform: translateY(-50%);
+    }
 
-    
+
     .content-section p {
         font-size: 14px;
         color: #FFFFFF;
         width: 280px;
         margin-left: 25px;
     }
-
-
-
 </style>
-
-
-
-
-
