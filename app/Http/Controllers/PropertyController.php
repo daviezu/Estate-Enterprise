@@ -8,11 +8,8 @@ use Illuminate\Support\Facades\Hash;
 
 class PropertyController extends Controller
 {
-    public function propertyListBeforeLogin() {
+    public function propertyList()
+    {
         return view('property');
-    }
-
-    public function propertyListAfterLogin() {
-        return view('propertylogin');
     }
 }

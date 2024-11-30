@@ -27,13 +27,16 @@
 
             @if (session('is_logged_in', false))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register.index') }}">Profile</a>
+                    <a class="nav-link" href="{{ route('profile.index') }}">Profile</a>
                 </li>
             @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login.index') }}">Sign In</a>
                 </li>
             @endif
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sign Out</a>
+            </li>
         </ul>
     </div>
 </nav>
