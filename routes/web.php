@@ -1,13 +1,14 @@
 <?php
 
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
+// Home Before Login
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
 
 Route::prefix('user')->group(function () {
 
@@ -31,4 +32,13 @@ Route::prefix('user')->group(function () {
 });
 
 // Agent List
-Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist.index');
+Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist');
+
+// Property List Before Login
+Route::get('/property', [PropertyController::class, 'propertyListBeforeLogin'])->name('property');
+
+// Property List After Login
+Route::get('/propertylogin', [PropertyController::class, 'propertyListAfterLogin'])->name('propertylogin');
+
+// Profile 
+Route::get('/profile', [UserController::class, 'profileLogin'])->name('profile');

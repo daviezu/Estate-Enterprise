@@ -30,6 +30,9 @@ class UserController extends Controller
         $user = AppUser::where('email', $credentials['email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
 
+        // if success, return to dashboard
+        if ($user) {
+            return redirect()->route('homelogin');
             // remember me cookies
             if ($request->has('rememberMe')) {
 
@@ -56,10 +59,20 @@ class UserController extends Controller
         return view('agentlist');
     }
 
+    public function homeLogin() {
+        return view('homelogin');
+    }
+
+    public function profileLogin() {
+        return view('profile');
+    }
+
+
     public function indexRegister()
     {
         return view('register');
     }
+
 
     public function register(Request $request)
     {

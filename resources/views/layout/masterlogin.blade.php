@@ -16,6 +16,7 @@
         rel="stylesheet">
 
     {{-- Bootstrap CSS --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -43,7 +44,7 @@
 <body>
     {{-- Navbar --}}
     <div class="d-flex flex-column min-vh-100">
-        @include('layout.navbar')
+        @include('layout.navbarlogin')
 
         {{-- Content --}}
         @if (request()->routeIs('login.index', 'register.index'))
@@ -60,12 +61,10 @@
         @include('layout.footer')
     </div>
 
-
     {{-- Custom Cursor Elements --}}
-    @for ($i = 0; $i < 40; $i++) 
+    @for ($i = 0; $i < 40; $i++)
         <div class="circle"></div>
     @endfor
-    
 
     {{-- JavaScript for cursor Effects --}}
 <script>

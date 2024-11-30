@@ -60,6 +60,7 @@
                     </div>
                 </div>
 
+
                 {{-- Register Button --}}
                 <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
                     <button type="submit" class="btn btn-primary"
@@ -90,7 +91,6 @@
                 </a>
             </div>
 
-
         </div>
     </div>
 @endsection
@@ -100,6 +100,23 @@
 {{-- Additional CSS --}}
 
 <style>
+
+    .btn-primary-register {
+        transition-duration: 0.4s !important;
+    }
+
+    .btn-primary-login {
+        transition-duration: 0.4s !important;
+    }
+
+    .btn-primary-register:hover {
+        background-color: #28bc99 !important; 
+    }
+
+    .btn-primary-login:hover {
+        background-color: #44D7B5 !important; 
+    }
+
     .segitigacontainer {
         position: absolute;
         top: 73px;
