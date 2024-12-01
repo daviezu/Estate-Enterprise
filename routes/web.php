@@ -3,12 +3,13 @@
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
+use App\Http\Controllers\HomeController;
+use App\Http\Middleware\rememberMe;
 use Illuminate\Support\Facades\Route;
 
 // Home Before Login
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::redirect('/', '/home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('user')->group(function () {
 
@@ -26,9 +27,10 @@ Route::prefix('user')->group(function () {
 
     // profile
     Route::middleware([Authenticate::class])->group(function () {
-        Route::get('/profile', []);
+        Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index');
         Route::put('/profile', []);
     });
+    // Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index');
 });
 
 // Agent List
@@ -40,7 +42,5 @@ Route::get('/property', [PropertyController::class, 'propertyList'])->name('prop
 // Property Detail
 Route::get('/detailproperty', [PropertyController::class, 'propertyDetail'])->name('propertyDetail');
 
-// Profile  
-Route::get('/profile', [UserController::class, 'profileLogin'])->name('profile.index');
-
-
+// logout
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');

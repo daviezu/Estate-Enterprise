@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AppUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -30,25 +31,21 @@ class UserController extends Controller
         $user = AppUser::where('email', $credentials['email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
 
-            // if success, return to dashboard
-            if ($user) {
-                return redirect()->route('homelogin');
-                // remember me cookies
-                if ($request->has('rememberMe')) {
+            // remember me cookies
+            if ($request->has('rememberMe')) {
 
-                    // generate unique token
-                    $token = Str::random(50);
-                    $user->remember_token = $token;
-                    $user->save();
+                // generate unique token
+                $token = Str::random(50);
+                $user->remember_token = $token;
+                $user->save();
 
-                    // set cookie for token
-                    Cookie::queue('remember_token', $token, 60 * 24 * 1); // 1 days
-                }
-
-                // store user id in session
-                session(['user_id' => $user->user_id, 'is_logged_in' => true]);
-                return redirect()->route('home');
+                // set cookie for token
+                Cookie::queue('remember_token', $token, 60 * 24 * 1); // 1 days
             }
+
+            // store user id in session
+            session(['user_id' => $user->user_id, 'is_logged_in' => true]);
+            return redirect()->route('home');
 
             // user doesn't exist
             return redirect()->route('login.index');
@@ -60,12 +57,7 @@ class UserController extends Controller
         return view('agentlist');
     }
 
-    public function homeLogin()
-    {
-        return view('homelogin');
-    }
-
-    public function profileLogin()
+    public function indexProfile()
     {
         return view('profile');
     }
@@ -118,5 +110,21 @@ class UserController extends Controller
 
             return redirect()->route('login.index')->with('success', 'Registration Successful');
         }
+    }
+
+    public function logout()
+    {
+        // clear the session
+        session()->flush();
+        session()->invalidate();
+        session()->regenerateToken();
+
+        // clear the remember me cookies if exist
+        Cookie::queue(Cookie::forget('remember_me'));
+
+        // logout the current user
+        Auth::logout();
+
+        return redirect()->route('login.index')->with('success', 'You have been logged out succesfully.');
     }
 }
