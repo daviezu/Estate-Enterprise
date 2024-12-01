@@ -34,9 +34,12 @@
                     <a class="nav-link" href="{{ route('login.index') }}">Sign In</a>
                 </li>
             @endif
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sign Out</a>
-            </li>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <li class="nav-item">
+                    <button type="submit" class="nav-link ">Sign Out</button>
+                </li>
+            </form>
         </ul>
     </div>
 </nav>

@@ -25,7 +25,7 @@ Route::prefix('user')->group(function () {
 
     // profile
     Route::middleware([Authenticate::class])->group(function () {
-        Route::get('/profile', []);
+        // Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index');
         Route::put('/profile', []);
     });
 });
@@ -36,5 +36,8 @@ Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist'
 // Property List Before Login
 Route::get('/property', [PropertyController::class, 'propertyList'])->name('propertyList');
 
+// logout
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
 // Profile  
-Route::get('/profile', [UserController::class, 'profileLogin'])->name('profile.index');
+Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index');
