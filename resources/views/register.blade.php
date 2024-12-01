@@ -1,5 +1,19 @@
 @extends('layout.master')
 @section('content')
+    {{-- displaying error  --}}
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{ session('error') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     {{-- Assset  --}}
     <div class="triangle-asset" style="height: 0px;">
         <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
@@ -100,7 +114,6 @@
 {{-- Additional CSS --}}
 
 <style>
-
     .btn-primary-register {
         transition-duration: 0.4s !important;
     }
@@ -110,11 +123,11 @@
     }
 
     .btn-primary-register:hover {
-        background-color: #28bc99 !important; 
+        background-color: #28bc99 !important;
     }
 
     .btn-primary-login:hover {
-        background-color: #44D7B5 !important; 
+        background-color: #44D7B5 !important;
     }
 
     .segitigacontainer {

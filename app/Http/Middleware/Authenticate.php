@@ -15,7 +15,7 @@ class Authenticate
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function checkRememberMe(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next): Response
     {
         if (!session()->has('user_id')) {
             if (Cookie::has('remember_token')) {
@@ -24,12 +24,13 @@ class Authenticate
 
                 if ($user) {
                     session(['user_id' => $user->user_id]);
+                    session()->regenerate();
                 }
             }
         }
 
         if (!session()->has('user_id')) {
-            return redirect('login')->with('error', 'Please log in to continue.');
+            return redirect()->route('login.index')->with('error', 'Please log in to continue.');
         }
 
         return $next($request);
