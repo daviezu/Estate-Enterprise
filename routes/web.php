@@ -34,8 +34,13 @@ Route::prefix('user')->group(function () {
 // Agent List
 Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist');
 
-// Property List Before Login
+// Property List 
 Route::get('/property', [PropertyController::class, 'propertyList'])->name('propertyList');
+
+// Property Detail
+Route::get('/detailproperty', [PropertyController::class, 'propertyDetail'])->name('propertyDetail');
 
 // Profile  
 Route::get('/profile', [UserController::class, 'profileLogin'])->name('profile.index');
+
+

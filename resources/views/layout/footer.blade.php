@@ -10,7 +10,7 @@
         <p>
             Kebon Jeruk, Jakarta Barat <br>
             Indonesia. <br> <br>
-            Email: admin@estaverse.com
+            Email: admin@estateverse.com
         </p>
     </div>
     <div class="property-type d-flex flex-column flex-grow-1 ms-5">
@@ -91,6 +91,7 @@
     }
 
     .property-type-link {
+        transition-duration: 0.4s;
         margin-top: 10px;
     }
 

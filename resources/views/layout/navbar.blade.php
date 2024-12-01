@@ -49,6 +49,7 @@
     }
 
     .search-container {
+        overflow: hidden; 
         width: 300px;
         height: 40px;
         border: solid;

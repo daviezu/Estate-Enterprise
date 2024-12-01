@@ -12,4 +12,10 @@ class PropertyController extends Controller
     {
         return view('property');
     }
+
+    public function propertyDetail() {
+        
+        return view('detailproperty');
+
+    }
 }
