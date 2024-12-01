@@ -62,6 +62,11 @@ class UserController extends Controller
         return view('profile');
     }
 
+    public function editProfile () 
+    {
+        return view('editprofile');
+    }
+
 
     public function indexRegister()
     {

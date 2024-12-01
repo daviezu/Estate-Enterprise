@@ -25,12 +25,13 @@ Route::prefix('user')->group(function () {
         Route::post('/post', [UserController::class, 'register'])->name('register.post');
     });
 
-    // profile
+    
     Route::middleware([Authenticate::class])->group(function () {
         Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index');
         Route::put('/profile', []);
     });
-    // Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index');
+    
+    // Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index'); 
 });
 
 // Agent List
@@ -44,3 +45,6 @@ Route::get('/detailproperty', [PropertyController::class, 'propertyDetail'])->na
 
 // logout
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
+// Edit Profile 
+Route::get('/editprofile', [UserController::class, 'editProfile'])->name('editProfile');
