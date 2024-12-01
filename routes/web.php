@@ -3,12 +3,11 @@
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 // Home Before Login
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('user')->group(function () {
 
