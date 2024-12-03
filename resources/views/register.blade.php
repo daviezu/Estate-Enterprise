@@ -34,9 +34,9 @@
     <!-- Card Register -->
     <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
         <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center"
-            style="width: 410px; height: 444px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
+            style="width: 440px; height: 480px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
             <h3 class="text-center mb-4"
-                style="width: 82px; height: 24px; margin-top: -2px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">
+                style="width: 82px; height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">
                 Sign Up</h3>
             <form action="{{ route('register.post') }}" method="POST" class="w-100 d-flex flex-column align-items-center">
                 @csrf
@@ -57,6 +57,12 @@
                         placeholder="E-mail" required>
                 </div>
 
+                <div class="phonenumber-form">
+                    <input type="text" name="phoneNumber" class="form-control"
+                        style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
+                        placeholder="Phone Number" required>
+                </div>
+
                 <div class="password-form">
                     <input type="password" name="password" class="form-control"
                         style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
@@ -67,18 +73,14 @@
                     <input type="password" name="confirmPassword" class="form-control"
                         style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
                         placeholder="Confirm Password" required>
-                    <div class="phonenumber-form">
-                        <input type="text" name="phoneNumber" class="form-control"
-                            style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
-                            placeholder="Phone Number" required>
-                    </div>
+
                 </div>
 
 
                 {{-- Register Button --}}
                 <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
-                    <button type="submit" class="btn btn-primary"
-                        style="width: 106px; height: 32px; background-color: #44D7B5; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Register</button>
+                    <button type="submit" class="btn btn-primary-register"
+                        style="width: 106px; height: 32px; background-color: #44D7B5; color: #FFFFFF; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Register</button>
                 </div>
             </form>
         </div>
@@ -100,8 +102,8 @@
             <div class="d-flex justify-content-end" style="width: 283px; margin-top: 50px;">
                 <a href="{{ route('login.index') }}">
 
-                    <button type="submit" class="btn btn-primary"
-                        style="width: 106px; height: 32px; background-color: black;  border-color:#44D7B5; border-radius: 5px; font-size: 12px; font-weight: bold;">Login</button>
+                    <button type="submit" class="btn btn-primary-login"
+                        style="width: 106px; height: 32px; background-color: black; color: #FFFFFF;  border-color:#44D7B5; border-radius: 5px; font-size: 12px; font-weight: bold;">Login</button>
                 </a>
             </div>
 

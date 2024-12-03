@@ -48,7 +48,7 @@
         </div>
 
         <div class="col-lg-4 d-flex align-items-center">
-            <div class="card shadow-lg p-4">
+            <div class="card shadow-lg p-4" style="border: none; border-radius: 12px;">
                 <div class="row align-items-center">
                     <div class="col-4 text-center">
                         <img src="{{ asset('images/Homecard.png') }}" alt="EstateVerse Logo" class="img-fluid" width="80">
