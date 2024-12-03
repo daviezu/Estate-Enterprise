@@ -33,9 +33,9 @@ Route::prefix('user')->group(function () {
             // get profile view
             Route::get('/', [UserController::class, 'indexProfile'])->name('profile.index');
             // Edit Profile view
-            Route::get('/edit', [UserController::class, 'editProfile'])->name('editProfile');
+            Route::get('/edit', [UserController::class, 'editProfile'])->name('profile.edit');
             // Update Profile
-            Route::put('/', []);
+            Route::put('/', [UserController::class, 'updateProfile'])->name('profile.update');
         });
     });
 });

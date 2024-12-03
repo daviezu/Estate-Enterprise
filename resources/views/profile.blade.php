@@ -49,9 +49,9 @@
                             </div>
 
                             <div class="button">
-                                <a href="#" class="btn btn-primary-edit"
+                                <a href="{{ route('profile.edit') }}" class="btn btn-primary-edit"
                                     style="font-weight: bold; width: 74.92px; height: 34.5px; color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 15px; float: right; margin-right: 50px; margin-top: 35px; text-align: left;">Edit</a>
-                                <a href="#" class="btn btn-secondary"
+                                <a href="{{ route('home') }}" class="btn btn-secondary"
                                     style="font-weight: bold; width: 74.92px; height: 34.5px; color: #FFFFFF; border: none; font-family: Montserrat, sans-serif; font-size: 15px; float: right; margin-right: 16px; margin-top: 35px;">Back</a>
                             </div>
 
