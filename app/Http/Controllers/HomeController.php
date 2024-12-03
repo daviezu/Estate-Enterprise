@@ -25,7 +25,7 @@ class HomeController extends Controller
             'id' => 3,
             'title' => 'Villa Asri di Bali',
             'description' => 'Villa dengan pemandangan pantai yang indah.',
-            'image' => 'images/property/property3.png',
+            'image' => 'images/property/property11.png',
         ],
         [
             'id' => 4,
