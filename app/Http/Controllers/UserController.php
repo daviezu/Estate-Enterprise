@@ -59,10 +59,20 @@ class UserController extends Controller
 
     public function indexProfile()
     {
-        return view('profile');
+        // retrieve user ID 
+        $userID = session('user_id');
+
+        // find user
+        $user = AppUser::find($userID);
+
+        if ($user) {
+            return view('profile', ['user' => $user]);
+        } else {
+            return redirect()->route('login.index')->with('error', 'User not found. Please log in');
+        }
     }
 
-    public function editProfile () 
+    public function editProfile()
     {
         return view('editprofile');
     }

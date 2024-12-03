@@ -4,13 +4,13 @@ use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\HomeController;
-use App\Http\Middleware\rememberMe;
 use Illuminate\Support\Facades\Route;
 
-// Home Before Login
+// Home
 Route::redirect('/', '/home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+// User
 Route::prefix('user')->group(function () {
 
     // login 
@@ -25,26 +25,31 @@ Route::prefix('user')->group(function () {
         Route::post('/post', [UserController::class, 'register'])->name('register.post');
     });
 
-    
+
     Route::middleware([Authenticate::class])->group(function () {
-        Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index');
-        Route::put('/profile', []);
+
+        // Profile
+        Route::prefix('profile')->group(function () {
+            // get profile view
+            Route::get('/', [UserController::class, 'indexProfile'])->name('profile.index');
+            // Edit Profile view
+            Route::get('/edit', [UserController::class, 'editProfile'])->name('editProfile');
+            // Update Profile
+            Route::put('/', []);
+        });
     });
-    
-    // Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index'); 
+});
+
+Route::prefix('property')->group(function () {
+    // Property List 
+    Route::get('/', [PropertyController::class, 'propertyList'])->name('propertyList');
+
+    // Property Detail
+    Route::get('/detail', [PropertyController::class, 'propertyDetail'])->name('propertyDetail');
 });
 
 // Agent List
 Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist');
 
-// Property List 
-Route::get('/property', [PropertyController::class, 'propertyList'])->name('propertyList');
-
-// Property Detail
-Route::get('/detailproperty', [PropertyController::class, 'propertyDetail'])->name('propertyDetail');
-
 // logout
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-
-// Edit Profile 
-Route::get('/editprofile', [UserController::class, 'editProfile'])->name('editProfile');
