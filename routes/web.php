@@ -30,14 +30,22 @@ Route::prefix('user')->group(function () {
 
         // Profile
         Route::prefix('profile')->group(function () {
+
             // get profile view
             Route::get('/', [UserController::class, 'indexProfile'])->name('profile.index');
-            // Edit Profile view
-            Route::get('/edit', [UserController::class, 'editProfile'])->name('profile.edit');
-            // Edit Profile Password
-            Route::get('/editpassword', [UserController::class, 'editPassword'])->name('profile.editpassword');
-            // Update Profile
-            Route::put('/', [UserController::class, 'updateProfile'])->name('profile.update');
+
+            // edit profile information
+            Route::prefix('name')->group(function () {
+
+                Route::get('/', [UserController::class, 'indexEditProfileName'])->name('profile.edit.name.index');
+                Route::put('/', [UserController::class, 'updateProfileName'])->name('update.profile.name');
+            });
+
+            // Edit profile Password
+            Route::prefix('password')->group(function () {
+                Route::get('/', [UserController::class, 'indexEditPassword'])->name('profile.edit.password.index');
+                Route::put('/', [UserController::class, 'updatePassword'])->name('update.password');
+            });
         });
     });
 });
