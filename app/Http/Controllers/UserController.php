@@ -32,5 +32,10 @@ class UserController extends Controller
         return view('editprofile');
     }
 
+    public function editPassword()
+    {
+        return view('editpassword');
+    }
+
     public function updateProfile() {}
 }

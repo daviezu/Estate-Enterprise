@@ -34,6 +34,8 @@ Route::prefix('user')->group(function () {
             Route::get('/', [UserController::class, 'indexProfile'])->name('profile.index');
             // Edit Profile view
             Route::get('/edit', [UserController::class, 'editProfile'])->name('profile.edit');
+            // Edit Profile Password
+            Route::get('/editpassword', [UserController::class, 'editPassword'])->name('profile.editpassword');
             // Update Profile
             Route::put('/', [UserController::class, 'updateProfile'])->name('profile.update');
         });
@@ -51,7 +53,5 @@ Route::prefix('property')->group(function () {
 // Agent List
 Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist');
 
-// Edit Profile 
-Route::get('/editprofile', [UserController::class, 'editProfile'])->name('editProfile');
-
+// logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

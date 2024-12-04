@@ -36,7 +36,7 @@
             
             
             <div class="button">
-                <a href="#" class="btn btn-primary" style="font-weight: bold; color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 16px; float: right; margin-right: 50px; width: 145px; height: 48px; border-radius: 10px; padding-top: 14px; margin-top: -5px;">Edit Profile</a>
+                <a href="{{ route('profile.edit') }}" class="btn btn-primary" style="font-weight: bold; color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 16px; float: right; margin-right: 50px; width: 145px; height: 48px; border-radius: 10px; padding-top: 14px; margin-top: -5px;">Edit Profile</a>
             </div>
 
         </div>
@@ -55,6 +55,11 @@
                 </tr>
 
                 <tr style="border-bottom: 2px solid #dee2e6;">
+                    <th style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-top: 25px; padding-bottom: 19px;">Nomor Telepon</th>
+                    <td style="font-size: 16px; font-family: Montserrat, sans-serif; padding-left: 375px; padding-top: 25px;">085261679011</td>
+                </tr>
+
+                <tr style="border-bottom: 2px solid #dee2e6;">
                     <th style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px; padding-top: 21px;">Password</th>
                     <td style="font-size: 16px; font-family: Montserrat, sans-serif; padding-top: 21px; padding-left: 375px;">*******************</td>
                 </tr>
@@ -62,7 +67,7 @@
             </table>
 
             <div class="button">
-                <a href="#" class="btn btn-primary" style="font-weight: bold; color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 16px; float: right; margin-right: 50px; width: 145px; height: 48px; border-radius: 10px; padding-top: 14px; margin-top: -22px;">Edit Password</a>
+                <a href="{{ route('profile.editpassword') }}" class="btn btn-primary" style="font-weight: bold; color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 16px; float: right; margin-right: 50px; width: 145px; height: 48px; border-radius: 10px; padding-top: 14px; margin-top: -22px;">Edit</a>
             </div>
         </div>
     </div>
@@ -90,7 +95,7 @@
 
     .profile-card-privacy {
         width: 1189px;
-        height: 254px;
+        height: 320px;
         border: 1px solid #dee2e6;
         border-radius: 10px;
         padding: 20px;
