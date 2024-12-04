@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
@@ -15,14 +16,14 @@ Route::prefix('user')->group(function () {
 
     // login 
     Route::prefix('login')->group(function () {
-        Route::get('/index', [UserController::class, 'indexLogin'])->name('login.index');
-        Route::post('/post', [UserController::class, 'login'])->name('login.post');
+        Route::get('/index', [AuthController::class, 'indexLogin'])->name('login.index');
+        Route::post('/post', [AuthController::class, 'login'])->name('login.post');
     });
 
     // register
     Route::prefix('register')->group(function () {
-        Route::get('/index', [UserController::class, 'indexRegister'])->name('register.index');
-        Route::post('/post', [UserController::class, 'register'])->name('register.post');
+        Route::get('/index', [AuthController::class, 'indexRegister'])->name('register.index');
+        Route::post('/post', [AuthController::class, 'register'])->name('register.post');
     });
 
 
@@ -52,4 +53,4 @@ Route::prefix('property')->group(function () {
 Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist');
 
 // logout
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
