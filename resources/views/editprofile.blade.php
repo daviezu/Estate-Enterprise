@@ -1,8 +1,11 @@
 @extends('layout.master')
 @section('content')
     <div class="infoHeader">
-        <h4 class="fw-bold text-center mt-4" style="color: #44D7B5; font-size: 24px; font-family: Montserrat, sans-serif; margin-bottom: 40px;">Info Dasar</h4>
-        <i class="bi bi-info-circle" style="font-size: 30px; color:#44D7B5; position: relative; bottom:8px; margin-left:20px;"></i>
+        <h4 class="fw-bold text-center mt-4"
+            style="color: #44D7B5; font-size: 24px; font-family: Montserrat, sans-serif; margin-bottom: 40px;">Info Dasar
+        </h4>
+        <i class="bi bi-info-circle"
+            style="font-size: 30px; color:#44D7B5; position: relative; bottom:8px; margin-left:20px;"></i>
     </div>
     <div class="container">
         <div class="edit card mt-4" style="margin-bottom: 75px;">
@@ -16,9 +19,11 @@
 
                     {{-- Button --}}
                     <a href="#" class="btn btn-primary-delete mt-2 mb-3"
-                        style="margin-left: 25px; font-weight: 500; background-color: #c6c6c6; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #ffffff; padding: 5px;">Hapus Foto</a>
+                        style="margin-left: 25px; font-weight: 500; background-color: #c6c6c6; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #ffffff; padding: 5px;">Hapus
+                        Foto</a>
                     <a href="#" class="btn btn-primary-change mt-2 mb-3"
-                        style="margin-left: 25px; font-weight: 500; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #FFFFFF; padding: 5px;">Ganti Foto</a>
+                        style="margin-left: 25px; font-weight: 500; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #FFFFFF; padding: 5px;">Ganti
+                        Foto</a>
                 </div>
 
                 {{-- Form Section --}}
@@ -41,15 +46,16 @@
                         id="username" placeholder="Username" required>
                 </div>
 
-                
+
 
 
                 {{-- Button --}}
                 <div class="d-flex justify-content-end">
                     <a href="{{ route('profile.index') }}" class="btn btn-secondary me-4"
                         style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; background-color: #c9c9c9; border:none; ">Batal</a>
-                    <a href="{{ route('profile.update') }}" class="btn btn-primary-save me-5"
-                        style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5;"> Save </a>
+                    <a href="{{ route('profile.edit.name.index') }}" class="btn btn-primary-save me-5"
+                        style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5;">
+                        Save </a>
                 </div>
 
             </form>
@@ -58,17 +64,16 @@
 @endsection
 
 <style>
-
     .form__section {
         display: flex;
         margin-bottom: 10px;
     }
 
     .infoHeader {
-    margin-right: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        margin-right: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .icon {
@@ -111,5 +116,4 @@
     .btn-primary-change:hover {
         background-color: #28bc99 !important;
     }
-
 </style>

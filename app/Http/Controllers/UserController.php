@@ -27,15 +27,16 @@ class UserController extends Controller
         }
     }
 
-    public function editProfile()
+    public function indexEditProfileName()
     {
         return view('editprofile');
     }
 
-    public function editPassword()
+    public function indexEditPassword()
     {
         return view('editpassword');
     }
 
-    public function updateProfile() {}
+    public function updateProfileName() {}
+    public function updatePassword() {}
 }
