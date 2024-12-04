@@ -25,7 +25,7 @@ Route::prefix('user')->group(function () {
         Route::post('/post', [UserController::class, 'register'])->name('register.post');
     });
 
-    
+    // Ini nanti di uncomment lagi 
     Route::middleware([Authenticate::class])->group(function () {
         Route::get('/profile', [UserController::class, 'indexProfile'])->name('profile.index');
         Route::put('/profile', []);
@@ -48,3 +48,4 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 // Edit Profile 
 Route::get('/editprofile', [UserController::class, 'editProfile'])->name('editProfile');
+
