@@ -26,7 +26,6 @@ Route::prefix('user')->group(function () {
         Route::post('/post', [AuthController::class, 'register'])->name('register.post');
     });
 
-
     Route::middleware([Authenticate::class])->group(function () {
 
         // Profile
@@ -52,5 +51,7 @@ Route::prefix('property')->group(function () {
 // Agent List
 Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist');
 
-// logout
+// Edit Profile 
+Route::get('/editprofile', [UserController::class, 'editProfile'])->name('editProfile');
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
