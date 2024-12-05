@@ -50,6 +50,7 @@ class AuthController extends Controller
             // user doesn't exist
             return redirect()->route('login.index');
         }
+        // return
     }
 
     public function indexRegister()

@@ -27,35 +27,35 @@
                             {{-- Form Section --}}
                             <div class="form__primary">
                                 <div class="title">
-                                    <p class="section__title" style="margin-left: 30px">Email</p>
+                                    {{-- <p class="section__title" style="margin-left: 30px">Email</p> --}}
                                     <p class="section__title" style="margin-left: 30px">Nomor telepon</p>
                                     <p class="section__title" style="margin-left: 30px">Password saat ini</p>
                                     <p class="section__title" style="margin-left: 30px">Password baru</p>
                                     <p class="section__title" style="margin-left: 30px">Konfirmasi password</p>
                                 </div>
                                 <div>
+                                    {{-- <input class="input__section" type="text" class="form-control"
+                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
+                                        id="name" placeholder="Email" required> --}}
+
+
                                     <input class="input__section" type="text" class="form-control"
                                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                        id="name" placeholder="Email" required>
-
-
-                                    <input class="input__section" type="text" class="form-control"
-                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                        id="name" placeholder="Nomor Telepon" required>
+                                        id="name" placeholder="Nomor Telepon" name="phoneNumber">
 
                                     <input class="input__section" type="password" class="form-control"
                                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                        id="password" placeholder="Password saat ini" required>
+                                        id="password" placeholder="Password saat ini" name="currentPassword" required>
 
 
                                     <input class="input__section" type="password" class="form-control"
                                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                        id="password" placeholder="Password baru" required>
+                                        id="password" placeholder="Password baru" name="newPassword" required>
 
 
                                     <input class="input__section" type="password" class="form-control"
                                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                        id="password" placeholder="Konfirmasi password" required>
+                                        id="password" placeholder="Konfirmasi password" name="confirmNewPassword" required>
                                 </div>
                             </div>
 
@@ -63,9 +63,14 @@
                             <div class="d-flex justify-content-end">
                                 <a href="{{ route('profile.index') }}" class="btn btn-secondary me-4"
                                     style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; background-color: #c9c9c9; border:none; ">Batal</a>
-                                <a href="{{ route('update.password') }}" class="btn btn-primary-save me-5"
-                                    style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5;">
-                                    Save </a>
+                                <form action="{{ route('update.password') }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="btn btn-primary-save me-5"
+                                        style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5;">
+                                        Save
+                                    </button>
+                                </form>
                             </div>
 
                     </form>
