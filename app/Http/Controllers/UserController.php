@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AppUser;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -37,6 +38,34 @@ class UserController extends Controller
         return view('editpassword');
     }
 
-    public function updateProfileName() {}
+    public function updateProfileName(Request $request)
+    {
+
+        $validate = $request->validate([
+            'firstName' => 'required|string',
+            'lastName' => 'required|string',
+            'username' => 'nullable|string'
+        ]);
+
+        // access user id through session
+        // retrieve user ID 
+        $userID = session('user_id');
+
+        // find user
+        $user = AppUser::find($userID);
+        if ($user) {
+            $dataToUpdate = [
+                'first_name' => $validate['firstName'],
+                'last_name' => $validate['lastName'],
+            ];
+
+            if (!empty($validate['username'])) {
+                $dataToUpdate['username'] = $validate['username'];
+            }
+
+            $user->update($dataToUpdate);
+            return redirect()->route('profile.index');
+        }
+    }
     public function updatePassword() {}
 }

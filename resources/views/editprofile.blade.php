@@ -31,31 +31,32 @@
                     <p class="section__title" style="margin-left: 30px">Nama Depan</p>
                     <input type="text" class="form-control"
                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px; margin-left: 120px;"
-                        id="name" placeholder="Nama Depan" required>
+                        id="name" placeholder="Nama Depan" name="firstName" required>
                 </div>
                 <div class="form__section">
                     <p class="section__title" style="margin-left: 30px">Nama Belakang</p>
                     <input type="text" class="form-control"
                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px; margin-left: 102px;"
-                        id="name" placeholder="Nama Belakang" required>
+                        id="name" placeholder="Nama Belakang" name="lastName" required>
                 </div>
                 <div class="form__section">
                     <p class="section__title" style="margin-left: 30px">Username</p>
                     <input type="text" class="form-control"
                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px; margin-left: 140px;"
-                        id="username" placeholder="Username" required>
+                        id="username" placeholder="Username" name="username">
                 </div>
-
-
-
 
                 {{-- Button --}}
                 <div class="d-flex justify-content-end">
                     <a href="{{ route('profile.index') }}" class="btn btn-secondary me-4"
                         style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; background-color: #c9c9c9; border:none; ">Batal</a>
-                    <a href="{{ route('profile.edit.name.index') }}" class="btn btn-primary-save me-5"
-                        style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5;">
-                        Save </a>
+                    <form action="{{ route('update.profile.name') }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-primary-save me-5"
+                            style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5;">Save
+                        </button>
+                    </form>
                 </div>
 
             </form>

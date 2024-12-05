@@ -1,7 +1,5 @@
+@extends('layout.master')
 @section('content')
-    @extends('layout.master')
-
-
     <div class="container">
         <div class="profile-section" style="margin-top: -10px; margin-left: 60px;">
 
@@ -24,7 +22,8 @@
                         <th
                             style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px;">
                             Nama Depan</th>
-                        <td style="font-size: 16px; font-family: Montserrat, sans-serif; padding-right: 83px;">Roseanne</td>
+                        <td style="font-size: 16px; font-family: Montserrat, sans-serif; padding-right: 83px;">
+                            {{ $user->first_name }}</td>
                     </tr>
 
                     <tr style="border-bottom: 2px solid #dee2e6;">
@@ -33,7 +32,7 @@
                             Nama Belakang</th>
                         <td
                             style="font-size: 16px; font-family: Montserrat, sans-serif; padding-top: 21px; padding-left: -95px;">
-                            Park</td>
+                            {{ $user->last_name }}</td>
                     </tr>
 
                     <tr style="border-bottom: 2px solid #dee2e6;">
@@ -42,7 +41,7 @@
                             Username</th>
                         <td
                             style="font-size: 16px; font-family: Montserrat, sans-serif; padding-top: 21px; padding-left: -95px;">
-                            rose</td>
+                            {{ $user->username }}</td>
                     </tr>
 
                 </table>
@@ -72,7 +71,7 @@
                             Email</th>
                         <td
                             style="font-size: 16px; font-family: Montserrat, sans-serif; padding-left: 375px; padding-top: 25px;">
-                            roseannepark@gmail.com</td>
+                            {{ $user->email }}</td>
                     </tr>
 
                     <tr style="border-bottom: 2px solid #dee2e6;">
@@ -81,7 +80,7 @@
                             Nomor Telepon</th>
                         <td
                             style="font-size: 16px; font-family: Montserrat, sans-serif; padding-left: 375px; padding-top: 25px;">
-                            085261679011</td>
+                            {{ $user->phone_number }}</td>
                     </tr>
 
                     <tr style="border-bottom: 2px solid #dee2e6;">
@@ -90,7 +89,7 @@
                             Password</th>
                         <td
                             style="font-size: 16px; font-family: Montserrat, sans-serif; padding-top: 21px; padding-left: 375px;">
-                            *******************</td>
+                            password</td>
                     </tr>
 
                 </table>

@@ -89,7 +89,9 @@ class AuthController extends Controller
         ];
 
         $user = AppUser::create([
-            'name' => $validate['firstName'] . ' ' . $validate['lastName'],
+            // 'name' => $validate['firstName'] . ' ' . $validate['lastName'],
+            'first_name' => $validate['firstName'],
+            'last_name' => $validate['lastName'],
             'email' => $validate['email'],
             'password' => $credentials['password'],
             'phone_number' => $validate['phoneNumber']

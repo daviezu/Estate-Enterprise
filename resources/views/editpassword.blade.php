@@ -59,16 +59,11 @@
                                 </div>
                             </div>
 
-
-
-
-
-
                             {{-- Button --}}
                             <div class="d-flex justify-content-end">
                                 <a href="{{ route('profile.index') }}" class="btn btn-secondary me-4"
                                     style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; background-color: #c9c9c9; border:none; ">Batal</a>
-                                <a href="{{ route('profile.edit.name.index') }}" class="btn btn-primary-save me-5"
+                                <a href="{{ route('update.password') }}" class="btn btn-primary-save me-5"
                                     style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5;">
                                     Save </a>
                             </div>

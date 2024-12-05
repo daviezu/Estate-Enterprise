@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand pt-3" style="background-color: #ffffff; z-index: 1000;">
     <div class="container">
-        <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
+        <a class="navbar-brand nav-link active" aria-current="page" href="{{ route('home') }}">
             <img src="{{ asset('images/EstateVerse Logo.png') }}" alt="Logo" width='200px'>
         </a>
         <ul class="navbar-nav">
@@ -29,17 +29,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('profile.index') }}">Profile</a>
                 </li>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <li class="nav-item">
+                        <button type="submit" class="nav-link ">Sign Out</button>
+                    </li>
+                </form>
             @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login.index') }}">Sign In</a>
                 </li>
             @endif
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <li class="nav-item">
-                    <button type="submit" class="nav-link ">Sign Out</button>
-                </li>
-            </form>
         </ul>
     </div>
 </nav>
@@ -52,7 +52,7 @@
     }
 
     .search-container {
-        overflow: hidden; 
+        overflow: hidden;
         width: 300px;
         height: 40px;
         border: solid;
