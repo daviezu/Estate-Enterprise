@@ -9,16 +9,17 @@ use Illuminate\Support\Facades\Hash;
 class PropertyController extends Controller
 {
 
-    
-   
+
+
     public function propertyList()
     {
-        return view('property');
+        $properties = Property::all();
+        return view('property', compact('properties'));
     }
 
-    public function propertyDetail() {
-        
-        return view('detailproperty');
+    public function propertyDetail()
+    {
 
+        return view('detailproperty');
     }
 }

@@ -46,11 +46,9 @@ class AuthController extends Controller
             // store user id in session
             session(['user_id' => $user->user_id, 'is_logged_in' => true]);
             return redirect()->route('home');
-
-            // user doesn't exist
-            return redirect()->route('login.index');
         }
-        // return
+        // user doesn't exist
+        return redirect()->route('login.index');
     }
 
     public function indexRegister()
