@@ -46,10 +46,9 @@ class AuthController extends Controller
             // store user id in session
             session(['user_id' => $user->user_id, 'is_logged_in' => true]);
             return redirect()->route('home');
-
-            // user doesn't exist
-            return redirect()->route('login.index');
         }
+        // user doesn't exist
+        return redirect()->route('login.index');
     }
 
     public function indexRegister()
@@ -89,7 +88,9 @@ class AuthController extends Controller
         ];
 
         $user = AppUser::create([
-            'name' => $validate['firstName'] . ' ' . $validate['lastName'],
+            // 'name' => $validate['firstName'] . ' ' . $validate['lastName'],
+            'first_name' => $validate['firstName'],
+            'last_name' => $validate['lastName'],
             'email' => $validate['email'],
             'password' => $credentials['password'],
             'phone_number' => $validate['phoneNumber']

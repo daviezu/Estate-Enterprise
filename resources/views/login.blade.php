@@ -1,19 +1,19 @@
 @extends('layout.master')
 @section('content')
     {{-- displaying error  --}}
-     @if (session('success'))
+    @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>{{ session('success') }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif 
+    @endif
 
     @if (session('error'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>{{ session('error') }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif 
+    @endif
 
     {{-- Assset  --}}
     <div class="triangle-asset" style="height: 0px;">
@@ -30,7 +30,7 @@
         <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
             style="width: 10%; position: relative; left: 500px; top: 500px; z-index: 1;">
 
-    </div> 
+    </div>
 
     <!-- Card Login -->
     <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
@@ -73,8 +73,6 @@
             </form>
         </div>
     </div>
-    </div> 
-
 
     {{-- Segitiga --}}
     <div class="segitigacontainer">
@@ -99,7 +97,7 @@
 
         </div>
     </div>
-@endsection 
+@endsection
 
 
 {{-- Additional CSS --}}
@@ -156,12 +154,3 @@
         margin-left: 25px;
     }
 </style>
-
-
-
-
-
-
-
-
-

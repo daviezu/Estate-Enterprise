@@ -8,24 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     use HasFactory;
+    protected $table = 'properties';
     protected $primaryKey = 'property_id';
 
-
     protected $fillable = [
-        'user_id',
         'property_name',
-        'address',
-        'latitude',
-        'longitude',
+        'owner',
         'price',
+        'location',
+        'address',
         'description',
-        'bedroom',
-        'bathroom',
-        'area',
-        'property_type',
-        'status',
-        'image_path',
-        'facilites',
+        'picture_path',
     ];
 
     public function PropertyToUser()

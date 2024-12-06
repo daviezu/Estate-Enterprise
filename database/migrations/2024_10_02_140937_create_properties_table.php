@@ -11,22 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('property', function (Blueprint $table) {
+        Schema::create('properties', function (Blueprint $table) {
             $table->id('property_id');
-            $table->foreignId('user_id')->constrained(table: 'app_user', column: 'user_id')->onUpdate('cascade')->onDelete('cascade');
             $table->string('property_name');
-            $table->string('address');
-            $table->decimal('latitude');
-            $table->decimal("longtitude");
+            $table->string('owner');
             $table->integer('price');
+            $table->string('location');
+            $table->string('address');
             $table->text('description');
-            $table->integer('bedroom');
-            $table->integer('bathroom');
-            $table->decimal('area');
-            $table->string('property_type');
-            $table->string('status');
-            $table->string('image_path');
-            $table->text('facilities');
+            $table->string('picture_path')->nullable();
             $table->timestamps();
         });
     }
