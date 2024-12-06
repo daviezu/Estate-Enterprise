@@ -12,7 +12,8 @@
 <body>
     <div class="edit__content">
         <div class="infoHeader">
-            <h4 class="fw-bold text-center mt-4" style="color: #44D7B5; font-size: 24px; font-family: Montserrat, sans-serif; margin-bottom: 40px;">Privasi dan Keamanan</h4>
+            <h5 class="fw-bold mb-4" style="font-size: 25px; font-family: Montserrat, sans-serif; color: #44D7B5; margin-left: 15px;">Privasi & Keamanan</h5>
+            {{-- <h4 class="fw-bold text-center mt-4" style="color: #44D7B5; font-size: 24px; font-family: Montserrat, sans-serif; margin-bottom: 40px;">Privasi dan Keamanan</h4> --}}
             <img src="{{ asset('images/low-vision-regular-240 1.png') }}" class="icon" alt="Low Vision Icon">
         </div>
     

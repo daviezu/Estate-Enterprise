@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Hash;
 class PropertyController extends Controller
 {
 
-    
-   
     public function propertyList()
     {
         return view('property');
@@ -19,6 +17,12 @@ class PropertyController extends Controller
     public function propertyDetail() {
         
         return view('detailproperty');
+
+    }
+
+    public function myProperty() {
+        
+        return view('my_property');
 
     }
 }
