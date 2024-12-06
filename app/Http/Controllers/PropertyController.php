@@ -8,9 +8,6 @@ use Illuminate\Support\Facades\Hash;
 
 class PropertyController extends Controller
 {
-
-
-
     public function propertyList()
     {
         $properties = Property::all();
@@ -21,5 +18,11 @@ class PropertyController extends Controller
     {
 
         return view('detailproperty');
+    }
+
+    public function myProperty() {
+        
+        return view('my_property');
+
     }
 }

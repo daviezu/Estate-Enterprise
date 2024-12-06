@@ -1,0 +1,132 @@
+/* Tittle Page */
+.tittlePage {
+    font-size: 25px;
+    font-weight: 600;
+    color: #44D7B5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Button Tambah */
+.btn-success-add {
+    margin-right: 67px;
+    width: 139px;
+    height: 36px;
+}
+
+.btn-success-add:hover {
+    background-color: #28bc99 !important;
+}
+
+
+/* Card */
+.card {
+    padding-left: 49px;
+    padding-top:39px;
+    margin-bottom: 120px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.40); 
+    width: 1230px !important; 
+    height: 706px !important;  
+    border-radius: 10px !important;
+}
+
+
+/* Text Table Header */
+.txt-gambar, .txt-judul, .txt-deskripsi, .txt-lokasi, .txt-action {
+    padding-bottom: 23px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px !important; 
+    font-weight: 600 !important;
+}
+
+
+.txt-judul {
+    padding-left: 10px !important;
+}
+
+.txt-deskripsi {
+    padding-left: 40px !important;
+}
+
+.txt-lokasi {
+    padding-left: 50px !important;
+}
+
+.txt-action {
+    padding-left: 15px !important;
+}
+
+
+/* Table Row 1 */
+.img-fluid-property1 {
+    object-fit: cover;
+    width: 107px;
+    height: 60px;   
+}
+
+
+.txt-judulrow1 {
+    width: 260px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; 
+    font-weight: 550;
+    
+}
+
+.txt-deskripsirow1 {
+    width: 290px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; 
+    padding-left: 40px !important;  
+}
+
+.txt-lokasirow1 {
+    width: 230px !important;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 50px !important;
+}
+
+
+/* Button For All Table Row Section */
+
+.btn-primary, .btn-warning, .btn-danger {
+    padding-left: 30px !important;
+    margin-left: 5px;
+    padding: 6px !important;
+    height: 36px !important;
+    transition-duration: 0.4s !important;
+    font-weight: 550 !important;  
+    font-size: 16px !important;
+}
+
+.btn-primary:hover {
+    background-color: #1b7dab !important; 
+}
+
+.btn-warning:hover {
+    background-color: #b2a72e !important; 
+}
+
+.btn-danger:hover {
+    background-color: #ea2023 !important; 
+}
+
+
+/* Table Row 2-6 */
+.img-fluid-property2, .img-fluid-property3, .img-fluid-property4, .img-fluid-property10, .img-fluid-property6 {
+    object-fit: cover;
+    width: 107px;
+    height: 60px;  
+}
+
+
+
+
+
+
+
+
+
+        
+    

@@ -55,7 +55,7 @@ Route::prefix('property')->group(function () {
     Route::get('/', [PropertyController::class, 'propertyList'])->name('propertyList');
 
     // Property Detail
-    Route::get('/detail', [PropertyController::class, 'propertyDetail'])->name('propertyDetail');
+    Route::get('/detail', [PropertyController::class, 'propertyDetail'])->name('detail.property');
 });
 
 // Agent List
@@ -63,3 +63,6 @@ Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist'
 
 // logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// My Properties for User who is Admin
+Route::get('/my_property', [PropertyController::class, 'myProperty'])->name('myProperty');
