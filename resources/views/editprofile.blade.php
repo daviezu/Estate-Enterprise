@@ -1,17 +1,17 @@
 @extends('layout.master')
 @section('content')
     <div class="infoHeader">
-<<<<<<< HEAD
+
         <h5 class="fw-bold mb-4" style="font-size: 25px; font-family: Montserrat, sans-serif; color: #44D7B5; margin-left: -105px;">Info Dasar</h5>
         {{-- <h4 class="fw-bold text-center mt-4" style="color: #44D7B5; font-size: 24px; font-family: Montserrat, sans-serif; margin-bottom: 40px;">Info Dasar</h4> --}}
         <i class="bi bi-info-circle" style="font-size: 30px; color:#44D7B5; position: relative; bottom:8px; margin-left:20px;"></i>
-=======
+
         <h4 class="fw-bold text-center mt-4"
             style="color: #44D7B5; font-size: 24px; font-family: Montserrat, sans-serif; margin-bottom: 40px;">Info Dasar
         </h4>
         <i class="bi bi-info-circle"
             style="font-size: 30px; color:#44D7B5; position: relative; bottom:8px; margin-left:20px;"></i>
->>>>>>> 3de5c08ddd32d359346f71111d51c20ee6e0a07b
+
     </div>
     <div class="container">
         <div class="edit card mt-4" style="margin-bottom: 75px;">
