@@ -20,7 +20,7 @@
       <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 1 hari lalu</p>
       
       
-      <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+      <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
     </div>
   </div>
 </div>
@@ -39,7 +39,7 @@
           <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 2 hari lalu</p>
           
           
-          <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+          <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
               <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 3 hari lalu</p>
               
               
-              <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+              <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@
               <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 1 hari lalu</p>
               
               
-              <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+              <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
                   <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 4 hari lalu</p>
                   
                   
-                  <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+                  <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@
                   <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 1 hari lalu</p>
                   
                   
-                  <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+                  <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
                 </div>
               </div>
             </div>
@@ -132,7 +132,7 @@
                   <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 5 hari lalu</p>
                   
                   
-                  <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+                  <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@
                   <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 3 hari lalu</p>
                   
                   
-                  <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+                  <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@
                   <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">Diperbarui 6 hari lalu</p>
                   
                   
-                  <a href="#" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
+                  <a href="{{ route('detail.property') }}" class="btn btn-primary" style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat Detail</a> 
                 </div>
               </div>
             </div>
