@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Hash;
 
 class PropertyController extends Controller
 {
-
     public function propertyList()
     {
         $properties = Property::all();
