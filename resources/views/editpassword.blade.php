@@ -3,70 +3,12 @@
     <!DOCTYPE html>
     <html lang="en">
 
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>EstateVerse</title>
-</head>
-<body>
-    <div class="edit__content">
-        <div class="infoHeader">
-            <h5 class="fw-bold mb-4" style="font-size: 25px; font-family: Montserrat, sans-serif; color: #44D7B5; margin-left: 15px;">Privasi & Keamanan</h5>
-            {{-- <h4 class="fw-bold text-center mt-4" style="color: #44D7B5; font-size: 24px; font-family: Montserrat, sans-serif; margin-bottom: 40px;">Privasi dan Keamanan</h4> --}}
-            <img src="{{ asset('images/low-vision-regular-240 1.png') }}" class="icon" alt="Low Vision Icon">
-        </div>
-    
-        <div class="container">
-            <div class="edit card mt-4" style="margin-bottom: 75px;">
-                <form action="#" method="POST">
-                    <div class="mb-3 text-left" style="margin-left: 80px;">
-    
-                    {{-- Form Section --}}
-                    <div class="form__primary">
-                        <div class="title">
-                            <p class="section__title" style="margin-left: 30px">Email</p>
-                            <p class="section__title" style="margin-left: 30px">Nomor telepon</p>
-                            <p class="section__title" style="margin-left: 30px">Password saat ini</p>
-                            <p class="section__title" style="margin-left: 30px">Password baru</p>
-                            <p class="section__title" style="margin-left: 30px">Konfirmasi password</p>
-                        </div>
-                        <div>
-                            <input class="input__section" type="text" class="form-control"
-                                style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                id="name" placeholder="Email" required>
-        
-                            
-                            <input class="input__section" type="text" class="form-control"
-                                style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                id="name" placeholder="Nomor Telepon" required>
-                            
-                            <input class="input__section" type="password" class="form-control"
-                                style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                id="password" placeholder="Password saat ini" required>
-        
-                            
-                            <input class="input__section" type="password" class="form-control"
-                                style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                id="password" placeholder="Password baru" required>
-        
-                            
-                            <input class="input__section" type="password" class="form-control"
-                                style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                id="password" placeholder="Konfirmasi password" required>
-                        </div>
-                    </div>
-=======
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>EstateVerse</title>
     </head>
->>>>>>> 3de5c08ddd32d359346f71111d51c20ee6e0a07b
 
     <body>
         <div class="edit__content">
@@ -135,8 +77,6 @@
                 </div>
             </div>
 
-
-    </body>
 
     </html>
 

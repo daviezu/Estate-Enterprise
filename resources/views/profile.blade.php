@@ -1,20 +1,38 @@
 @extends('layout.master')
 @section('content')
     <div class="container">
+
+        {{-- displaying error  --}}
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ session('error') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="profile-section" style="margin-top: -10px; margin-left: 60px;">
 
             <!-- Info Dasar -->
             <i class="bi bi-info-circle"
                 style="font-size: 25px; color:#44D7B5; margin-left: 150px; position: relative; top: 27px; "></i>
-            <h5 class="fw-bold mb-4" style="font-size: 25px; font-family: Montserrat, sans-serif; color: #44D7B5;">Info Dasar
+            <h5 class="fw-bold mb-4" style="font-size: 25px; font-family: Montserrat, sans-serif; color: #44D7B5;">Info
+                Dasar
             </h5>
             <div class="profile-card-info" style="margin-bottom: 70px;">
                 <div class="text-center my-3">
                     <p class="mt-2 text" style="font-size: 16px; font-family: Montserrat, sans-serif;">Gambar Profile</p>
-                    <img src="{{ asset('images/profiles/rose.png') }}" alt="Profile Image" class="profile-image"
+                    {{-- <img src="{{ asset('images/profiles/rose.png') }}" alt="Profile Image" clgitass="profile-image"
+                        style="margin-bottom: 30px;"> --}}
+                    <img src="{{ asset($user->picture_path) }}" alt="Profile Image" clgitass="profile-image"
                         style="margin-bottom: 30px;">
                 </div>
-
 
                 <table class="table" style="margin-bottom: 50px;">
 
@@ -89,7 +107,7 @@
                             Password</th>
                         <td
                             style="font-size: 16px; font-family: Montserrat, sans-serif; padding-top: 21px; padding-left: 375px;">
-                            password</td>
+                            ********</td>
                     </tr>
 
                 </table>
