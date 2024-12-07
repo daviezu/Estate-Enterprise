@@ -3,6 +3,13 @@
 @section('title', 'Homepage')
 
 @section('content')
+
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ session('success') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     {{-- herosection buat sambungin ke cssnya  --}}
     <div class="hero-section d-flex flex-column justify-content-between position-relative">
         {{-- gambarbackground header --}}
@@ -21,7 +28,7 @@
         </div>
 
         {{-- searchbar --}}
-        <div class="container mb-4 position-relative" style="z-index: 2;">
+        {{-- <div class="container mb-4 position-relative" style="z-index: 2;">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="hero-search-container mx-auto">
@@ -34,22 +41,25 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
+    
+    <div class="margin__spacing"></div>
 
     {{-- estateverse 4x --}}
     <div class="container">
         <div class="row">
 
             <div class="col-lg-8">
-                <h1 class="fw-bold display-1 text-green">ESTATEVERSE</h1>
-                <h1 class="fw-bold display-1 text-stroke-green">ESTATEVERSE</h1>
-                <h1 class="fw-bold display-1 text-green">ESTATEVERSE</h1>
-                <h1 class="fw-bold display-1 text-stroke-green">ESTATEVERSE</h1>
+                <h1 class="text1">ESTATEVERSE</h1>
+                <h1 class="text2">ESTATEVERSE</h1>
+                <h1 class="text1">ESTATEVERSE</h1>
+                <h1 class="text2">ESTATEVERSE</h1>
             </div>
 
+
             @if (!session('is_logged_in', false))
-                <div class="col-lg-4 d-flex align-items-center">
+                <div class="col-lg-3 d-flex align-items-center" id="logincard">
                     <div class="card shadow-lg p-4" style="border: none; border-radius: 12px;">
                         <div class="row align-items-center">
                             <div class="col-4 text-center">
@@ -57,8 +67,8 @@
                                     width="80">
                             </div>
 
-                            <div class="col-8 text-center">
-                                <p class="fw-bold">Masuk dan Temukan<br>Rumah Impian Anda</p>
+                            <div class="col-8 text-left">
+                                <p class="text__login">Masuk dan temukan <span class="highlighted">Rumah Impian</span> Anda</p>
                                 <a href="{{ route('login.index') }}" class="btn btn-lg"
                                     style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Login</a>
             @endif
@@ -68,12 +78,12 @@
     </div>
     </div>
     </div>
-
+    <div class="margin__spacing"></div>
 
     <div class="container mt-4">
         <div class="mb-3">
             <h2 class="mb-1">Real estate & Perumahan untuk dijual</h2>
-            <p>Menampilkan 100+ hasil di pencarian</p>
+            
         </div>
     </div>
 
@@ -99,7 +109,7 @@
     </div>
 
     {{-- Pagination --}}
-    <div class="d-flex justify-content-center mt-4">
+    {{-- <div class="d-flex justify-content-center mt-4">
         <nav>
             <ul class="pagination">
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -107,10 +117,11 @@
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
             </ul>
         </nav>
-    </div>
+    </div> --}}
 @endsection
 
 <style>
+
     body {
         margin: 0;
         padding: 0;
@@ -202,6 +213,87 @@
 
     .col-lg-6.offset-lg-6 {
         padding-right: 50px;
+    }
+
+    .text1 {
+        font-weight: bolder;
+        font-size: 100px;
+        color: #44D7B5;
+        outline: #44D7B5;
+        animation: text1__animation ease-in-out 10s infinite;
+    }
+
+    .text2 {
+        font-weight: bolder;
+        font-size: 100px;
+        color: white;
+        animation: text2__animation ease-in-out 10s infinite;
+        text-shadow: 
+        -1px -1px 0 #44D7B5,
+        1px -1px 0 #44D7B5,
+        -1px 1px 0 #44D7B5,
+        1px 1px 0 #44D7B5;
+    }
+
+    .margin__spacing {
+        margin-bottom: 100px;
+    }
+
+    .highlighted{
+        color: #44D7B5;
+    }
+
+    .text__login {
+        text-align: left;
+    }
+
+    #logincard {
+        scale: 1.7;
+    }
+
+
+    @keyframes text1__animation {
+        0% {
+            color: #44D7B5;
+            outline: #44D7B5;
+        }
+
+        50% {
+            color: white;
+            text-shadow: 
+            -1px -1px 0 #44D7B5,
+            1px -1px 0 #44D7B5,
+            -1px 1px 0 #44D7B5,
+            1px 1px 0 #44D7B5;
+        }
+
+        100% {
+            color: #44D7B5;
+            outline: #44D7B5;
+        }
+    }
+
+    @keyframes text2__animation {
+        0% {
+            color: white;
+            text-shadow: 
+            -1px -1px 0 #44D7B5,
+            1px -1px 0 #44D7B5,
+            -1px 1px 0 #44D7B5,
+            1px 1px 0 #44D7B5;
+        }
+        50% {
+            color: #44D7B5;
+            outline: #44D7B5;
+        }
+        100% {
+            color: white;
+            text-shadow: 
+            -1px -1px 0 #44D7B5,
+            1px -1px 0 #44D7B5,
+            -1px 1px 0 #44D7B5,
+            1px 1px 0 #44D7B5;
+        }
     }
 
     @media (max-width: 991.98px) {
