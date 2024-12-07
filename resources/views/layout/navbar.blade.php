@@ -5,10 +5,7 @@
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Properti Dijual</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Properti Disewa</a>
+                <a class="nav-link" href="{{ route('property.list') }}">Properti Dijual</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Team Kami</a>
