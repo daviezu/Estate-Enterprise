@@ -138,13 +138,32 @@ class UserController extends Controller
                 if ($user->save()) {
                     return redirect()->route('profile.index')->with('success', 'Profile picture updated successfully.');
                 } else {
-                    return redirect()->back()->withErrors(['error' => 'Failed to update profile picture in the database.']);
+                    return redirect()->back()->with(['error' => 'Failed to update profile picture in the database.']);
                 }
             }
-            return redirect()->back()->withErrors(['error' => 'No file uploaded.']);
+            return redirect()->back()->with(['error' => 'No file uploaded.']);
         }
-        return redirect()->back()->withErrors(['error' => 'User not exist.']);
+        return redirect()->back()->with(['error' => 'User not exist.']);
     }
 
-    public function deleteProfilePicture(Request $request) {}
+    public function deleteProfilePicture(Request $request)
+    {
+        $userID = session('user_id');
+
+        // find user
+        $user = AppUser::find($userID);
+        if (!$user) {
+            return redirect()->back()->withErrors(['error' => 'User not exist.']);
+        }
+        // check if user has a profile picture
+        if ($user->picture_path) {
+            if (file_exists(public_path($user->picture_path))) {
+                unlink(public_path($user->picture_path));
+            }
+            $user->picture_path = null;
+            $user->save();
+            return redirect()->route('profile.index')->with('success', 'Profile pictured deleted successfully');
+        }
+        return redirect()->back()->with(['error' => 'No profile picture to delete.']);
+    }
 }
