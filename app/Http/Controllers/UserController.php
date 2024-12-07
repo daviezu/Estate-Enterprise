@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\AppUser;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
@@ -79,9 +78,7 @@ class UserController extends Controller
         $userID = session('user_id');
         $user = AppUser::find($userID);
 
-        if (!Hash::check($request['currentPassword'], $user->password))
-        // if ($request['currentPassword'] != $user->password)
-        {
+        if (!Hash::check($request['currentPassword'], $user->password)) {
             return redirect()->back()->withErrors(['Password do not match with current password'])->withInput();
         }
 
@@ -124,12 +121,12 @@ class UserController extends Controller
                 // Generate a unique file name
                 $filename = Str::random(20) . '.' . $request->file('profilePicture')->getClientOriginalExtension();
 
-                // $path = $request->file('profilePicture')->store('profile', 'public');
                 $request->file('profilePicture')->move($directory, $filename);
 
-                // delete the old picture
+                // $image = Image::make($request->file('profilePicture'))->resize(900, 600)->save($directory . '/' . $filename);
+
+                // delete the old picture if exists
                 if ($user->picture_path && file_exists(public_path($user->picture_path))) {
-                    // Storage::disk('public')->delete($user->picture_path);
                     unlink(public_path($user->picture_path));
                 }
 

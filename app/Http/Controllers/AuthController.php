@@ -29,6 +29,10 @@ class AuthController extends Controller
         ];
 
         $user = AppUser::where('email', $credentials['email'])->first();
+        if (!$user) {
+            return redirect()->route('login.index')->with('error', 'User does not exist');
+        }
+
         if ($user && Hash::check($credentials['password'], $user->password)) {
 
             // remember me cookies
@@ -47,8 +51,7 @@ class AuthController extends Controller
             session(['user_id' => $user->user_id, 'is_logged_in' => true]);
             return redirect()->route('home');
         }
-        // user doesn't exist
-        return redirect()->route('login.index');
+        return redirect()->route('login.index')->with('error', 'Password does not match');
     }
 
     public function indexRegister()
