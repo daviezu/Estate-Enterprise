@@ -3,6 +3,13 @@
 @section('title', 'Homepage')
 
 @section('content')
+
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ session('success') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     {{-- herosection buat sambungin ke cssnya  --}}
     <div class="hero-section d-flex flex-column justify-content-between position-relative">
         {{-- gambarbackground header --}}
