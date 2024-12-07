@@ -76,3 +76,5 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // My Properties for User who is Admin
 Route::get('/my_property', [PropertyController::class, 'myProperty'])->name('myProperty');
+
+Route::get('/editmyproperty', [PropertyController::class, 'editmyproperty'])->name('editmyProperty');
