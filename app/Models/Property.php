@@ -21,8 +21,8 @@ class Property extends Model
         'picture_path',
     ];
 
-    public function PropertyToUser()
+    public function PropertyToAgent()
     {
-        return $this->belongsTo(AppUser::class, 'user_id', 'user_id');
+        return $this->belongsTo(Agent::class, 'agent_id', 'agent_id');
     }
 }

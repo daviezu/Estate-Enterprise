@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AppUser extends Model
+
+class Agent extends Model
 {
     use HasFactory;
-    protected $table = 'app_users';
-    protected $primaryKey = 'user_id';
+
+    protected $table = 'agents';
+    protected $primaryKey = 'agent_id';
 
     protected $fillable = [
         'first_name',
@@ -22,8 +24,8 @@ class AppUser extends Model
         'picture_path'
     ];
 
-    public function UserToProperty()
+    public function AgentToProperty()
     {
-        return $this->hasMany(Property::class, 'user_id', 'user_id');
+        return $this->hasMany(Property::class, 'agent_id', 'agent_id');
     }
 }
