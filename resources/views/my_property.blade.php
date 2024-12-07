@@ -15,7 +15,7 @@
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 50px;">
             <h2 class="tittlePage">My Properties</h2>
-            <a href="#" class="btn btn-success-add" style="font-family: 'Montserrat', sans-serif; background-color: #44D7B5; color: #FFFFFF; font-size: 16px; font-weight: 600; border-radius: 5px;">Tambah</a>
+            <a href="{{ route('editmyProperty') }}" class="btn btn-success-add" style="font-family: 'Montserrat', sans-serif; background-color: #44D7B5; color: #FFFFFF; font-size: 16px; font-weight: 600; border-radius: 5px;">Tambah</a>
         </div>
 
         <div class="card table-responsive mt-3">

@@ -76,7 +76,7 @@ Route::prefix('agent')->group(function () {
         // My Properties for User who is Admin
         Route::get('/', [PropertyController::class, 'myProperty'])->name('myProperty');
 
-        Route::get('/', [PropertyController::class, 'editmyproperty'])->name('editmyProperty');
+        Route::get('/edit', [PropertyController::class, 'editmyproperty'])->name('editmyProperty');
     });
 });
 // Agent List
