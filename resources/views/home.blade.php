@@ -23,6 +23,12 @@
                     <h1 class="display-4 fw-bold mb-0">Temukan Rumah Impian<br>Anda dengan <span
                             class="text-green">Mudah.</span></h1>
                     <p class="lead mt-3">Cari properti terbaik dengan EstateVerse.</p>
+                    <div class="d-flex justify-content-start mt-4 mb-5">
+                        <a href="{{ route('login.index') }}" class="btn btn-lg" 
+                           style="background-color: #44D7B5; border-color: #44D7B5; color: white;">
+                           About Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,8 +88,8 @@
 
     <div class="container mt-4">
         <div class="mb-3">
-            <h2 class="mb-1">Real estate & Perumahan untuk dijual</h2>
-            
+            <h2 class="mb-1">Beberapa Pilihan</h2>
+            <p class="mb-2">Real estate & Perumahan yang sedang dijual</p>
         </div>
     </div>
 
@@ -109,23 +115,22 @@
     </div>
 
     {{-- Pagination --}}
-    {{-- <div class="d-flex justify-content-center mt-4">
-        <nav>
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-            </ul>
-        </nav>
-    </div> --}}
+    <div class="d-flex justify-content-center mt-4 mb-5">
+        <a href="{{ route('property.list') }}" class="btn btn-lg" 
+           style="background-color: #44D7B5; border-color: #44D7B5; color: white;">
+           Lihat Lebih Banyak
+        </a>
+    </div>
 @endsection
 
 <style>
 
-    body {
-        margin: 0;
-        padding: 0;
-    }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 
     .hero-section {
         position: relative;
@@ -309,4 +314,12 @@
             height: 40px;
         }
     }
+
+    main {
+    flex: 1;
+}
+
+footer {
+    margin-top: 20px; /* Jarak di atas footer */
+}
 </style>
