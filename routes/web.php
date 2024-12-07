@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
@@ -31,7 +32,7 @@ Route::prefix('user')->group(function () {
         // Profile
         Route::prefix('profile')->group(function () {
 
-            // get profile view
+            // // get profile view
             Route::get('/', [UserController::class, 'indexProfile'])->name('profile.index');
 
             // edit profile information
@@ -39,6 +40,15 @@ Route::prefix('user')->group(function () {
 
                 Route::get('/', [UserController::class, 'indexEditProfileName'])->name('profile.edit.name.index');
                 Route::put('/', [UserController::class, 'updateProfileName'])->name('update.profile.name');
+            });
+
+            // profile picture
+            Route::prefix('picture')->group(function () {
+
+                // Update Profile Picture
+                Route::put("/", [UserController::class, 'updateProfilePicture'])->name('update.profile.picture');
+                // Delete Profile Picture
+                Route::delete('/', [UserController::class, 'deleteProfilePicture'])->name('delete.profile.picture');
             });
 
             // Edit profile Password
@@ -59,7 +69,7 @@ Route::prefix('property')->group(function () {
 });
 
 // Agent List
-Route::get('/agentlist', [UserController::class, 'agentList'])->name('agentlist');
+Route::get('/agentlist', [AgentController::class, 'agentList'])->name('agentlist');
 
 // logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
