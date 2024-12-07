@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AppUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -44,6 +45,8 @@ class UserController extends Controller
             'lastName' => 'required|string',
             'username' => 'nullable|string'
         ]);
+        
+        // $mahasiswa->alamat = $validateData['alamat'];
         // access user id through session
         // retrieve user ID 
         $userID = session('user_id');

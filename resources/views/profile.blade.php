@@ -122,6 +122,30 @@
 
 
     <style>
+
+        .alert-danger {
+            background-color: rgb(192, 26, 26) !important; 
+            color: #FFFFFF !important;
+            border: 1px solid #c3e6cb !important;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+            position: relative;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .alert-success {
+            background-color: #44D7B5 !important;
+            color: #FFFFFF !important;          
+            border: 1px solid #c3e6cb !important;
+            border-radius: 5px !important;
+            font-family: Montserrat, sans-serif !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+            position: relative;
+        }
+
+
         .btn-primary {
             transition-duration: 0.4s !important;
         }

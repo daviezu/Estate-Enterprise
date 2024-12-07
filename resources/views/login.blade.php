@@ -2,7 +2,7 @@
 @section('content')
     {{-- displaying error  --}}
     @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 500px; text-align: center; margin-left: 1000px; border-radius: 10px;">
             <strong>{{ session('success') }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -35,7 +35,7 @@
     <!-- Card Login -->
     <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
         <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center"
-            style="width: 410px; height: 340px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
+            style="width: 410px; height: 340px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative; margin-left: 335px;">
             <h3 class="text-center mb-4"
                 style="width: 59px; height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">
                 Login</h3>
@@ -103,6 +103,26 @@
 {{-- Additional CSS --}}
 
 <style>
+
+    .alert-success {
+        background-color: #3e9f89 !important;
+        color: #FFFFFF !important;          
+        border: 1px solid #c3e6cb !important;
+        font-family: Montserrat, sans-serif !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        position: relative;
+        z-index: 1200;
+    }
+
+    .alert-danger {
+        background-color: rgb(192, 26, 26) !important; 
+        color: #FFFFFF !important;
+        border: 1px solid #c3e6cb !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        font-family: Montserrat, sans-serif !important;
+    }
+
     .text-decoration-none:hover {
         color: #28bc99 !important;
     }
