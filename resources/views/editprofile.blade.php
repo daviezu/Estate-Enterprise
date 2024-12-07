@@ -38,19 +38,19 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-primary-delete mt-2 mb-3"
-                        style="margin-left: 25px; font-weight: 500; background-color: #c6c6c6; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #ffffff; padding: 5px;">
+                        style="margin-left: 80px; position: absolute; top: 85px; background-color: #c6c6c6; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #ffffff; padding: 5px;">
                         Hapus Foto
                     </button>
                 </form>
                 <form action="{{ route('update.profile.picture') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <input type="file" name="profilePicture" required>
+                    <input type="file" name="profilePicture" style="margin-left: -48px;"  required>
                     @error('profilePicture')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <button type="submit" class="btn btn-primary-change mt-2 mb-3"
-                        style="margin-left: 25px; font-weight: 500; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #FFFFFF; padding: 5px;">
+                        style="margin-left: -10px; position: absolute; top: 85px; font-weight: 500; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #FFFFFF; padding: 5px;">
                         Ganti Foto
                     </button>
                 </form>
