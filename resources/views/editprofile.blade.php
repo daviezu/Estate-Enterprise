@@ -9,6 +9,22 @@
 
     </div>
     <div class="container">
+
+        {{-- displaying error  --}}
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{ session('error') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="edit card mt-4" style="margin-bottom: 75px;">
             <p style="margin-left: 30px">Gambar Profile</p>
             <div class="mb-3 text-left" style="margin-left: 80px;">
@@ -18,9 +34,14 @@
                     style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #44D7B5; margin-left: -50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);">
 
                 {{-- Button --}}
-                <a href="#" class="btn btn-primary-delete mt-2 mb-3"
-                    style="margin-left: 25px; font-weight: 500; background-color: #c6c6c6; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #ffffff; padding: 5px;">Hapus
-                    Foto</a>
+                <form action="{{ route('delete.profile.picture') }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-primary-delete mt-2 mb-3"
+                        style="margin-left: 25px; font-weight: 500; background-color: #c6c6c6; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #ffffff; padding: 5px;">
+                        Hapus Foto
+                    </button>
+                </form>
                 <form action="{{ route('update.profile.picture') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
