@@ -25,4 +25,10 @@ class PropertyController extends Controller
         return view('my_property');
 
     }
+
+    public function editmyproperty() {
+
+        return view('editmyproperty');
+
+    }
 }
