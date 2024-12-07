@@ -111,9 +111,75 @@
             </ul>
         </nav>
     </div>
+
+    <div class="margin__spacing"></div>
+    <div class="container mt-4">
+        <div class="mb-5">
+            <h1>Apa Kata Mereka Tentang <span><img src="{{asset('images/EstateVerse Logo.png')}}" class="logo" alt=""></span> ?</h1>
+        </div>
+    </div>
+
+    <div class="testimony">
+        <div class="testimony__card">
+            <h5>Sarah - Pembeli Rumah</h5>
+            <p>"EstateVerse mempermudah saya dalam mencari rumah impian. Platform ini intuitif dan saya bisa melihat banyak pilihan properti dalam waktu singkat. Agen yang bekerja sama juga sangat responsif dan profesional."</p>
+        </div>
+        <div class="testimony__card">
+            <h5>Rizal - Agen Properti</h5>
+            <p>"EstateVerse memberikan akses kepada lebih banyak calon pembeli yang serius. Dalam beberapa minggu saja, saya berhasil menjual beberapa properti melalui platform ini. Sistemnya memudahkan saya untuk mengelola listing dan berinteraksi dengan pembeli."</p>
+        </div>
+        <div class="testimony__card">
+            <h5>Lisa - Penyewa Apartemen</h5>
+            <p>"Saya sangat terbantu dengan EstateVerse saat mencari apartemen untuk disewa. Filter pencarian yang detail membantu saya menemukan unit yang sesuai dengan kebutuhan dan anggaran saya. Prosesnya cepat dan tanpa ribet!"</p>
+        </div>
+    </div>
+    <div class="testimony2">
+        <div class="testimony__card">
+            <h5>Budi - Pemilik Properti</h5>
+            <p>"Saya merasa EstateVerse sangat memudahkan saya untuk memasarkan properti saya kepada calon pembeli. Tidak perlu repot-repot mempromosikan sendiri, platform ini sudah melakukan semuanya untuk saya."</p>
+        </div>
+        <div class="testimony__card">
+            <h5>Dina - Investor Properti</h5>
+            <p>"Sebagai investor properti, saya selalu mencari peluang terbaik. EstateVerse membantu saya menemukan properti baru di lokasi-lokasi strategis dengan mudah. Platform ini sangat informatif dan mendukung kebutuhan saya."</p>
+        </div>
+    </div>
+
+    {{-- images background --}}
+
+    {{-- <div class="images_testimony">
+        <img src={{asset('images/assets/house.png')}} class="testimony__image" alt="">
+        <img src={{asset('images/assets/laptop.png')}} class="testimony__image2" alt="">
+    </div> --}}
+
+
+
 @endsection
 
+
+
 <style>
+
+    .testimony {
+        display: flex;
+        gap: 100px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 70px;
+    }
+    
+    .testimony2 {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        margin-bottom: 70px;
+    }
+
+    .testimony__card { 
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
     body {
         margin: 0;
@@ -206,6 +272,11 @@
 
     .col-lg-6.offset-lg-6 {
         padding-right: 50px;
+    }
+
+    .logo {
+        width: 250px;
+        margin-bottom: 10px;
     }
 
     .text1 {
