@@ -28,7 +28,7 @@
         </div>
 
         {{-- searchbar --}}
-        <div class="container mb-4 position-relative" style="z-index: 2;">
+        {{-- <div class="container mb-4 position-relative" style="z-index: 2;">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="hero-search-container mx-auto">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     
     <div class="margin__spacing"></div>
@@ -83,7 +83,7 @@
     <div class="container mt-4">
         <div class="mb-3">
             <h2 class="mb-1">Real estate & Perumahan untuk dijual</h2>
-            <p>Menampilkan 100+ hasil di pencarian</p>
+            
         </div>
     </div>
 
@@ -109,7 +109,7 @@
     </div>
 
     {{-- Pagination --}}
-    <div class="d-flex justify-content-center mt-4">
+    {{-- <div class="d-flex justify-content-center mt-4">
         <nav>
             <ul class="pagination">
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -117,7 +117,7 @@
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
             </ul>
         </nav>
-    </div>
+    </div> --}}
 @endsection
 
 <style>
