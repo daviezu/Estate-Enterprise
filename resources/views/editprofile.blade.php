@@ -83,9 +83,9 @@
                     <a href="{{ route('profile.index') }}" class="btn btn-secondary me-4"
                         style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; background-color: #c9c9c9; border:none; ">Batal</a>
                     <button type="submit" class="btn btn-primary-save me-5"
-                        style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5;">Save
+                        style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5; border: none;">Save
                     </button>
-            </form>
+            </form> 
         </div>
 
     </div>
@@ -116,7 +116,12 @@
 
     .btn-primary-save:hover {
         color: #FFFFFF !important;
-        background-color: #44D7B5 !important;
+        background-color: #28bc99 !important;
+    }
+
+
+    .btn-secondary:hover {
+        background-color: #908e8e !important;
     }
 
 

@@ -34,7 +34,7 @@
     <!-- Card Register -->
     <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
         <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center"
-            style="width: 440px; height: 480px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
+            style="width: 440px; height: 480px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative; margin-left: 335px;">
             <h3 class="text-center mb-4"
                 style="width: 82px; height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">
                 Sign Up</h3>
