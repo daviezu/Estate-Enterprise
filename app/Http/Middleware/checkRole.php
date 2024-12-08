@@ -17,7 +17,6 @@ class checkRole
     public function handle(Request $request, Closure $next): Response
     {
         $role = session('role');
-
         if (!$role) {
             return redirect()->route('home')->with("error", "You are not an agent.");
         }

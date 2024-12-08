@@ -22,7 +22,7 @@
         <div class="overlay"></div>
         <div class="container position-relative z-1">
             <div class="row">
-                <div class="col-md-6 ms-auto">
+                <div class="col-md-6 ms-auto pt-5">
                     <h1 class="display-4 fw-bold">Temukan Rumah Impian<br>Anda dengan <span class="text-green">Mudah.</span>
                     </h1>
                     <p class="lead">Cari properti terbaik dengan EstateVerse.</p>
