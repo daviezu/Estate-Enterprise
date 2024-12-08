@@ -32,7 +32,7 @@
     </div>
 
     <!-- Card Register -->
-    <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
+    <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 100px;">
         <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center"
             style="width: 500px; height: 550px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative; margin-left: 335px; z-index: 200;">
             <h3 class="text-center mb-4"

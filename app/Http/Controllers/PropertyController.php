@@ -41,4 +41,9 @@ class PropertyController extends Controller
     {
         return view('editmyproperty');
     }
+
+    public function addmyproperty()
+    {
+        return view('addproperty');
+    }
 }

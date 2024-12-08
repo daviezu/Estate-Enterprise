@@ -15,7 +15,7 @@
   <div>
     <div class="container mt-4">
       <div>
-        <h2 class="titlePage">Edit Properti</h2>
+        <h2 class="titlePage">Tambah Properti</h2>
       </div>
     </div>
     
@@ -66,7 +66,7 @@
         <input type="number" class="form-control rounded border-2" style="border-color: #44D7B5;" name="carport" id="carport" min="0" placeholder="Ex: 4">
       </div>
       <div class="mb-5 ms-5">
-        <button class="btn text-light" style="background-color: #44D7B5" type="submit">Simpan</button>
+        <button class="btn text-light" style="background-color: #44D7B5" type="submit">Tambah</button>
       </div>
     </div>
   </form>

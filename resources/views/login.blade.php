@@ -33,9 +33,9 @@
     </div>
 
     <!-- Card Login -->
-    <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
+    <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 100px;">
         <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center"
-            style="width: 500px; height: 380px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative; margin-left: 308px; z-index: 200;">
+            style="width: 500px; height: 380px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; margin-left: 335px; position: relative; z-index: 200;">
             <h3 class="text-center mb-4"
                 style="height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 30px; color: #43D3B2; font-weight: bold;">
                 Login</h3>
