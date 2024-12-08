@@ -63,4 +63,9 @@ class PropertyController extends Controller
         $property->delete();
         return redirect()->back()->with('success', 'Property deleted successfully.');
     }
+    public function addmyproperty()
+    {
+        return view('addproperty');
+
+    }
 }

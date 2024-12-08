@@ -28,8 +28,8 @@
                 </div>
             @endif
             <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 50px;">
-                <h2 class="tittlePage">My Properties</h2>
-                <a href="{{ route('agent.property.edit') }}" class="btn btn-success-add"
+                <h2 class="tittlePage">Properti Saya</h2>
+                <a href="{{ route('agent.property.add') }}" class="btn btn-success-add"
                     style="font-family: 'Montserrat', sans-serif; background-color: #44D7B5; color: #FFFFFF; font-size: 16px; font-weight: 600; border-radius: 5px;">Tambah</a>
             </div>
 
