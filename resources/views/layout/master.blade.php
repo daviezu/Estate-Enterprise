@@ -53,11 +53,11 @@
 
         {{-- Content --}}
         @if (request()->routeIs('login.index', 'register.index'))
-            <div class="container-fluid px-0 flex-grow-1 pt-5" style="background-color: #44D7B5;">
+            <div class="container-fluid px-0 flex-grow-1" style="background-color: #44D7B5;">
                 @yield('content')
             </div>
         @else
-            <div class="container-fluid px-0 flex-grow-1 pt-5">
+            <div class="container-fluid px-0 flex-grow-1">
                 @yield('content')
             </div>
         @endif
