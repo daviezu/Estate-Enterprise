@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('content')
+
     <div class="container-md pt-5 mt-5 container">
       <div class="row">
         <div class="col-lg-3 col-md-4">
@@ -91,9 +92,11 @@
       </div>
 
     </div>
+
 @endsection
 
 <style>
+
 
  
 
@@ -116,5 +119,6 @@
   @media (max-width: 480px) {
    
   }
+
 </style>
 

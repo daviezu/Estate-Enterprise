@@ -29,7 +29,7 @@
             @endif
             <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 50px;">
                 <h2 class="tittlePage">Properti Saya</h2>
-                <a href="{{ route('agent.property.add') }}" class="btn btn-success-add"
+                <a href="{{ route('agent.property.create.index') }}" class="btn btn-success-add"
                     style="font-family: 'Montserrat', sans-serif; background-color: #44D7B5; color: #FFFFFF; font-size: 16px; font-weight: 600; border-radius: 5px;">Tambah</a>
             </div>
 
@@ -61,9 +61,9 @@
                                 <td class="txt-deskripsirow1">{{ $p->description }}</td>
                                 <td class="txt-lokasirow1">{{ $p->address }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-primary btn-sm"
+                                    <a href="{{ route('property.detail'), $p->property_id }}" class="btn btn-primary btn-sm"
                                         style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #44A8D7; border: none;">Lihat</a>
-                                    <a href="#" class="btn btn-warning btn-sm"
+                                    <a href="{{ route('agent.property.edit.index') }}" class="btn btn-warning btn-sm"
                                         style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #D7CB44; border: none; ">Edit</a>
                                     <form action="{{ route('agent.property.delete', $p->property_id) }}" method="POST"
                                         class="d-inline">
