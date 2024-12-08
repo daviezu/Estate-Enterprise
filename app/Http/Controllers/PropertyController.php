@@ -19,7 +19,6 @@ class PropertyController extends Controller
 
     public function propertyDetail()
     {
-
         return view('detailproperty');
     }
 
@@ -38,10 +37,12 @@ class PropertyController extends Controller
         return redirect()->back()->with('error', 'You do not have permission to access this page.');
     }
 
-    public function editmyproperty()
+    public function editPropertyIndex()
     {
         return view('editmyproperty');
     }
+
+    public function editProperty() {}
 
     public function deleteProperty($id)
     {
@@ -63,9 +64,53 @@ class PropertyController extends Controller
         $property->delete();
         return redirect()->back()->with('success', 'Property deleted successfully.');
     }
-    public function addmyproperty()
+
+    public function addPropertyIndex()
     {
         return view('addproperty');
+    }
 
+    public function addProperty(Request $request)
+    {
+        // Validate the request data
+        $validate = $request->validate([
+            'property_name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'address' => 'required|string|max:255',
+            'location_link' => 'nullable|url',
+            'building_size' => 'required|numeric|min:0',
+            'land_size' => 'required|numeric|min:0',
+            'certificate' => 'required|string|max:255',
+            'bedroom' => 'required|integer|min:0',
+            'bathroom' => 'required|integer|min:0',
+            'carport' => 'required|integer|min:0',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Store the picture if uploaded
+        $picturePath = null;
+        if ($request->hasFile('picture')) {
+            $picturePath = $request->file('picture')->store('images/properties', 'public');
+        }
+        $userId = session('user_id');
+        // Create a new property
+        Property::create([
+            'user_id' => $userId,
+            'property_name' => $validate['property_name'],
+            'description' => $validate['description'],
+            'address' => $validate['address'],
+            'price' => $validate['price'],
+            'location_link' => $validate['location_link'],
+            'building_size' => $validate['building_size'],
+            'land_size' => $validate['land_size'],
+            'certificate' => $validate['certificate'],
+            'bedroom' => $validate['bedroom'],
+            'bathroom' => $validate['bathroom'],
+            'carport' => $validate['carport'],
+            'picture_path' => $picturePath,
+        ]);
+        // Redirect to a success page or back
+        return redirect()->route('agent.property')->with('success', 'Property added successfully!');
     }
 }
