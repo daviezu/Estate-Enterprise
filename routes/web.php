@@ -16,7 +16,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Search by Address
 Route::post('/search-property-address', [HomeController::class, 'searchByAddress'])->name('search.property.address');
 
-// Agent list
 // Agent List
 Route::get('/agent/list', [AgentController::class, 'agentList'])->name('agent.list');
 
@@ -76,8 +75,18 @@ Route::middleware(Authenticate::class)->group(function () {
             Route::prefix('property')->group(function () {
                 // My Properties for User who is Admin
                 Route::get('/', [PropertyController::class, 'agentProperty'])->name('agent.property');
-                Route::get('/edit', [PropertyController::class, 'editmyproperty'])->name('agent.property.edit');
-                Route::get('/add', [PropertyController::class, 'addmyproperty'])->name('agent.property.add');
+
+                // add property
+                Route::prefix('create')->group(function () {
+                    Route::get('/index', [PropertyController::class, 'addPropertyIndex'])->name('agent.property.create.index');
+                    Route::post('/', [PropertyController::class, 'addProperty'])->name('agent.property.create');
+                });
+
+                // edit property
+                Route::get('/index', [PropertyController::class, 'editPropertyIndex'])->name('agent.property.edit.index');
+                Route::put('/{id}', [PropertyController::class, 'editProperty'])->name('agent.property.edit');
+
+                // delete property
                 Route::delete('/{id}', [PropertyController::class, 'deleteProperty'])->name('agent.property.delete');
             });
         });
