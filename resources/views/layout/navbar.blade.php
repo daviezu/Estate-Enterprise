@@ -5,15 +5,19 @@
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('property.list') }}">Properti Dijual</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="#">Team Kami</a>
+                <a class="nav-link" href="{{ route('property.list') }}">Properti</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Hubungi Kami</a>
+                <a class="nav-link" href="{{ route('property.list') }}">Agent Seller</a>
             </li>
+            {{-- agent navbar  --}}
+            @if (session('is_logged_in', false))
+                @if (session('role', true))
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Properti Saya</a>
+                    </li>
+                @endif
+            @endif
             <div class="search-container">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

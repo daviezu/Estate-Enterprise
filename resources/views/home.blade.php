@@ -5,10 +5,16 @@
 @section('content')
 
     @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>{{ session('success') }}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{ session('error') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     @endif
     {{-- herosection buat sambungin ke cssnya  --}}
     <div class="hero-section d-flex flex-column justify-content-between position-relative">
@@ -24,9 +30,9 @@
                             class="text-green">Mudah.</span></h1>
                     <p class="lead mt-3">Cari properti terbaik dengan EstateVerse.</p>
                     <div class="d-flex justify-content-start mt-4 mb-5">
-                        <a href="{{ route('login.index') }}" class="btn btn-lg" 
-                           style="background-color: #44D7B5; border-color: #44D7B5; color: white;">
-                           About Us
+                        <a href="{{ route('login.index') }}" class="btn btn-lg"
+                            style="background-color: #44D7B5; border-color: #44D7B5; color: white;">
+                            About Us
                         </a>
                     </div>
                 </div>
@@ -49,7 +55,7 @@
             </div>
         </div> --}}
     </div>
-    
+
     <div class="margin__spacing"></div>
 
     {{-- estateverse 4x --}}
@@ -74,7 +80,8 @@
                             </div>
 
                             <div class="col-8 text-left">
-                                <p class="text__login">Masuk dan temukan <span class="highlighted">Rumah Impian</span> Anda</p>
+                                <p class="text__login">Masuk dan temukan <span class="highlighted">Rumah Impian</span> Anda
+                                </p>
                                 <a href="{{ route('login.index') }}" class="btn btn-lg"
                                     style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Login</a>
             @endif
@@ -116,41 +123,50 @@
 
     {{-- Pagination --}}
     <div class="d-flex justify-content-center mt-4 mb-5">
-        <a href="{{ route('property.list') }}" class="btn btn-lg" 
-           style="background-color: #44D7B5; border-color: #44D7B5; color: white;">
-           Lihat Lebih Banyak
+        <a href="{{ route('property.list') }}" class="btn btn-lg"
+            style="background-color: #44D7B5; border-color: #44D7B5; color: white;">
+            Lihat Lebih Banyak
         </a>
     </div>
 
     <div class="margin__spacing"></div>
     <div class="container mt-4">
         <div class="mb-5">
-            <h1>Apa Kata Mereka Tentang <span><img src="{{asset('images/EstateVerse Logo.png')}}" class="logo" alt=""></span> ?</h1>
+            <h1>Apa Kata Mereka Tentang <span><img src="{{ asset('images/EstateVerse Logo.png') }}" class="logo"
+                        alt=""></span> ?</h1>
         </div>
     </div>
 
     <div class="testimony">
         <div class="testimony__card">
             <h5>Sarah - Pembeli Rumah</h5>
-            <p>"EstateVerse mempermudah saya dalam mencari rumah impian. Platform ini intuitif dan saya bisa melihat banyak pilihan properti dalam waktu singkat. Agen yang bekerja sama juga sangat responsif dan profesional."</p>
+            <p>"EstateVerse mempermudah saya dalam mencari rumah impian. Platform ini intuitif dan saya bisa melihat banyak
+                pilihan properti dalam waktu singkat. Agen yang bekerja sama juga sangat responsif dan profesional."</p>
         </div>
         <div class="testimony__card">
             <h5>Rizal - Agen Properti</h5>
-            <p>"EstateVerse memberikan akses kepada lebih banyak calon pembeli yang serius. Dalam beberapa minggu saja, saya berhasil menjual beberapa properti melalui platform ini. Sistemnya memudahkan saya untuk mengelola listing dan berinteraksi dengan pembeli."</p>
+            <p>"EstateVerse memberikan akses kepada lebih banyak calon pembeli yang serius. Dalam beberapa minggu saja, saya
+                berhasil menjual beberapa properti melalui platform ini. Sistemnya memudahkan saya untuk mengelola listing
+                dan berinteraksi dengan pembeli."</p>
         </div>
         <div class="testimony__card">
             <h5>Lisa - Penyewa Apartemen</h5>
-            <p>"Saya sangat terbantu dengan EstateVerse saat mencari apartemen untuk disewa. Filter pencarian yang detail membantu saya menemukan unit yang sesuai dengan kebutuhan dan anggaran saya. Prosesnya cepat dan tanpa ribet!"</p>
+            <p>"Saya sangat terbantu dengan EstateVerse saat mencari apartemen untuk disewa. Filter pencarian yang detail
+                membantu saya menemukan unit yang sesuai dengan kebutuhan dan anggaran saya. Prosesnya cepat dan tanpa
+                ribet!"</p>
         </div>
     </div>
     <div class="testimony2">
         <div class="testimony__card">
             <h5>Budi - Pemilik Properti</h5>
-            <p>"Saya merasa EstateVerse sangat memudahkan saya untuk memasarkan properti saya kepada calon pembeli. Tidak perlu repot-repot mempromosikan sendiri, platform ini sudah melakukan semuanya untuk saya."</p>
+            <p>"Saya merasa EstateVerse sangat memudahkan saya untuk memasarkan properti saya kepada calon pembeli. Tidak
+                perlu repot-repot mempromosikan sendiri, platform ini sudah melakukan semuanya untuk saya."</p>
         </div>
         <div class="testimony__card">
             <h5>Dina - Investor Properti</h5>
-            <p>"Sebagai investor properti, saya selalu mencari peluang terbaik. EstateVerse membantu saya menemukan properti baru di lokasi-lokasi strategis dengan mudah. Platform ini sangat informatif dan mendukung kebutuhan saya."</p>
+            <p>"Sebagai investor properti, saya selalu mencari peluang terbaik. EstateVerse membantu saya menemukan properti
+                baru di lokasi-lokasi strategis dengan mudah. Platform ini sangat informatif dan mendukung kebutuhan saya."
+            </p>
         </div>
     </div>
 
@@ -168,7 +184,6 @@
 
 
 <style>
-
     .testimony {
         display: flex;
         gap: 100px;
@@ -176,7 +191,7 @@
         align-items: center;
         margin-bottom: 70px;
     }
-    
+
     .testimony2 {
         display: flex;
         justify-content: center;
@@ -184,7 +199,7 @@
         margin-bottom: 70px;
     }
 
-    .testimony__card { 
+    .testimony__card {
         width: 400px;
         padding: 20px;
         border-radius: 10px;
@@ -302,18 +317,18 @@
         font-size: 100px;
         color: white;
         animation: text2__animation ease-in-out 10s infinite;
-        text-shadow: 
-        -1px -1px 0 #44D7B5,
-        1px -1px 0 #44D7B5,
-        -1px 1px 0 #44D7B5,
-        1px 1px 0 #44D7B5;
+        text-shadow:
+            -1px -1px 0 #44D7B5,
+            1px -1px 0 #44D7B5,
+            -1px 1px 0 #44D7B5,
+            1px 1px 0 #44D7B5;
     }
 
     .margin__spacing {
         margin-bottom: 100px;
     }
 
-    .highlighted{
+    .highlighted {
         color: #44D7B5;
     }
 
@@ -334,11 +349,11 @@
 
         50% {
             color: white;
-            text-shadow: 
-            -1px -1px 0 #44D7B5,
-            1px -1px 0 #44D7B5,
-            -1px 1px 0 #44D7B5,
-            1px 1px 0 #44D7B5;
+            text-shadow:
+                -1px -1px 0 #44D7B5,
+                1px -1px 0 #44D7B5,
+                -1px 1px 0 #44D7B5,
+                1px 1px 0 #44D7B5;
         }
 
         100% {
@@ -350,23 +365,25 @@
     @keyframes text2__animation {
         0% {
             color: white;
-            text-shadow: 
-            -1px -1px 0 #44D7B5,
-            1px -1px 0 #44D7B5,
-            -1px 1px 0 #44D7B5,
-            1px 1px 0 #44D7B5;
+            text-shadow:
+                -1px -1px 0 #44D7B5,
+                1px -1px 0 #44D7B5,
+                -1px 1px 0 #44D7B5,
+                1px 1px 0 #44D7B5;
         }
+
         50% {
             color: #44D7B5;
             outline: #44D7B5;
         }
+
         100% {
             color: white;
-            text-shadow: 
-            -1px -1px 0 #44D7B5,
-            1px -1px 0 #44D7B5,
-            -1px 1px 0 #44D7B5,
-            1px 1px 0 #44D7B5;
+            text-shadow:
+                -1px -1px 0 #44D7B5,
+                1px -1px 0 #44D7B5,
+                -1px 1px 0 #44D7B5,
+                1px 1px 0 #44D7B5;
         }
     }
 
@@ -385,10 +402,11 @@
     }
 
     main {
-    flex: 1;
-}
+        flex: 1;
+    }
 
-footer {
-    margin-top: 20px; /* Jarak di atas footer */
-}
+    footer {
+        margin-top: 20px;
+        /* Jarak di atas footer */
+    }
 </style>
