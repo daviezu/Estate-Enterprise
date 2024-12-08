@@ -78,6 +78,8 @@ Route::prefix('agent')->group(function () {
         Route::get('/', [PropertyController::class, 'agentProperty'])->name('agent.property');
 
         Route::get('/edit', [PropertyController::class, 'editmyproperty'])->name('agent.property.edit');
+
+        Route::get('/add', [PropertyController::class, 'addmyproperty'])->name('agent.property.add');
     });
 
     // Agent List

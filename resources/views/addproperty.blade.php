@@ -77,7 +77,7 @@
       <input type="number" class="form" id="name" placeholder="Carport" name="carport" required>
     </div>
     <div class="button">
-      <a href="" class="save__button">Save</a>
+      <a href="" class="save__button">Tambah</a></a>
   </div>
   </div>
 
