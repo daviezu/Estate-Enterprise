@@ -1,57 +1,63 @@
 <div class="footer spacing"></div>
-<div class="mt-4 container footer-box d-flex justify-content-between gap-5" style="z-index: 1000">
+<div class="mt-4 container footer-box d-flex justify-content-between gap-5 mb-2" style="z-index: 1000">
     <div class="contact-info">
-        <div class="spacing">
+        <div class="spacing d-flex flex-column">
             <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
-                <img src="{{ asset('images/EstateVerse Logo.png') }}" width='200px' alt="Logo">
+                <img src="{{ asset('images/EstateVerse Logo.png') }}" class="footer__logo" width='200px' alt="Logo">
             </a>
+            <div class="d-flex flex-column mt-4">
+                <p>Kebon Jeruk, Jakarta Barat </p>
+                <p>Indonesia.</p>
+                <p>Email: admin@estateverse.com</p>
+            </div>
         </div>
 
-        <p>
-            Kebon Jeruk, Jakarta Barat <br>
-            Indonesia. <br> <br>
-            Email: admin@estateverse.com
-        </p>
     </div>
-    <div class="property-type d-flex flex-column flex-grow-1 ms-5">
+    <div class="property-type d-flex flex-column flex-grow-1 text-end">
         <h5 class="property-title">Property</h5>
         <a class="property-type-link" href="#">House</a>
         <a class="property-type-link" href="#">Apartment</a>
         <a class="property-type-link" href="#">Villa</a>
         <a class="property-type-link" href="#">Hotel</a>
     </div>
-    <div class="contact-form d-flex flex-column
     
-     flex-grow-1">
-
-        <div class="contact-form d-flex flex-column
-        
-         flex-grow-1">
-            <div class="mb-3">
-                <div class="spacing">
-                    <label for="exampleFormControlInput1" class="contact-label d-flex justify-content-end">ASK FOR
-                        HELP</label>
-                </div>
-                <input type="email" class="form-control form-control-lg" id="exampleFormControlInput1"
-                    placeholder="Email">
-            </div>
-            <div class="mb-3">
-                {{-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> --}}
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
-            </div>
-            <div class="text-end">
-                <button class="send-btn">
-                    Send
-                </button>
-            </div>
-
-            <div class="spacing"></div>
-            <div class="spacing"></div>
-        </div>
-    </div>
 </div>
 
 <style>
+     @media (max-width: 992px) {
+
+    }
+
+    @media (max-width: 768px) {
+
+    }
+
+    @media (max-width: 576px) {
+
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 0  1rem;
+        }
+
+        .footer__logo {
+            width: 150px;
+        }
+
+        .contact-info p {
+            font-size: 10px;
+        }
+
+        .property-title,
+        .property-type a
+        {
+            font-size: 10px;
+        }
+
+
+    }
+
     .footer {
         border-top: solid;
         border-width: 1px;

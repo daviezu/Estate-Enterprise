@@ -17,7 +17,7 @@
         <div>
             <div class="container mt-4">
                 <div>
-                    <h2 class="titlePage">Edit Properti</h2>
+                    <h2 class="titlePage">Tambah Properti</h2>
                 </div>
             </div>
             @if ($errors->any())

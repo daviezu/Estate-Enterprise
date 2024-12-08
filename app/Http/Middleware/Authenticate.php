@@ -23,7 +23,7 @@ class Authenticate
                 $user = AppUser::where('remember_token', $token)->first();
 
                 if ($user) {
-                    session(['user_id' => $user->user_id]);
+                    session(['user_id' => $user->user_id, 'role' => $user->is_agent]);
                     session()->regenerate();
                 }
             }

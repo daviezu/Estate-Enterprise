@@ -48,8 +48,8 @@ class AuthController extends Controller
             }
 
             // store user id in session
-            session(['user_id' => $user->user_id, 'is_logged_in' => true]);
-            return redirect()->route('home');
+            session(['user_id' => $user->user_id, 'is_logged_in' => true, 'role' => $user->is_agent]);
+            return redirect()->route('home')->with("success", "Login Success");
         }
         return redirect()->route('login.index')->with('error', 'Password does not match');
     }
@@ -77,7 +77,7 @@ class AuthController extends Controller
         }
 
         // check IF email EXIST
-        $email = AppUser::where('Email', $validate['email'])->first();
+        $email = AppUser::where('email', $validate['email'])->first();
 
         // email exist
         if ($email) {
@@ -101,7 +101,7 @@ class AuthController extends Controller
 
         if ($user) {
 
-            return redirect()->route('login.index')->with('success', 'Registration Successful');
+            return redirect()->route('home')->with('success', 'Registration Success');
         }
     }
 
