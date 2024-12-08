@@ -48,7 +48,7 @@
 
 <body>
     {{-- Navbar --}}
-    <div class="d-flex flex-column min-vh-100">
+    <div class="d-flex flex-column min-vh-100 ">
         @include('layout.navbar')
 
         {{-- Content --}}
@@ -57,7 +57,7 @@
                 @yield('content')
             </div>
         @else
-            <div class="container-fluid px-0 flex-grow-1">
+            <div class="container-fluid px-0 flex-grow-1 ">
                 @yield('content')
             </div>
         @endif
@@ -74,6 +74,7 @@
     
 
     {{-- JavaScript for cursor Effects --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
     const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
