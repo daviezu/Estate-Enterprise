@@ -1,29 +1,27 @@
-<nav class="navbar navbar-expand pt-3" style="background-color: #ffffff; z-index: 1000;">
+<nav class="navbar navbar-expand pt-3 fixed-top" style="background-color: #ffffff; z-index: 1000;">
     <div class="container">
         <a class="navbar-brand nav-link active" aria-current="page" href="{{ route('home') }}">
-            <img src="{{ asset('images/EstateVerse Logo.png') }}" alt="Logo" width='200px'>
+            <img src="{{ asset('images/EstateVerse Logo.png') }}" class="logo" alt="Logo" width='200px'>
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('property.list') }}">Properti Dijual</a>
+                <a class="nav-link" href="{{ route('property.list') }}">Properti</a>
             </li>
-            
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('about.index') }}">Team Kami</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Hubungi Kami</a>
+                <a class="nav-link" href="{{ route('agent.list') }}">Agent Seller</a>
             </li>
-            <div class="search-container">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit">
-                        <img src="{{ asset('images/Search Icon.png') }}" alt="search">
-                    </button>
-                </form>
-            </div>
-
             @if (session('is_logged_in', false))
+                {{-- agent navbar start --}}
+                @if (session('role', true))
+                    <li class="nav-item">
+                        <a href={{ route('agent.property') }} class="nav-link" href="#">Properti Saya</a>
+                    </li>
+                @endif
+                {{-- agent navbar end --}}
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('profile.index') }}">Profile</a>
                 </li>
@@ -43,10 +41,48 @@
 </nav>
 
 <style>
+    @media (max-width: 992px) {
+
+        .nav-item a,
+        .nav-item button {
+            font-size: 10px;
+        }
+
+        .search-container {
+            width: 250px !important;
+        }
+
+        .logo {
+            width: 100px;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+        .logo {
+            width: 75px;
+        }
+
+    }
+
+    @media (max-width: 576px) {
+        .logo {
+            width: 70px;
+        }
+    }
+
+    @media (max-width: 480px) {}
+
+    .container {
+        width: 100%;
+    }
+
     .navbar {
-        border-bottom: solid;
+        width: 100%;
+    
         border-width: 1px;
         padding-bottom: 16px;
+        margin-bottom: 0px;
     }
 
     .search-container {

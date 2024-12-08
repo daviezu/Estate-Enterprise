@@ -3,7 +3,7 @@
   font-weight: 600;
   color: #44D7B5;
   font-family: 'Montserrat', sans-serif;
-  margin-left: 10%;
+  text-align: center;
 }
 
 .description {
@@ -33,6 +33,7 @@
   flex-direction: column;
   border: none;
   color: white;
+  margin-left: 100px;
 }
 
 .addPhotos img{

@@ -48,7 +48,7 @@ class AuthController extends Controller
             }
 
             // store user id in session
-            session(['user_id' => $user->user_id, 'is_logged_in' => true]);
+            session(['user_id' => $user->user_id, 'is_logged_in' => true, 'role' => $user->is_agent]);
             return redirect()->route('home')->with("success", "Login Success");
         }
         return redirect()->route('login.index')->with('error', 'Password does not match');
