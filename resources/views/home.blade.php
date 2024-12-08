@@ -149,13 +149,13 @@
         </div>
     
         <div class="margin__spacing"></div>
-        <div class="container mt-4">
+        {{-- <div class="container mt-4">
             <div class="mb-5">
                 <h1>Apa Kata Mereka Tentang <span><img src="{{asset('images/EstateVerse Logo.png')}}" class="logo" alt=""></span> ?</h1>
             </div>
-        </div>
+        </div> --}}
     
-        <div class="testimony">
+        {{-- <div class="testimony">
             <div class="testimony__card">
                 <h5>Sarah - Pembeli Rumah</h5>
                 <p>"EstateVerse mempermudah saya dalam mencari rumah impian. Platform ini intuitif dan saya bisa melihat banyak pilihan properti dalam waktu singkat. Agen yang bekerja sama juga sangat responsif dan profesional."</p>
@@ -179,7 +179,7 @@
                 <p>"Sebagai investor properti, saya selalu mencari peluang terbaik. EstateVerse membantu saya menemukan properti baru di lokasi-lokasi strategis dengan mudah. Platform ini sangat informatif dan mendukung kebutuhan saya."</p>
             </div>
 
-        </div>
+        </div> --}}
     
         {{-- images background --}}
     
