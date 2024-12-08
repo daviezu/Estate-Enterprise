@@ -17,10 +17,16 @@ return new class extends Migration
             $table->string('property_name');
             $table->string('owner');
             $table->integer('price');
-            $table->string('location');
             $table->string('address');
-            $table->text('description');
+            $table->string('location_link');
             $table->string('picture_path')->nullable();
+            $table->text('description');
+            $table->double("building_size");
+            $table->double("land_size");
+            $table->string("certificate");
+            $table->integer("bedroom");
+            $table->integer("bathroom");
+            $table->integer("carport");
             $table->timestamps();
         });
     }

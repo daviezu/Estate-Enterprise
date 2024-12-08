@@ -15,10 +15,16 @@ class Property extends Model
         'property_name',
         'owner',
         'price',
-        'location',
         'address',
-        'description',
+        'location_link',
         'picture_path',
+        'description',
+        'building_size',
+        'land_size',
+        'certificate',
+        'bedroom',
+        'bathroom',
+        'carport'
     ];
 
     public function PropertyToAgent()
