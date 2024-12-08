@@ -5,10 +5,16 @@
 @section('content')
 
     @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>{{ session('success') }}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{ session('error') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     @endif
 
     
@@ -20,6 +26,7 @@
                     <h1 class="display-4 fw-bold">Temukan Rumah Impian<br>Anda dengan <span
                         class="text-green">Mudah.</span></h1>
                     <p class="lead">Cari properti terbaik dengan EstateVerse.</p>
+
                 </div>
             </div>
         </div>
@@ -67,6 +74,7 @@
                 </div>
             </div>
         </div> --}}
+
     
         {{-- estateverse 4x --}}
         <div class="container">
@@ -95,6 +103,7 @@
                                         style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Login</a>
                 @endif
             </div>
+
         </div>
         </div>
         </div>
@@ -126,6 +135,7 @@
                             </div>
                         </div>
                     </div>
+
                 @endforeach
             </div>
         </div>
@@ -168,6 +178,7 @@
                 <h5>Dina - Investor Properti</h5>
                 <p>"Sebagai investor properti, saya selalu mencari peluang terbaik. EstateVerse membantu saya menemukan properti baru di lokasi-lokasi strategis dengan mudah. Platform ini sangat informatif dan mendukung kebutuhan saya."</p>
             </div>
+
         </div>
     
         {{-- images background --}}
@@ -186,6 +197,7 @@
 
 
 <style>
+
 
     @media (max-width: 992px) {
         .estateverse__title h1{
@@ -229,6 +241,7 @@
         height:100%;
     } */
 
+
     .testimony {
         display: flex;
         gap: 100px;
@@ -236,7 +249,7 @@
         align-items: center;
         margin-bottom: 70px;
     }
-    
+
     .testimony2 {
         display: flex;
         justify-content: center;
@@ -244,7 +257,7 @@
         margin-bottom: 70px;
     }
 
-    .testimony__card { 
+    .testimony__card {
         width: 400px;
         padding: 20px;
         border-radius: 10px;
@@ -362,18 +375,18 @@
         font-size: 100px;
         color: white;
         animation: text2__animation ease-in-out 10s infinite;
-        text-shadow: 
-        -1px -1px 0 #44D7B5,
-        1px -1px 0 #44D7B5,
-        -1px 1px 0 #44D7B5,
-        1px 1px 0 #44D7B5;
+        text-shadow:
+            -1px -1px 0 #44D7B5,
+            1px -1px 0 #44D7B5,
+            -1px 1px 0 #44D7B5,
+            1px 1px 0 #44D7B5;
     }
 
     .margin__spacing {
         margin-bottom: 100px;
     }
 
-    .highlighted{
+    .highlighted {
         color: #44D7B5;
     }
 
@@ -394,11 +407,11 @@
 
         50% {
             color: white;
-            text-shadow: 
-            -1px -1px 0 #44D7B5,
-            1px -1px 0 #44D7B5,
-            -1px 1px 0 #44D7B5,
-            1px 1px 0 #44D7B5;
+            text-shadow:
+                -1px -1px 0 #44D7B5,
+                1px -1px 0 #44D7B5,
+                -1px 1px 0 #44D7B5,
+                1px 1px 0 #44D7B5;
         }
 
         100% {
@@ -410,23 +423,25 @@
     @keyframes text2__animation {
         0% {
             color: white;
-            text-shadow: 
-            -1px -1px 0 #44D7B5,
-            1px -1px 0 #44D7B5,
-            -1px 1px 0 #44D7B5,
-            1px 1px 0 #44D7B5;
+            text-shadow:
+                -1px -1px 0 #44D7B5,
+                1px -1px 0 #44D7B5,
+                -1px 1px 0 #44D7B5,
+                1px 1px 0 #44D7B5;
         }
+
         50% {
             color: #44D7B5;
             outline: #44D7B5;
         }
+
         100% {
             color: white;
-            text-shadow: 
-            -1px -1px 0 #44D7B5,
-            1px -1px 0 #44D7B5,
-            -1px 1px 0 #44D7B5,
-            1px 1px 0 #44D7B5;
+            text-shadow:
+                -1px -1px 0 #44D7B5,
+                1px -1px 0 #44D7B5,
+                -1px 1px 0 #44D7B5,
+                1px 1px 0 #44D7B5;
         }
     }
 
@@ -445,10 +460,11 @@
     }
 
     main {
-    flex: 1;
-}
+        flex: 1;
+    }
 
-footer {
-    margin-top: 20px; /* Jarak di atas footer */
-}
+    footer {
+        margin-top: 20px;
+        /* Jarak di atas footer */
+    }
 </style>
