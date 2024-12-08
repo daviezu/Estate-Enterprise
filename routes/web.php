@@ -6,6 +6,7 @@ use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\checkRole;
 use Illuminate\Support\Facades\Route;
 
 // Home
@@ -35,7 +36,7 @@ Route::prefix('user')->group(function () {
         // Profile
         Route::prefix('profile')->group(function () {
 
-            // // get profile view
+            // get profile view
             Route::get('/', [UserController::class, 'indexProfile'])->name('profile.index');
 
             // edit profile information
@@ -63,6 +64,25 @@ Route::prefix('user')->group(function () {
     });
 });
 
+// agent
+Route::middleware(Authenticate::class)->group(function () {
+    Route::middleware(checkRole::class)->group(function () {
+        Route::prefix('agent')->group(function () {
+
+            Route::prefix('property')->group(function () {
+                // My Properties for User who is Admin
+                Route::get('/', [PropertyController::class, 'agentProperty'])->name('agent.property');
+
+                Route::delete('/{id}', [PropertyController::class, 'deleteProperty'])->name('agent.property.delete');
+                Route::get('/edit', [PropertyController::class, 'editmyproperty'])->name('agent.property.edit');
+            });
+            // Agent List
+            Route::get('/list', [AgentController::class, 'agentList'])->name('agent.list');
+        });
+    });
+});
+
+// property
 Route::prefix('property')->group(function () {
     // Property List 
     Route::get('/list', [PropertyController::class, 'propertyList'])->name('property.list');

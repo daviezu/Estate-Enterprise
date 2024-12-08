@@ -13,6 +13,20 @@
     @extends('layout.master')
     @section('content')
         <div class="container mt-4">
+            {{-- displaying error  --}}
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ session('success') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>{{ session('error') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 50px;">
                 <h2 class="tittlePage">Properti Saya</h2>
                 <a href="{{ route('agent.property.add') }}" class="btn btn-success-add"
@@ -51,7 +65,10 @@
                                         style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #44A8D7; border: none;">Lihat</a>
                                     <a href="#" class="btn btn-warning btn-sm"
                                         style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #D7CB44; border: none; ">Edit</a>
-                                    <form action="#" method="POST" class="d-inline">
+                                    <form action="{{ route('agent.property.delete', $p->property_id) }}" method="POST"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm"
                                             style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #D74446; border: none;">Hapus</button>
                                     </form>
