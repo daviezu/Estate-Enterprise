@@ -39,16 +39,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-                        <a href="#" class="btn btn-primary"
-                            style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
-                            Detail</a>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
 
             {{-- Property 2 --}}
             <div class="col-md-4 mb-4">
@@ -57,13 +48,16 @@
                         alt="property2">
                     <div class="card-body">
                         <h5 class="card-price"
-                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp 850 Jt - 1,3
+                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp
+                            850 Jt - 1,3
                             M</h5>
                         <h2 class="card-tittle"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">Sunrise Hills
+                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">
+                            Sunrise Hills
                             Residence</h2>
                         <h3 class="card-text"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By Andi Wijaya
+                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By Andi
+                            Wijaya
                         </h3>
                         <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
                             Cibubur, Jakarta Timur</p>
@@ -89,13 +83,16 @@
                         alt="property3">
                     <div class="card-body">
                         <h5 class="card-price"
-                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp 950 Jt - 1,4
+                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp
+                            950 Jt - 1,4
                             M</h5>
                         <h2 class="card-tittle"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">Maple Green
+                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">Maple
+                            Green
                             Estate</h2>
                         <h3 class="card-text"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By Lestari
+                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By
+                            Lestari
                             Rahmadani</h3>
                         <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
                             Bekasi, Jawa Barat</p>
@@ -121,13 +118,16 @@
                         alt="property4">
                     <div class="card-body">
                         <h5 class="card-price"
-                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp 1,2 M - 2 M
+                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp
+                            1,2 M - 2 M
                         </h5>
                         <h2 class="card-tittle"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">Emerald Park
+                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">
+                            Emerald Park
                             Residence</h2>
                         <h3 class="card-text"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By Dedi Pratama
+                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By Dedi
+                            Pratama
                         </h3>
                         <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
                             Depok, Jawa Barat</p>
@@ -144,10 +144,6 @@
                     </div>
                 </div>
             </div>
-
-                </div>
-            </div>
-
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center mt-5 mb-5">
@@ -167,75 +163,76 @@
                 </ul>
             </nav>
         </div>
-    @endsection
+    </div>
+@endsection
 
 
-    <style>
-        .btn-primary {
-            transition-duration: 0.4s !important;
-        }
+<style>
+    .btn-primary {
+        transition-duration: 0.4s !important;
+    }
 
-        .btn-primary:hover {
-            background-color: #28bc99 !important;
-        }
-
-
-        .tittle {
-            font-family: 'Monserrat', sans-serif;
-            color: #000000;
-            font-weight: semibold;
-        }
-
-        .textawal {
-            font-family: 'Monserrat', sans-serif;
-            font-size: 22px;
-        }
-
-        .card {
-            margin-top: 40px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.60);
-        }
-
-        .imagess {
-            width: 26.25rem;
-        }
-
-        .page-link {
-            font-weight: 600;
-            color: black !important;
-            outline: 2px solid #44D7B5 !important;
-            border: none;
-            border-radius: 5px;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            align-content: center;
-        }
-
-        .page-item {
-            font-family: 'Monserrat', sans-serif;
-            margin: 0 10px;
-        }
-
-        .page-link:hover {
-            color: black !important;
-            background-color: #E6FCF6 !important;
-            text-decoration: none;
-        }
-
-        .page-item.active .page-link,
-        .page-link:focus {
-            color: white !important;
-            background-color: #44D7B5 !important;
-            outline: none;
-            border-color: #44D7B5 !important;
-        }
+    .btn-primary:hover {
+        background-color: #28bc99 !important;
+    }
 
 
-        .pagination {
-            display: flex;
-            align-items: center;
-            list-style: none;
-            padding: 0;
-        }
-    </style>
+    .tittle {
+        font-family: 'Monserrat', sans-serif;
+        color: #000000;
+        font-weight: semibold;
+    }
+
+    .textawal {
+        font-family: 'Monserrat', sans-serif;
+        font-size: 22px;
+    }
+
+    .card {
+        margin-top: 40px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.60);
+    }
+
+    .imagess {
+        width: 26.25rem;
+    }
+
+    .page-link {
+        font-weight: 600;
+        color: black !important;
+        outline: 2px solid #44D7B5 !important;
+        border: none;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        align-content: center;
+    }
+
+    .page-item {
+        font-family: 'Monserrat', sans-serif;
+        margin: 0 10px;
+    }
+
+    .page-link:hover {
+        color: black !important;
+        background-color: #E6FCF6 !important;
+        text-decoration: none;
+    }
+
+    .page-item.active .page-link,
+    .page-link:focus {
+        color: white !important;
+        background-color: #44D7B5 !important;
+        outline: none;
+        border-color: #44D7B5 !important;
+    }
+
+
+    .pagination {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+    }
+</style>

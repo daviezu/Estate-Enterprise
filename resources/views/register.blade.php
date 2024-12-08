@@ -27,51 +27,51 @@
         <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
             style="width: 15%; position: relative; left: 350px; top: 100px; z-index: 1;">
         <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 10%; position: relative; left: 500px; top: 500px; z-index: 1;">
+            style="width: 12%; position: relative; right: -400px; top: 450px; z-index: 1;">
 
     </div>
 
     <!-- Card Register -->
     <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 700px;">
         <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center"
-            style="width: 440px; height: 480px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative;">
+            style="width: 500px; height: 550px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative; margin-left: 335px; z-index: 200;">
             <h3 class="text-center mb-4"
-                style="width: 82px; height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 20px; color: #43D3B2; font-weight: bold;">
+                style="height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 30px; color: #43D3B2; font-weight: bold;">
                 Sign Up</h3>
             <form action="{{ route('register.post') }}" method="POST" class="w-100 d-flex flex-column align-items-center">
                 @csrf
                 <div class="firstname-form">
                     <input type="text" name="firstName" class="form-control"
-                        style="margin-top: 15px; margin-bottom: 20px; width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
+                        style="margin-top: 15px; margin-bottom: 20px; width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
                         placeholder="First Name" required>
                 </div>
                 <div class="lastname-form">
                     <input type="text" name="lastName" class="form-control"
-                        style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
+                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
                         placeholder="Last Name" required>
                 </div>
 
                 <div class="email-form">
                     <input type="text" name="email" class="form-control"
-                        style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
+                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
                         placeholder="E-mail" required>
                 </div>
 
                 <div class="phonenumber-form">
                     <input type="text" name="phoneNumber" class="form-control"
-                        style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
+                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
                         placeholder="Phone Number" required>
                 </div>
 
                 <div class="password-form">
                     <input type="password" name="password" class="form-control"
-                        style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
+                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
                         placeholder="Password" required>
                 </div>
 
                 <div class="confirm-form">
                     <input type="password" name="confirmPassword" class="form-control"
-                        style="margin-bottom:20px;  width: 283px; height: 32px; border-color: #43D2B1; border-radius: 5px; background-color: #F2F2F2; font-size: 12px"
+                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
                         placeholder="Confirm Password" required>
 
                 </div>
@@ -151,8 +151,7 @@
         font-family: 'Montserrat', sans-serif;
         position: absolute;
         right: 7%;
-        top: 32%;
-        transform: translateY(-50%);
+        top: 22%;
     }
 
 

@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+// Search by Address
+Route::post('/search-property-address', [HomeController::class, 'searchByAddress'])->name('search.property.address');
+
 // User
 Route::prefix('user')->group(function () {
 
@@ -62,19 +65,24 @@ Route::prefix('user')->group(function () {
 
 Route::prefix('property')->group(function () {
     // Property List 
-    Route::get('/', [PropertyController::class, 'propertyList'])->name('propertyList');
+    Route::get('/list', [PropertyController::class, 'propertyList'])->name('property.list');
 
     // Property Detail
-    Route::get('/detail', [PropertyController::class, 'propertyDetail'])->name('detail.property');
+    Route::get('/detail', [PropertyController::class, 'propertyDetail'])->name('property.detail');
 });
 
-// Agent List
-Route::get('/agentlist', [AgentController::class, 'agentList'])->name('agentlist');
+Route::prefix('agent')->group(function () {
+
+    Route::prefix('property')->group(function () {
+        // My Properties for User who is Admin
+        Route::get('/', [PropertyController::class, 'agentProperty'])->name('agent.property');
+
+        Route::get('/edit', [PropertyController::class, 'editmyproperty'])->name('agent.property.edit');
+    });
+
+    // Agent List
+    Route::get('/list', [AgentController::class, 'agentList'])->name('agent.list');
+});
 
 // logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-// My Properties for User who is Admin
-Route::get('/my_property', [PropertyController::class, 'myProperty'])->name('myProperty');
-
-Route::get('/editmyproperty', [PropertyController::class, 'editmyproperty'])->name('editmyProperty');

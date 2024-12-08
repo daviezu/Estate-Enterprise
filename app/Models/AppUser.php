@@ -19,7 +19,8 @@ class AppUser extends Model
         'password',
         'phone_number',
         'remember_token',
-        'picture_path'
+        'picture_path',
+        "is_agent"
     ];
 
     public function UserToProperty()

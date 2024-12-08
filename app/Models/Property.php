@@ -12,17 +12,23 @@ class Property extends Model
     protected $primaryKey = 'property_id';
 
     protected $fillable = [
-        'property_name',
+        'property_name',    
         'owner',
         'price',
-        'location',
         'address',
-        'description',
+        'location_link',
         'picture_path',
+        'description',
+        'building_size',
+        'land_size',
+        'certificate',
+        'bedroom',
+        'bathroom',
+        'carport'
     ];
 
     public function PropertyToAgent()
     {
-        return $this->belongsTo(Agent::class, 'agent_id', 'agent_id');
+        return $this->belongsTo(AppUser::class, 'user_id', 'user_id');
     }
 }

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('remember_token', 100)->nullable();
             $table->string('picture_path')->nullable();
+            $table->boolean('is_agent')->default(false);
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('app_user');
+        Schema::dropIfExists('app_users');
     }
 };
