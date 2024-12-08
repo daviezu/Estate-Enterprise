@@ -10,18 +10,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('property.list') }}">Agent Seller</a>
             </li>
-
-            {{-- <div class="search-container">
-
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit">
-                        <img src="{{ asset('images/Search Icon.png') }}" alt="search">
-                    </button>
-                </form>
-            </div> --}}
-
             @if (session('is_logged_in', false))
+                {{-- agent navbar start --}}
+                @if (session('role', true))
+                    <li class="nav-item">
+                        <a href={{ route('agent.property') }} class="nav-link" href="#">Properti Saya</a>
+                    </li>
+                @endif
+                {{-- agent navbar end --}}
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('profile.index') }}">Profile</a>
                 </li>
@@ -42,8 +39,9 @@
 
 <style>
     @media (max-width: 992px) {
+
         .nav-item a,
-        .nav-item button{
+        .nav-item button {
             font-size: 10px;
         }
 
@@ -70,10 +68,8 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 480px) {}
 
-    }
-    
     .container {
         width: 100%;
     }
