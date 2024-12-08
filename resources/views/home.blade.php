@@ -18,7 +18,7 @@
     @endif
 
     
-    <div class="hero-section text-light d-flex align-items-center pt-0">
+    <div class="hero-section text-light d-flex align-items-center py-5">
         <div class="overlay"></div>
         <div class="container position-relative z-1">
             <div class="row">
@@ -26,7 +26,6 @@
                     <h1 class="display-4 fw-bold">Temukan Rumah Impian<br>Anda dengan <span
                         class="text-green">Mudah.</span></h1>
                     <p class="lead">Cari properti terbaik dengan EstateVerse.</p>
-
                 </div>
             </div>
         </div>
@@ -58,7 +57,6 @@
                 </div>
             </div>
     
-            searchbar
             <div class="container mb-4 position-relative" style="z-index: 2;">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
@@ -73,9 +71,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
-
-    
+        </div> --}}    
         {{-- estateverse 4x --}}
         <div class="container">
             <div class="row">
@@ -198,7 +194,6 @@
 
 <style>
 
-
     @media (max-width: 992px) {
         .estateverse__title h1{
             font-size: 90px;
@@ -295,63 +290,9 @@
         z-index: 2;
     }
 
-
-    .hero-search-container {
-        width: 100%;
-        max-width: 500px;
-        border: 1px solid rgb(168, 168, 168);
-        border-radius: 10px;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        padding: 0 10px;
-    }
-
-    .hero-search-container form {
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    .hero-search-container .form-control {
-        border: none;
-        font-size: 15px;
-        background-color: transparent;
-        color: white;
-    }
-
-    .hero-search-container .form-control::placeholder {
-        color: white;
-    }
-
-    .hero-search-container .form-control:focus {
-        outline: none;
-        box-shadow: none;
-        background-color: transparent;
-    }
-
-    .hero-search-container .btn {
-        background-color: transparent;
-        border: none;
-        padding: 0;
-    }
-
-    .hero-search-container .btn img {
-        width: 24px;
-        height: 24px;
-    }
-
-
-    .text-stroke-green {
-        color: white;
-        -webkit-text-stroke: 2px #44D7B5;
-        text-stroke: 2px #44D7B5;
-    }
-
     .text-green {
         color: #44D7B5;
     }
-
 
     .col-lg-6.offset-lg-6 {
         padding-right: 50px;
@@ -366,7 +307,6 @@
         font-weight: bolder;
         font-size: 100px;
         color: #44D7B5;
-        outline: #44D7B5;
         animation: text1__animation ease-in-out 10s infinite;
     }
 
@@ -395,16 +335,13 @@
     }
 
     #logincard {
-        scale: 1.7;
+        transform: scale(1.7);
     }
-
 
     @keyframes text1__animation {
         0% {
             color: #44D7B5;
-            outline: #44D7B5;
         }
-
         50% {
             color: white;
             text-shadow:
@@ -413,10 +350,8 @@
                 -1px 1px 0 #44D7B5,
                 1px 1px 0 #44D7B5;
         }
-
         100% {
             color: #44D7B5;
-            outline: #44D7B5;
         }
     }
 
@@ -432,7 +367,6 @@
 
         50% {
             color: #44D7B5;
-            outline: #44D7B5;
         }
 
         100% {
@@ -442,6 +376,7 @@
                 1px -1px 0 #44D7B5,
                 -1px 1px 0 #44D7B5,
                 1px 1px 0 #44D7B5;
+
         }
     }
 
@@ -465,6 +400,7 @@
 
     footer {
         margin-top: 20px;
+
         /* Jarak di atas footer */
     }
 </style>

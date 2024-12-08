@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand pt-3" style="background-color: #ffffff; z-index: 1000;">
+<nav class="navbar navbar-expand pt-3 fixed-top" style="background-color: #ffffff; z-index: 1000;">
     <div class="container">
         <a class="navbar-brand nav-link active" aria-current="page" href="{{ route('home') }}">
             <img src="{{ asset('images/EstateVerse Logo.png') }}" class="logo" alt="Logo" width='200px'>
@@ -6,6 +6,9 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('property.list') }}">Properti</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('about.index') }}">Team Kami</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('agent.list') }}">Agent Seller</a>
@@ -76,7 +79,7 @@
 
     .navbar {
         width: 100%;
-        border-bottom: solid;
+    
         border-width: 1px;
         padding-bottom: 16px;
         margin-bottom: 0px;
