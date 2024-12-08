@@ -2,128 +2,204 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PropertySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        // $faker = Faker::create();
         DB::table('properties')->insert([
             [
                 'property_id' => 1,
-                'property_name' => 'Green Valley Residence',
-                'owner' => 'Rina Setyowati',
-                'location' => 'Sawangan, Kota Depok',
-                'price' => 1500000000,   // 1,5 Billion Rupiah
-                'address' => 'Jl. Melati Indah No. 12',
-                'description' => 'Rumah dengan desain modern minimalis, dilengkapi dengan 3 kamar tidur, 2 kamar mandi, dan taman kecil yang asri.',
-                'picture_path' => 'images/property/property1.png'
+                'user_id' => 1,
+                'property_name' => 'Rumah Mewah BSD',
+                'owner' => 'Budi Santoso',
+                'price' => 3000000000,
+                'address' => 'Jl. Raya Serpong, Tangerang',
+                'location_link' => 'https://maps.example.com/bsd',
+                'picture_path' => null,
+                'description' => 'Rumah 2 lantai mewah di BSD City.',
+                'building_size' => 150,
+                'land_size' => 200,
+                'certificate' => 'SHM',
+                'bedroom' => 4,
+                'bathroom' => 3,
+                'carport' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'property_id' => 2,
-                'property_name' => 'Sunrise Hills Residence',
-                'owner' => 'Andi Wijaya',
-                'location' => 'Cibubur, Jakarta Timur',
-                'price' => 1300000000,   // 1,3 Billion Rupiah
-                'address' => 'Jl. Cendana Raya No. 5',
-                'description' => 'Hunian nyaman di lingkungan aman dan strategis, dekat dengan pusat perbelanjaan dan fasilitas umum.',
-                'picture_path' => 'images/property/property2.png'
+                'user_id' => 1,
+                'property_name' => 'Apartemen City View',
+                'owner' => 'Budi Santoso',
+                'price' => 1500000000,
+                'address' => 'Jl. Sudirman, Jakarta',
+                'location_link' => 'https://maps.example.com/cityview',
+                'picture_path' => null,
+                'description' => 'Apartemen dengan pemandangan kota.',
+                'building_size' => 75,
+                'land_size' => 0,
+                'certificate' => 'HGB',
+                'bedroom' => 2,
+                'bathroom' => 2,
+                'carport' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'property_id' => 3,
-                'property_name' => 'Maple Green Estate',
-                'owner' => 'Lestari Rahmadani',
-                'location' => 'Bekasi, Jawa Barat',
-                'price' => 1400000000,   // 1,4 Billion Rupiah
-                'address' => 'Jl. Dahlia No. 18',
-                'description' => 'Rumah baru direnovasi, dilengkapi dengan dapur modern dan ruang tamu luas untuk keluarga besar.',
-                'picture_path' => 'images/property/property3.png'
+                'user_id' => 2,
+                'property_name' => 'Villa Ubud Bali',
+                'owner' => 'Siti Aminah',
+                'price' => 5000000000,
+                'address' => 'Jl. Raya Ubud, Bali',
+                'location_link' => 'https://maps.example.com/ubud',
+                'picture_path' => null,
+                'description' => 'Villa eksklusif di Ubud.',
+                'building_size' => 200,
+                'land_size' => 400,
+                'certificate' => 'SHM',
+                'bedroom' => 5,
+                'bathroom' => 4,
+                'carport' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
-
             [
                 'property_id' => 4,
-                'property_name' => 'Emerald Park',
-                'owner' => 'Dedi Pratama',
-                'location' => 'Depok, Jawa Barat',
-                'price' => 1200000000,   // 1,2 Billion Rupiah
-                'address' => 'Jl. Anggrek Blok A2 No. 9',
-                'description' => 'Rumah modern dengan 2 lantai, dilengkapi 4 kamar tidur, 3 kamar mandi, dan halaman belakang luas yang cocok untuk keluarga.',
-                'picture_path' => 'images/property/property4.png'
+                'user_id' => 2,
+                'property_name' => 'Rumah Minimalis Depok',
+                'owner' => 'Siti Aminah',
+                'price' => 1200000000,
+                'address' => 'Jl. Margonda, Depok',
+                'location_link' => 'https://maps.example.com/depok',
+                'picture_path' => null,
+                'description' => 'Rumah minimalis dekat stasiun.',
+                'building_size' => 90,
+                'land_size' => 100,
+                'certificate' => 'SHM',
+                'bedroom' => 3,
+                'bathroom' => 2,
+                'carport' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
-
             [
                 'property_id' => 5,
-                'property_name' => 'Cendana Valley',
-                'owner' => 'Siti Aisyah',
-                'location' => 'Tangerang, Banten',
-                'price' => 1000000000,   // 1 Billion Rupiah
-                'address' => 'Jl. Mawar Indah No. 23',
-                'description' => 'Hunian minimalis di lingkungan hijau yang asri, dekat dengan pusat perbelanjaan dan fasilitas pendidikan.',
-                'picture_path' => 'images/property/property5.png'
+                'user_id' => 3,
+                'property_name' => 'Kos Elite Bandung',
+                'owner' => 'Andi Saputra',
+                'price' => 1000000000,
+                'address' => 'Jl. Dago, Bandung',
+                'location_link' => 'https://maps.example.com/dago',
+                'picture_path' => null,
+                'description' => 'Kos-kosan elite untuk mahasiswa.',
+                'building_size' => 120,
+                'land_size' => 150,
+                'certificate' => 'SHM',
+                'bedroom' => 8,
+                'bathroom' => 8,
+                'carport' => 0,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
-
             [
                 'property_id' => 6,
-                'property_name' => 'Orchard Hill Residence',
-                'owner' => 'Ridwan Kurniawan',
-                'location' => 'Sawangan, Kota Depok',
-                'price' => 1800000000,   // 1,8 Billion Rupiah
-                'address' => 'Jl. Anggrek Lestari Blok B7 No. 12',
-                'description' => 'Rumah nyaman dengan konsep open space, memiliki 3 kamar tidur, ruang tamu luas, dan dapur modern.',
-                'picture_path' => 'images/property/property6.png'
+                'user_id' => 3,
+                'property_name' => 'Rumah Tepi Pantai',
+                'owner' => 'Andi Saputra',
+                'price' => 4500000000,
+                'address' => 'Jl. Pantai Kuta, Bali',
+                'location_link' => 'https://maps.example.com/kuta',
+                'picture_path' => null,
+                'description' => 'Rumah tepi pantai dengan view laut.',
+                'building_size' => 180,
+                'land_size' => 250,
+                'certificate' => 'SHM',
+                'bedroom' => 4,
+                'bathroom' => 3,
+                'carport' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
-
             [
                 'property_id' => 7,
-                'property_name' => 'Grand Mahkota Estate',
-                'owner' => 'Nina Hartati',
-                'location' => 'Bogor, Jawa Barat',
-                'price' => 1500000000,   // 1,5 Billion Rupiah
-                'address' => 'Jl. Penuin Blok D3 No. 23',
-                'description' => 'Hunian strategis dengan akses mudah ke jalan tol, memiliki 4 kamar tidur, 2 kamar mandi, dan garasi untuk 2 mobil.',
-                'picture_path' => 'images/property/property7.png'
+                'user_id' => 4,
+                'property_name' => 'Cluster Cibubur',
+                'owner' => 'Rina Wijaya',
+                'price' => 2000000000,
+                'address' => 'Jl. Alternatif Cibubur, Bogor',
+                'location_link' => 'https://maps.example.com/cibubur',
+                'picture_path' => null,
+                'description' => 'Cluster rumah nyaman di Cibubur.',
+                'building_size' => 100,
+                'land_size' => 120,
+                'certificate' => 'SHM',
+                'bedroom' => 3,
+                'bathroom' => 2,
+                'carport' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
-
             [
                 'property_id' => 8,
-                'property_name' => 'Palm View Residence',
-                'owner' => 'Agus Santoso',
-                'location' => 'Bandung, Jawa Barat',
-                'price' => 1300000000,   // 1,3 Billion Rupiah
-                'address' => 'Jl. Sukajadi Blok C4 No. 23',
-                'description' => 'Rumah minimalis tipe 36 dengan harga terjangkau, cocok untuk pasangan muda atau keluarga kecil.',
-                'picture_path' => 'images/property/property8.png'
+                'user_id' => 4,
+                'property_name' => 'Rumah Asri Yogyakarta',
+                'owner' => 'Rina Wijaya',
+                'price' => 900000000,
+                'address' => 'Jl. Kaliurang, Yogyakarta',
+                'location_link' => 'https://maps.example.com/kaliurang',
+                'picture_path' => null,
+                'description' => 'Rumah asri di dekat kampus UGM.',
+                'building_size' => 85,
+                'land_size' => 100,
+                'certificate' => 'SHM',
+                'bedroom' => 3,
+                'bathroom' => 2,
+                'carport' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
-
-
             [
                 'property_id' => 9,
-                'property_name' => 'Vista Green Hills',
-                'owner' => 'Rita Sari',
-                'location' => 'Bogor, Jawa Barat',
-                'price' => 2500000000,   // 2,5 Billion Rupiah
-                'address' => 'Jl. Flamboyan Blok C1 No. 10',
-                'description' => 'Rumah klasik dengan sentuhan modern, memiliki 3 kamar tidur, 2 kamar mandi, dan halaman depan luas.',
-                'picture_path' => 'images/property/property9.png'
+                'user_id' => 1,
+                'property_name' => 'Rumah Modern Jakarta',
+                'owner' => 'Budi Santoso',
+                'price' => 3500000000,
+                'address' => 'Jl. Fatmawati, Jakarta',
+                'location_link' => 'https://maps.example.com/fatmawati',
+                'picture_path' => null,
+                'description' => 'Rumah modern dengan desain minimalis.',
+                'building_size' => 180,
+                'land_size' => 250,
+                'certificate' => 'HGB',
+                'bedroom' => 4,
+                'bathroom' => 4,
+                'carport' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
-
             [
                 'property_id' => 10,
-                'property_name' => 'Exhuma Grand Residence',
-                'owner' => 'Richard Novsevrin',
-                'location' => 'Bandung, Jawa Barat',
-                'price' => 3500000000,   // 2,5 Billion Rupiah
-                'address' => 'Jl. Cemara Kuta F2 No. 5',
-                'description' => 'Hunian di lingkungan aman dan nyaman, dekat dengan taman bermain anak dan fasilitas olahraga.',
-                'picture_path' => 'images/property/property10.png'
-            ]
-        
-
+                'user_id' => 2,
+                'property_name' => 'Villa Tepi Sungai',
+                'owner' => 'Siti Aminah',
+                'price' => 6000000000,
+                'address' => 'Jl. Raya Puncak, Bogor',
+                'location_link' => 'https://maps.example.com/puncak',
+                'picture_path' => null,
+                'description' => 'Villa mewah tepi sungai dengan view pegunungan.',
+                'building_size' => 250,
+                'land_size' => 500,
+                'certificate' => 'SHM',
+                'bedroom' => 6,
+                'bathroom' => 5,
+                'carport' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }
