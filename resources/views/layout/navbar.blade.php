@@ -8,6 +8,9 @@
                 <a class="nav-link" href="{{ route('property.list') }}">Properti</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('about.index') }}">Team Kami</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('agent.list') }}">Agent Seller</a>
             </li>
             @if (session('is_logged_in', false))
