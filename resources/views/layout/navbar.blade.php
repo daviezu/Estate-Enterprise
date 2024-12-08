@@ -8,7 +8,7 @@
                 <a class="nav-link" href="{{ route('property.list') }}">Properti</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('property.list') }}">Agent Seller</a>
+                <a class="nav-link" href="{{ route('agent.list') }}">Agent Seller</a>
             </li>
             @if (session('is_logged_in', false))
                 {{-- agent navbar start --}}

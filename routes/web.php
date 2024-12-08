@@ -16,6 +16,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Search by Address
 Route::post('/search-property-address', [HomeController::class, 'searchByAddress'])->name('search.property.address');
 
+// Agent list
+// Agent List
+Route::get('/agent/list', [AgentController::class, 'agentList'])->name('agent.list');
+
 // User
 Route::prefix('user')->group(function () {
 
@@ -76,8 +80,6 @@ Route::middleware(Authenticate::class)->group(function () {
                 Route::get('/add', [PropertyController::class, 'addmyproperty'])->name('agent.property.add');
                 Route::delete('/{id}', [PropertyController::class, 'deleteProperty'])->name('agent.property.delete');
             });
-            // Agent List
-            Route::get('/list', [AgentController::class, 'agentList'])->name('agent.list');
         });
     });
 });
