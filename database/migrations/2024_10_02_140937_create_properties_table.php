@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('app_users', column: 'user_id')->onUpdate('cascade')->onDelete('cascade');
             $table->string('property_name');
             $table->string('owner');
-            $table->integer('price');
+            $table->bigInteger('price');
             $table->string('address');
             $table->string('location_link');
             $table->string('picture_path')->nullable();
