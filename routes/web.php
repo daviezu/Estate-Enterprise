@@ -6,6 +6,7 @@ use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
 // Home
@@ -86,3 +87,4 @@ Route::prefix('agent')->group(function () {
 
 // logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');

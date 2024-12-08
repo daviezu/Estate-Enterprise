@@ -9,7 +9,7 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="#">Team Kami</a>
+                <a class="nav-link" href="{{ route('about.index') }}">Team Kami</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Hubungi Kami</a>
