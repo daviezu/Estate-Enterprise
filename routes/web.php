@@ -75,13 +75,14 @@ Route::prefix('agent')->group(function () {
 
     Route::prefix('property')->group(function () {
         // My Properties for User who is Admin
-        Route::get('/', [PropertyController::class, 'myProperty'])->name('myProperty');
+        Route::get('/', [PropertyController::class, 'myProperty'])->name('agent.property');
 
-        Route::get('/edit', [PropertyController::class, 'editmyproperty'])->name('editmyProperty');
+        Route::get('/edit', [PropertyController::class, 'editmyproperty'])->name('agent.property.edit');
     });
+
+    // Agent List
+    Route::get('/list', [AgentController::class, 'agentList'])->name('agent.list');
 });
-// Agent List
-Route::get('/agentlist', [AgentController::class, 'agentList'])->name('agentlist');
 
 // logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
