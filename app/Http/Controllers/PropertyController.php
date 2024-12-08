@@ -30,10 +30,8 @@ class PropertyController extends Controller
         if ($agent) {
             $properties = Property::where('user_id', $id)->get();
 
-            if ($properties->isNotEmpty()) {
-                return view('agent-property', compact('properties'));
-            }
-            return redirect()->redirect()->with('error', 'There are no properties registered, please add one first.');
+            return view('agent-property', compact('properties'));
+            
         }
         // User is not an agent
         return redirect()->back()->with('error', 'You do not have permission to access this page.');
