@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    <div class="container my-3">
+    <div class="container py-5">
         <h2 class="tittle">Real estate & Perumahan untuk dijual</h2>
 
         <p class="textawal text-start">Menampilkan 100+ hasil di pencarian</p>

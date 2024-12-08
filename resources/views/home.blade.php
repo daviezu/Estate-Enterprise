@@ -18,7 +18,7 @@
     @endif
 
     
-    <div class="hero-section text-light d-flex align-items-center pt-0">
+    <div class="hero-section text-light d-flex align-items-center py-5">
         <div class="overlay"></div>
         <div class="container position-relative z-1">
             <div class="row">
