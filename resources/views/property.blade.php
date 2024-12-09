@@ -9,8 +9,7 @@
             @foreach ($properties as $p)
                 <div class="col-md-4 mb-4">
                     <div class="card" style="width: 26.25rem; border: none; border-radius: 20px">
-                        <img class="imagess" src="{{ asset('images/property/property1.png') }}" class="card-img-fluid"
-                            alt="property1">
+                        <img class="imagess" src="{{ asset($p->picture_path) }}" class="card-img-fluid" alt="property picture">
                         <div class="card-body">
                             <h5 class="card-price"
                                 style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">
@@ -31,7 +30,6 @@
                             <p class="card-text"
                                 style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
                                 Diperbarui 1 hari lalu</p>
-
 
                             <a href="{{ route('property.detail', $p->property_id) }}" class="btn btn-primary"
                                 style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
