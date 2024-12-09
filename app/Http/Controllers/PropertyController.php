@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
 {
+    // get all property
     public function propertyList()
     {
         $properties = Property::all();
@@ -19,10 +20,15 @@ class PropertyController extends Controller
 
     public function propertyDetail($property_id)
     {
+        // find property by id
+        $property = Property::find($property_id);
 
-        return view('detailproperty', ['property_id' => $property_id]);
+        $agent = AppUser::find($property->user_id);
+
+        return view('detailproperty', compact('property', 'agent'));
     }
 
+    // get property by agent
     public function agentProperty()
     {
         $id = session('user_id');

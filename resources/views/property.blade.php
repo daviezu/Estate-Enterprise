@@ -30,6 +30,7 @@
                             <p class="card-text"
                                 style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
                                 Diperbarui 1 hari lalu</p>
+                            {{-- {{ $p->updated_at }} --}}
 
                             <a href="{{ route('property.detail', $p->property_id) }}" class="btn btn-primary"
                                 style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
