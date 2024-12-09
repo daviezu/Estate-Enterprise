@@ -88,8 +88,8 @@ Route::middleware(Authenticate::class)->group(function () {
 
                 // edit property
                 Route::prefix('edit')->group(function () {
-                    Route::get('/index', [PropertyController::class, 'editPropertyIndex'])->name('agent.property.edit.index');
-                    Route::put('/{id}', [PropertyController::class, 'editProperty'])->name('agent.property.edit');
+                    Route::get('/{property_index}', [PropertyController::class, 'editPropertyIndex'])->name('agent.property.edit.index');
+                    Route::put('/{property_index}', [PropertyController::class, 'editProperty'])->name('agent.property.edit');
                 });
 
                 // delete property

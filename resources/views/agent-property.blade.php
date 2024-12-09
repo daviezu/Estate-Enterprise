@@ -57,7 +57,7 @@
                                     <a href="{{ route('property.detail', $p->slug) }}" class="btn  text-light" style="background-color:#44D7B5">
                                         <i class="bi bi-eye-fill"></i>
                                     </a>
-                                    <a href="{{ route('agent.property.edit.index', $p->slug) }}" class="btn  text-light btn-warning" >
+                                    <a href="{{ route('agent.property.edit.index', $p->property_id) }}" class="btn  text-light btn-warning" >
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
                                     <form action="{{ route('agent.property.delete', $p->slug) }}" method="POST"

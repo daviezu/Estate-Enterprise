@@ -36,6 +36,11 @@
                                         name="property_name" id="property_name" placeholder="Ex: Rumah modern tingkat 3">
                                 </div>
                                 <div class="mb-3 ">
+                                    <label for="property_owner" class="form-label">Pemilik Properti</label>
+                                    <input type="text" class="form-control rounded border-2" style="border-color: #44D7B5;"
+                                        name="property_owner" id="property_owner" placeholder="Ex: Wilson Sumanto">
+                                </div>
+                                <div class="mb-3 ">
                                     <label for="price" class="form-label">Harga Properti</label>
                                     <input type="number" class="form-control rounded border-2" style="border-color: #44D7B5;"
                                         name="price" id="price" placeholder="Ex: Rp 1.500.000 (dalam rupiah)">
