@@ -1,151 +1,53 @@
 @extends('layout.master')
 @section('content')
-    <div class="container py-5">
+    <div class="container py-5 mt-5">
         <h2 class="tittle">Real estate & Perumahan untuk dijual</h2>
 
         <p class="textawal text-start">Menampilkan 100+ hasil di pencarian</p>
 
+        
+
         <div class="row">
             @foreach ($properties as $p)
                 <div class="col-md-4 mb-4">
-                    <div class="card" style="width: 26.25rem; border: none; border-radius: 20px">
+                    <div class="card shadow-sm" style="width: 26.25rem; border: none; border-radius: 20px">
                         <img class="imagess" src="{{ asset('images/property/property1.png') }}" class="card-img-fluid"
                             alt="property1">
                         <div class="card-body">
+                            <h2 class="card-tittle"
+                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">
+                            {{$p->property_name}}
+                        </h2>
                             <h5 class="card-price"
                                 style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">
-                                {{ $p->price }}
+                                {{ 'Rp ' . number_format($p->price, 0, ',', '.') . ',00' }}
                             </h5>
-                            <h2 class="card-tittle"
-                                style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">
-                                {{ $p->property_name }}</h2>
+                           
                             <h3 class="card-text"
                                 style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By
                                 {{ $p->owner }}</h3>
                             <p class="card-text"
                                 style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
-                                {{ $p->location }}</p>
+                                {{ $p->address }}</p>
                             <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px;">2-4 KT, LT
                                 90-200
                                 m², LB 80-150 m²</p>
                             <p class="card-text"
                                 style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
-                                Diperbarui 1 hari lalu</p>
+                                Diperbarui {{$p->updated_at->diffForHumans()}}</p>
 
-
-                            <a href="#" class="btn btn-primary"
-                                style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
-                                Detail</a>
+                            <div class="mt-auto text-end">
+                                    <a href="{{route("property.detail")}}" class="btn btn-lg"
+                                        style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             @endforeach
 
-            {{-- Property 2 --}}
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 26.25rem; border: none; border-radius: 20px">
-                    <img class="imagess" src="{{ asset('images/property/property2.png') }}" class="card-img-fluid"
-                        alt="property2">
-                    <div class="card-body">
-                        <h5 class="card-price"
-                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp
-                            850 Jt - 1,3
-                            M</h5>
-                        <h2 class="card-tittle"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">
-                            Sunrise Hills
-                            Residence</h2>
-                        <h3 class="card-text"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By Andi
-                            Wijaya
-                        </h3>
-                        <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
-                            Cibubur, Jakarta Timur</p>
-                        <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px;">3-5 KT, LT
-                            100-220 m², LB 80-140 m²</p>
-                        <p class="card-text"
-                            style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
-                            Diperbarui 2 hari lalu</p>
+          
 
-
-                        <a href="#" class="btn btn-primary"
-                            style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
-                            Detail</a>
-                    </div>
-                </div>
-            </div>
-
-
-            {{-- Property 3 --}}
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 26.25rem; border: none; border-radius: 20px">
-                    <img class="imagess" src="{{ asset('images/property/property11.png') }}" class="card-img-fluid"
-                        alt="property3">
-                    <div class="card-body">
-                        <h5 class="card-price"
-                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp
-                            950 Jt - 1,4
-                            M</h5>
-                        <h2 class="card-tittle"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">Maple
-                            Green
-                            Estate</h2>
-                        <h3 class="card-text"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By
-                            Lestari
-                            Rahmadani</h3>
-                        <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
-                            Bekasi, Jawa Barat</p>
-                        <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px;">2-4 KT, LT 90-180
-                            m², LB 70-130 m²</p>
-                        <p class="card-text"
-                            style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
-                            Diperbarui 3 hari lalu</p>
-
-
-                        <a href="#" class="btn btn-primary"
-                            style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
-                            Detail</a>
-                    </div>
-                </div>
-            </div>
-
-
-            {{-- Property 4 --}}
-            <div class="col-md-4 mb-4">
-                <div class="card" style="width: 26.25rem; border: none; border-radius: 20px">
-                    <img class="imagess" src="{{ asset('images/property/property4.png') }}" class="card-img-fluid"
-                        alt="property4">
-                    <div class="card-body">
-                        <h5 class="card-price"
-                            style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">Rp
-                            1,2 M - 2 M
-                        </h5>
-                        <h2 class="card-tittle"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">
-                            Emerald Park
-                            Residence</h2>
-                        <h3 class="card-text"
-                            style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By Dedi
-                            Pratama
-                        </h3>
-                        <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
-                            Depok, Jawa Barat</p>
-                        <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px;">3-4 KT, LT
-                            120-250 m², LB 100-160 m²</p>
-                        <p class="card-text"
-                            style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
-                            Diperbarui 1 hari lalu</p>
-
-
-                        <a href="#" class="btn btn-primary"
-                            style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
-                            Detail</a>
-                    </div>
-                </div>
-            </div>
-
-            <nav aria-label="Page navigation example">
+            {{-- <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center mt-5 mb-5">
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
@@ -161,7 +63,14 @@
                         </a>
                     </li>
                 </ul>
-            </nav>
+            </nav> --}}
+        </div>
+
+          {{-- Navigation --}}
+          <div class="row pt-4 text-center">
+            <div class="col">
+                    {{$properties->links()}}
+            </div>
         </div>
     </div>
 @endsection
@@ -188,10 +97,6 @@
         font-size: 22px;
     }
 
-    .card {
-        margin-top: 40px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.60);
-    }
 
     .imagess {
         width: 26.25rem;

@@ -13,7 +13,7 @@ class PropertyController extends Controller
 {
     public function propertyList()
     {
-        $properties = Property::all();
+        $properties = Property::simplePaginate(5)->withQueryString();
         return view('property', compact('properties'));
     }
 
