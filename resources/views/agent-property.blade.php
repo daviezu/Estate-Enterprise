@@ -61,9 +61,10 @@
                                 <td class="txt-deskripsirow1">{{ $p->description }}</td>
                                 <td class="txt-lokasirow1">{{ $p->address }}</td>
                                 <td>
-                                    <a href="{{ route('property.detail'), $p->property_id }}" class="btn btn-primary btn-sm"
+                                    <a href="{{ route('property.detail') }}" class="btn btn-primary btn-sm"
                                         style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #44A8D7; border: none;">Lihat</a>
-                                    <a href="{{ route('agent.property.edit.index') }}" class="btn btn-warning btn-sm"
+                                    <a href="{{ route('agent.property.edit.index', $p->property_id) }}"
+                                        class="btn btn-warning btn-sm"
                                         style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #D7CB44; border: none; ">Edit</a>
                                     <form action="{{ route('agent.property.delete', $p->property_id) }}" method="POST"
                                         class="d-inline">

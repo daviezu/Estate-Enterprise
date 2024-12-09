@@ -37,12 +37,70 @@ class PropertyController extends Controller
         return redirect()->back()->with('error', 'You do not have permission to access this page.');
     }
 
-    public function editPropertyIndex()
+    public function editPropertyIndex($property_id)
     {
-        return view('editmyproperty');
+        return view('editmyproperty', ['property_id' => $property_id]);
     }
 
-    public function editProperty() {}
+    public function editProperty(Request $request, $property_id)
+    {
+        $validate = $request->validate([
+            'property_name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'address' => 'required|string|max:255',
+            'location_link' => 'nullable|url',
+            'building_size' => 'required|numeric|min:0',
+            'land_size' => 'required|numeric|min:0',
+            'certificate' => 'required|string|max:255',
+            'bedroom' => 'required|integer|min:0',
+            'bathroom' => 'required|integer|min:0',
+            'carport' => 'required|integer|min:0',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Find the property by ID
+        $property = Property::find($property_id);
+
+        // Check if the property exists
+        if (!$property) {
+            return redirect()->back()->with('error', 'Property not found.');
+        }
+
+        // Handle picture upload if a new picture is provided
+        if ($request->hasFile('picture')) {
+            // Delete the old picture if it exists
+            if ($property->picture_path && Storage::disk('public')->exists($property->picture_path)) {
+                Storage::disk('public')->delete($property->picture_path);
+            }
+
+            // Store the new picture
+            $picturePath = $request->file('picture')->store('images/properties', 'public');
+            $validate['picture_path'] = $picturePath;
+        } else {
+            // Retain the old picture path if no new picture is uploaded
+            $validate['picture_path'] = $property->picture_path;
+        }
+
+        // Update the property data
+        $property->update([
+            'property_name' => $validate['property_name'],
+            'price' => $validate['price'],
+            'description' => $validate['description'],
+            'address' => $validate['address'],
+            'location_link' => $validate['location_link'],
+            'building_size' => $validate['building_size'],
+            'land_size' => $validate['land_size'],
+            'certificate' => $validate['certificate'],
+            'bedroom' => $validate['bedroom'],
+            'bathroom' => $validate['bathroom'],
+            'carport' => $validate['carport'],
+            'picture_path' => $validate['picture_path'],
+        ]);
+
+        // Redirect with a success message
+        return redirect()->route('agent.property')->with('success', 'Property updated successfully!');
+    }
 
     public function deleteProperty($id)
     {
