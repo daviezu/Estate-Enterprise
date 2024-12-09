@@ -45,7 +45,7 @@
         <div class="w-100 px-5">
             <input name="email" type="text" class="form-control py-2"
                 style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                placeholder="Username" required>
+                placeholder="Email" required>
         </div>
         <div class="w-100 px-5">
             <input name="password" type="password" class="form-control py-2"
