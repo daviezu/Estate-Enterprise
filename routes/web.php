@@ -102,7 +102,7 @@ Route::prefix('property')->group(function () {
     Route::get('/list', [PropertyController::class, 'propertyList'])->name('property.list');
 
     // Property Detail
-    Route::get('/detail', [PropertyController::class, 'propertyDetail'])->name('property.detail');
+    Route::get('/{id}/detail', [PropertyController::class, 'propertyDetail'])->name('property.detail');
 });
 
 // logout

@@ -33,7 +33,7 @@
                                 Diperbarui 1 hari lalu</p>
 
 
-                            <a href="#" class="btn btn-primary"
+                            <a href="{{ route('property.detail', $p->property_id) }}" class="btn btn-primary"
                                 style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
                                 Detail</a>
                         </div>

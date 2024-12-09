@@ -17,9 +17,10 @@ class PropertyController extends Controller
         return view('property', compact('properties'));
     }
 
-    public function propertyDetail()
+    public function propertyDetail($property_id)
     {
-        return view('detailproperty');
+
+        return view('detailproperty', ['property_id' => $property_id]);
     }
 
     public function agentProperty()
