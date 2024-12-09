@@ -2,163 +2,209 @@
 @section('content')
 
 
-<div class="container my-3">
+<div class="container my-3 pt-4">
     <div class="row">
+
+        {{-- Bento Grid --}}
+        <div class="container my-5 bento-grid">
+    
+            <div class="row g-4">
+                <!-- Large item -->
+                <div class="col-md-8">
+                    <div class="bento-item" style=" height: 400px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
+                        <img src="{{ asset('images/property/property10.png') }}" alt="Large Item" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                </div>
+                <!-- Two small items -->
+                <div class="col-md-4">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="bento-item" style="height: 200px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
+                                <img src="{{ asset('images/property/property10.png') }}" alt="Small Item 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="bento-item" style="height: 200px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
+                                <img src="{{ asset('images/property/property10.png') }}" alt="Small Item 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Medium item -->
+                <div class="col-md-4">
+                    <div class="bento-item" style=" height: 250px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: black; text-align: center; overflow: hidden;">
+                        <img src="{{ asset('images/property/property10.png') }}" alt="Medium Item 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                </div>
+                <!-- Medium item -->
+                <div class="col-md-4">
+                    <div class="bento-item" style=" height: 250px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: black; text-align: center; overflow: hidden;">
+                        <img src="{{ asset('images/property/property10.png') }}" alt="Medium Item 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                </div>
+                <!-- Medium item -->
+                <div class="col-md-4">
+                    <div class="bento-item" style=" height: 250px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
+                        <img src="{{ asset('images/property/property10.png') }}" alt="Medium Item 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Carousel --}}
+        <div class="container my-5 carousel">
+            <div id="starryCarousel" class="carousel slide" data-bs-ride="carousel">
+              
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100" >
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100" >
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100" >
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100" >
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#starryCarousel" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#starryCarousel" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </div>
+    
+            
+            
+              <!-- Information Property -->
         
-        {{-- Parent Card & Image--}}
-        <div class="col-md-4 mb-4">
-        <div class="cardparent" style="width: 40.5rem; height: 22.875rem; border: none; border-radius: 20px;">
-            <img class="imagessparent" src="{{ asset('images/property/property10.png') }}" class="card-img-fluid" alt="property">
-        </div>
         </div>
 
+        <div class="container">
 
-        {{-- Child Card & Image --}}
-        <div class="col-md-4 mb-4">
-            <div class="cardchild" style="width: 15.875rem; height: 10.8125rem; border: none; border-radius: 20px; margin-left: 250px;">
-                <img class="imagesschild" src="{{ asset('images/property/property10.png') }}" class="card-img-fluid" alt="property">
-            </div>
-        </div>
+            <div class="row" style="margin-top: -15px;">
+                  <div class="col-lg-7 col-md-4 col-sm ">
+                    <h4 class="txt-tittle1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; margin-left: 5px;">{{$property->property_name}}</h4>
+                    <p class="text-muted1" style="font-weight: 300; font-family: Montserrat, sans-serif; font-size: 20px; margin-left: 5px;">{{$property->address}}</p>
+               
+                </div>
+    
+                <div class="col-lg-4 col-md-7 text-price">
 
-        <div class="col-md-4 mb-4">
-            <div class="cardchild" style="width: 15.875rem; height: 10.8125rem; border: none; border-radius: 20px; margin-left: 109px;">
-                <img class="imagesschild" src="{{ asset('images/property/property10.png') }}" class="card-img-fluid" alt="property">
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="cardchild" style="width: 15.875rem; height: 10.8125rem; border: none; border-radius: 20px; margin-left: 690px; margin-top: -200px;">
-                <img class="imagesschild" src="{{ asset('images/property/property10.png') }}" class="card-img-fluid" alt="property">
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="cardchild" style="width: 15.875rem; height: 10.8125rem; border: none; border-radius: 20px; margin-left: 550px; margin-top: -200px;">
-                <img class="imagesschild" src="{{ asset('images/property/property10.png') }}" class="card-img-fluid" alt="property">
-            </div>
-        </div>
-
-
-        <!-- Information Property -->
-        <div class="row" style="margin-top: -15px;">
-            <div class="col-lg-8">
-            <h4 class="txt-tittle1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; margin-left: 5px;">Dijual Rumah Mewah dengan Halaman Luas & Strategis</h4>
-            <p class="text-muted1" style="font-weight: 300; font-family: Montserrat, sans-serif; font-size: 20px; margin-left: 5px;">Jakarta Barat, DKI Jakarta</p>
-            </div>
-
-
-            <div class="col-lg-4">
-            <p class="text-muted2" style="font-weight: 400; font-family: Montserrat, sans-serif; font-size: 20px; margin-left: 225px;">OFFERS OVER</p>
-            <h3 class="text-price" style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 40px; margin-left: 202px; margin-top: -15px;">Rp 60 M</h3>
+        
+                    <p class="" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px; margin-left: 5px;">{{ 'Rp ' . number_format($property->price, 0, ',', '.') . ',00' }}</p>
+                </div>
             </div>
         </div>
 
         {{-- Border Bottom --}}
-        <div class="spacings" style="width: 1230px;  margin-top: 44px; margin-bottom: 50px;"></div>
+        <div class="spacings" style="width: 1230px;   margin-bottom: 50px;"></div>
         
 
-        {{-- Section Description --}}
-        <div class="section-description">
-            <h4 class="txt-tittle2" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; margin-left: 5px;">
-                Rumah for Sale in Jakarta Selatan, DKI Jakarta
-            </h4>
-            <p class="text-description" style="font-weight: 400; font-family: Montserrat, sans-serif; font-size: 16px; margin-left: 5px;">
-                Dijual Rumah Mewah dengan Halaman Luas dan Strategis @Tebet 
-            </p>
+        <div class="container pb-3 ">
+            <div class="row gx-3">
 
-            <p class="text-description" style="font-weight: 400; font-family: Montserrat, sans-serif; font-size: 16px; margin-left: 5px; margin-top: -20px;">
-                Properti yang menakjubkan ini menawarkan perpaduan kemewahan, kenyamanan, dan fungsionalitas
-            </p>
+                {{-- Section Description --}}
+                <div class="col-lg-8 col-md-7">
+                    <div class="section-description">
+                
+                        <p class="text-description" style="font-weight: 400; font-family: Montserrat, sans-serif; font-size: 16px; margin-left: 5px;">
+                            {{$property->description}}
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, debitis. In quia, ullam dolorum aliquid earum sequi, assumenda sit odio hic odit quas suscipit modi dicta eveniet voluptatibus nobis nisi illum! Optio et quaerat itaque veritatis minus dolor, delectus, blanditiis voluptate ex quia nesciunt amet quae, nostrum enim molestias repudiandae quos aut voluptates. Voluptates placeat similique doloremque, maiores nam recusandae facilis velit laboriosam ad ducimus quaerat dolores, ut modi, optio aut? Dolore neque voluptatem unde aliquid, ipsum nobis autem nemo eveniet nostrum earum dolorem laboriosam, excepturi fuga repellat placeat fugiat. Eius et reiciendis quisquam maiores perspiciatis facilis ab aspernatur provident!
+                        </p>
 
-            <p class="text-description" style="font-weight: 400; font-family: Montserrat, sans-serif; font-size: 16px; margin-left: 5px; margin-top: -20px;">
-                yang luar biasa. Dibangun di atas lahan seluas 840 meter persegi, dengan luas bangunan 1.000 meter
-            </p>
+                    </div>
+                </div>
+                
+                {{-- Section Agent--}}
+                <div class="col-lg-3 col-md-4 mb-4 p-2 agent-card" style="height:100%;">
+                    <div class="h-100 shadow-sm d-flex flex-column py-2 px-1 w-100 ">
+                      <div class="image-container mx-auto mb-auto  w-100 h-100">
+                        <img src="{{ asset('images/agents/agent13.png')}}" class="w-100" >
+                      </div>
+                      <div class="d-flex flex-column  w-100 text-center">
+                            <p class="fs-6 fw-bold mb-0">Nicholas Nelson</p>
+                            <p class="fs-6 w-100 mb-1 text-secondary">+6281272940557</p>
+                            <div class="pb-2 w-100">
+                                <a href="#" class="btn btn-sm"
+                                    style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti <span class="bg-warning px-1 rounded  text-light">15</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <p class="text-description" style="font-weight: 400; font-family: Montserrat, sans-serif; font-size: 16px; margin-left: 5px; margin-top: -20px;">
-                persegi, rumah ini sangat cocok untuk keluarga yang mencari ruang dan keanggunan.
-            </p>
-
-            <ul class="text-description" style="font-weight: 400; font-family: Montserrat, sans-serif; font-size: 16px; margin-left: 5px; list-style: disc; padding-left: 20px;">
-                <li class="description">Kamar Tidur: 6 kamar tidur luas yang dirancang untuk relaksasi, dengan pencahayaan alami yang cukup</li>
-                <p class="description" style="margin-top: -2px;">dan interior yang stylish.</p>
-                <li class="description" style="margin-top: 10px">Kamar Mandi: 6 kamar mandi modern, termasuk 3 kamar mandi dalam untuk kenyamanan dan privasi.</li>
-                <li class="description" style="margin-top: 13px;">Garasi & Carport: Tampung kendaraan Anda dengan mudah di garasi 2 mobil dan carport tambahan</li>
-                <p class="description" style="margin-top: -2px;">untuk 4 mobil.</p>
-                <li class="description" style="margin-top: 13px;">Keanggunan Arsitektur: Properti ini memiliki detail arsitektur yang menakjubkan, termasuk foyer yang</li>
-                <p class="description" style="margin-top: -2px;">megah dan desain interior yang sangat indah.</p>
-                <li class="description" style="margin-top: 13px;">Oasis Luar Ruangan: Halaman belakang yang luas memiliki kolam yang tenang, taman yang rimbun, dan</li>
-                <p class="description" style="margin-top: -2px;">ruang yang luas untuk kegiatan di luar ruangan, menjadikannya tempat peristirahatan yang ideal.</p>
-            </ul>
+            </div>
         </div>
         
-        
-        {{-- Section Agent--}}
-        <div class="card-agent text-center" style="width: 275px; height: 390px; border-radius: 15px; border: none; margin-top: 30px; margin-left: -348px;">
-           
-            <div class="card-body">
-                <div class="text-center">
-                    <img src="{{ asset('images/detailproperty/EstateVerse.png') }}" alt="EstateVerse" style="width: 60%; margin-bottom: 20px; margin-top: 35px;">
-                    <img src="{{ asset('images/agents/agent16.png') }}" alt="AgentCaleb" class="rounded-circle" style="width: 162px; height: 162px; object-fit: cover;">
+        <div class="container  map-container pb-4" >
+            <div class="row gx-5 h-100 gy-3 ">
+                <div class="col-lg-3 col-md-4">
+                    <div class="d-flex flex-column gap-2">
+                        
+                        <h4 class="mb-0 ms-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; ">Specification</h4>
+
+                        <div class="d-flex">
+                            
+                            <p class="fs-6 mb-0" style="font-family: Montserrat, sans-serif;">Building Size</p>
+                            <p class="fs-6 mb-0 ms-auto" style="font-family: Montserrat, sans-serif;">: {{$property->building_size}}m<sup>2</sup></p>
+                        </div>
+
+                        <div class="d-flex">
+
+                            <p class="fs-6 mb-0" style="font-family: Montserrat, sans-serif;">Land Size</p>
+                            <p class="fs-6 mb-0 ms-auto" style="font-family: Montserrat, sans-serif;">: {{$property->land_size}}m<sup>2</sup></p>
+                        </div>
+
+                        <div class="d-flex">
+
+                            <p class="fs-6 mb-0" style="font-family: Montserrat, sans-serif;">Certificate</p>
+                            <p class="fs-6 mb-0 ms-auto" style="font-family: Montserrat, sans-serif;">: {{$property->certificate}}</p>
+                        </div>
+
+                        <d class="d-flex">
+
+                            <p class="fs-6 mb-0" style="font-family: Montserrat, sans-serif;">Bedroom</p>
+                            <p class="fs-6 mb-0 ms-auto" style="font-family: Montserrat, sans-serif;">: {{$property->bedroom}} units</p>
+                        </d>
+
+                        <div class="d-flex">
+
+                            <p class="fs-6 mb-0" style="font-family: Montserrat, sans-serif;">Bathroom</p>
+                            <p class="fs-6 mb-0 ms-auto" style="font-family: Montserrat, sans-serif;">: {{$property->bathroom}} units</p>
+                        </div>
+
+                        <div class="d-flex">
+
+                            <p class="fs-6 mb-0" style="font-family: Montserrat, sans-serif;">Carport</p>
+                            <p class="fs-6 mb-0 ms-auto" style="font-family: Montserrat, sans-serif;">: {{$property->carport}} units</p>
+                        </div>
+                        
+                    </div>
                 </div>
-                <h6 class="agent-name mt-3 mb-3" style="font-family: Montserrat, sans-serif; font-size: 12px;">Agent Caleb</h6>
-                <div class="button">
-                    <a href="#" class="btn btn-primary-call mb-2" style="font-weight: bold; background-color: #FFFFFF; border: 2px solid #44D7B5; font-family: Montserrat, sans-serif; font-size: 10px; width: 150px; height: 33px; border-radius: 10px; color: #9D9B9B; padding: 7px">Call Caleb</a>
-                    <a href="#" class="btn btn-primary-chat mt-1" style="font-weight: bold; background-color: #FFFFFF; border: 2px solid #44D7B5; font-family: Montserrat, sans-serif; font-size: 10px; width: 150px; height: 33px; border-radius: 10px; color: #9D9B9B; padding: 7px">Chat Caleb</a>
+
+                <div class="col-lg-8 col-md-7 h-100" >
+                    <div class="d-flex flex-column gap-2 h-100 ">
+                        <h4 class="mb-0 location-map" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; ">Location</h4>
+                        <iframe class="g-maps h-100" style="border-radius: 10px; " 
+                        src="{{$property->location_link}}" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div> 
+                
                 </div>
+                  
+                    
             </div>
+        </div>
+    
             
-        </div>
-
-
-        {{-- Section Specification --}}
-        <div class="section-specification">
-            <h4 class="txt-specification" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; margin-top: 30px;">Specification</h4>
-            <div class="text-spec" style="font-weight: 400; font-family: Montserrat, sans-serif; font-size: 16px; display: flex; flex-direction: column; gap: 5px;">
-
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Live ID</span>
-                    <span style="margin-right: 1050px;">: L31681571</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Listing ID</span>
-                    <span style="margin-right: 1068px;">: 452229</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Building Size</span>
-                    <span style="margin-right: 1057px;">: 1000 m2</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Land Size</span>
-                    <span style="margin-right: 1063px;">: 840 m2</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Certificate</span>
-                    <span style="margin-right: 1010px;">: SHM/Freehold</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Bedroom</span>
-                    <span style="margin-right: 1116px;">: 6</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Bathroom</span>
-                    <span style="margin-right: 1116px;">: 6</span>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Carport</span>
-                    <span style="margin-right: 1115px;">: 4</span>
-                </div>
-
-            </div>
-        </div>
-
-
-        {{-- Section Property Map or Location --}}
-        <div class="section-location">
-            <h4 class="txt-specification" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; margin-top: -269px; margin-left: 435px;">Location</h4>
-            <iframe class="g-maps" style="border-radius: 10px; margin-left: 435px; margin-top: 5px; margin-bottom: 55px;" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28228573789!2d106.74711712480918!3d-6.229569453346221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta!5e0!3m2!1sen!2sid!4v1733036106429!5m2!1sen!2sid" width="428" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>     
     </div>
 </div>
 
@@ -170,6 +216,69 @@
 
 
 <style>
+
+    .text-price {
+        text-align:end;
+    }
+
+
+    .carousel {
+        display:none;
+    }
+
+    .bento-grid {
+        display:block;
+    }
+    .location-map {
+        margin: 0 auto;
+    }
+    .map-container {
+        min-height:20rem;
+    }
+
+    @media (max-width: 992px) {
+        .agent-card {
+            margin-left:auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .carousel {
+            display: block;
+        }
+
+        .agent-card {
+            width:50%;
+            margin: 0 auto;
+        }
+
+        .location-map {
+            margin: 0 0;
+        }
+        .map-container {
+            height:100%;
+        }
+
+        .bento-grid{
+            display:none;
+        }
+
+        .text-price {
+            text-align: start;
+        }
+
+      
+
+    }
+    @media (max-width: 576px) {
+     
+
+    }
+
+    @media (max-width: 480px) {
+      
+    }
 
     .g-maps {
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
@@ -222,10 +331,12 @@
 </style>
 
 
-
-
-
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Inisialisasi carousel agar berjalan otomatis (autoplay)
+  var myCarousel = document.getElementById('starryCarousel');
+  var carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 2000, // Menentukan interval 2 detik untuk pergantian slide otomatis
+    ride: 'carousel' // Menentukan untuk berjalan otomatis
+  });
+</script>
