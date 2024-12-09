@@ -38,7 +38,7 @@
                                     Diperbarui {{$p->updated_at->diffForHumans()}}
                                 </p>
                             </div>
-                            <div class="mt-auto text-end">
+                            <div class="text-end">
                                 <a href="{{ route('property.detail', $p->slug) }}" class="btn btn-lg text-light" style="background-color:#44D7B5">
                                     Lihat Detail
                                 </a>

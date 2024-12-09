@@ -33,8 +33,10 @@ class PropertyController extends Controller
 
         // find agent
         $agent = AppUser::find($id)->where('is_agent', true)->first();
+
         if ($agent) {
             $properties = Property::where('user_id', $id)->get();
+
 
             return view('agent-property', compact('properties'));
         }

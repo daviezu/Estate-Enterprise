@@ -18,10 +18,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/search-property-address', [HomeController::class, 'searchByAddress'])->name('search.property.address');
 
 // Agent List
-Route::get('/agent/list', [AgentController::class, 'agentList'])->name('agent.list');
+Route::get('/agents/list', [AgentController::class, 'agentList'])->name('agent.list');
 
 // Agent Detail
-Route::get("/agent/{user_id}", [AgentController::class, "agentDetail"])->name("agent.detail");
+Route::get("/agents/{user_id}", [AgentController::class, "agentDetail"])->name("agent.detail");
 
 // User
 Route::prefix('user')->group(function () {
