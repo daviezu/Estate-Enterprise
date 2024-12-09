@@ -1,90 +1,86 @@
 @extends('layout.master')
 @section('content')
-    {{-- displaying error  --}}
+    <div class="register__content">
+        {{-- displaying error  --}}
     @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{ session('success') }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-success alert-dismissible fade show position-absolute mx-auto p-3" role="alert" style="width: 80%;  border-radius: 10px; top:90; left:10%;">
+        <strong >{{ session('success') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+    </div>
     @endif
 
     @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>{{ session('error') }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="alert alert-danger alert-dismissible fade show position-absolute mx-auto p-3" role="alert" style="width: 80%;  border-radius: 10px; top:90; left:10%;;">
+            <strong >{{ session('error') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
         </div>
     @endif
-    {{-- Assset  --}}
-    <div class="triangle-asset" style="height: 0px;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 15%; position: relative; left: 300px; bottom: 200px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 15%; position: relative; right: 630px; top: 200px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 15%; position: relative; left: -15px; top: 100px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 10%; position: relative; left: -300px; top: 550px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 15%; position: relative; left: 350px; top: 100px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 12%; position: relative; right: -400px; top: 450px; z-index: 1;">
 
+{{-- Assset  --}}
+<div class="triangle-asset" style="height: 0px;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 15%; position: relative; left: 300px; bottom: 200px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 15%; position: relative; right: 630px; top: 200px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 15%; position: relative; left: -15px; top: 100px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 10%; position: relative; left: -300px; top: 550px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 15%; position: relative; left: 350px; top: 100px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 12%; position: relative; right: -400px; top: 450px; z-index: 1;">
+
+</div>
+
+<!-- Card Register -->
+<div class="h-100 py-2 px-0 card-register position-relative z-2 mt-5" style="margin-bottom: 100px; margin-left:10%">
+    <div class="card shadow px-0 py-5 d-flex flex-column justify-content-center align-items-center w-100 mt-5"
+    style=" border-radius: 20px; font-family: Montserrat, sans-serif; border: none;">
+        <h3 class="text-center mb-4"
+            style="height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 30px; color: #43D3B2; font-weight: bold;">
+            Sign Up</h3>
+        <form action="{{ route('register.post') }}" method="POST" class="w-100 d-flex flex-column align-items-center">
+            @csrf
+            <div class="w-100 px-5">
+                <input name="firstName" type="text" class="form-control py-2"
+                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                    placeholder="Nama Depan" required>
+            </div>
+            <div class="w-100 px-5">
+                <input name="lastName" type="text" class="form-control py-2"
+                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                    placeholder="Nama Belakang" required>
+            </div>
+            <div class="w-100 px-5">
+                <input name="email" type="email" class="form-control py-2"
+                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                    placeholder="Email" required>
+            </div>
+            <div class="w-100 px-5">
+                <input name="phoneNumber" type="number" class="form-control py-2"
+                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                    placeholder="Nomor telepon" required>
+            </div>
+            <div class="w-100 px-5">
+                <input name="password" type="password" class="form-control py-2"
+                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                    placeholder="Kata sandi" required>
+            </div>
+            <div class="w-100 px-5">
+                <input name="confirmPassword" type="password" class="form-control py-2"
+                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                    placeholder="Konfirmasi Kata sandi" required>
+            </div>
+
+            {{-- Register Button --}}
+            <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
+                <button type="submit" class="btn btn-primary-register"
+                    style="width: 106px; height: 32px; background-color: #44D7B5; color: #FFFFFF; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Register</button>
+            </div>
+        </form>
     </div>
-
-    <!-- Card Register -->
-    <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 100px;">
-        <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center"
-            style="width: 500px; height: 550px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; z-index: 2; position: relative; margin-left: 335px; z-index: 200;">
-            <h3 class="text-center mb-4"
-                style="height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 30px; color: #43D3B2; font-weight: bold;">
-                Sign Up</h3>
-            <form action="{{ route('register.post') }}" method="POST" class="w-100 d-flex flex-column align-items-center">
-                @csrf
-                <div class="firstname-form">
-                    <input type="text" name="firstName" class="form-control"
-                        style="margin-top: 15px; margin-bottom: 20px; width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                        placeholder="First Name" required>
-                </div>
-                <div class="lastname-form">
-                    <input type="text" name="lastName" class="form-control"
-                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                        placeholder="Last Name" required>
-                </div>
-
-                <div class="email-form">
-                    <input type="text" name="email" class="form-control"
-                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                        placeholder="E-mail" required>
-                </div>
-
-                <div class="phonenumber-form">
-                    <input type="text" name="phoneNumber" class="form-control"
-                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                        placeholder="Phone Number" required>
-                </div>
-
-                <div class="password-form">
-                    <input type="password" name="password" class="form-control"
-                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                        placeholder="Password" required>
-                </div>
-
-                <div class="confirm-form">
-                    <input type="password" name="confirmPassword" class="form-control"
-                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                        placeholder="Confirm Password" required>
-
-                </div>
-
-
-                {{-- Register Button --}}
-                <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
-                    <button type="submit" class="btn btn-primary-register"
-                        style="width: 106px; height: 32px; background-color: #44D7B5; color: #FFFFFF; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Register</button>
-                </div>
-            </form>
-        </div>
-    </div>
+</div>
 
     {{-- Segitiga --}}
     <div class="segitigacontainer">
@@ -108,7 +104,10 @@
             </div>
 
         </div>
+</div>
     </div>
+    
+
 @endsection
 
 
@@ -116,6 +115,23 @@
 {{-- Additional CSS --}}
 
 <style>
+
+    .card-register {
+        width:450px;
+        height:380px;
+        margin-left:14%;
+
+    }
+
+    .card-register .d-flex .d-flex a.register-small {
+        display:none;
+        font-size: 14px;
+    }
+
+    input.form-control {
+        margin-bottom: 20px; 
+    }
+    
     .btn-primary-register {
         transition-duration: 0.4s !important;
     }
@@ -134,7 +150,7 @@
 
     .segitigacontainer {
         position: absolute;
-        top: 73px;
+        top: 50px;
         right: 0;
         display: flex;
         justify-content: flex-end;
@@ -154,11 +170,90 @@
         top: 22%;
     }
 
-
     .content-section p {
         font-size: 14px;
         color: #FFFFFF;
         width: 280px;
         margin-left: 25px;
     }
+
+    @media (max-width: 992px) {
+        .segitiga {
+            max-width:500px;
+        }
+    }
+    @media (max-width: 768px) {
+        .segitiga {
+           display:none;
+        }
+        div.card-register {
+            width:450px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            display:none;
+        }
+
+        .card-register .d-flex .d-flex a.register-small {
+            display: block;
+        }
+        
+    }
+
+    @media (max-width: 480px) {
+        div.card-register {
+            width:400px;
+            margin: 0 auto;
+        }
+
+        .card-register .d-flex .d-flex a.register-small {
+            font-size:12px;
+        }
+
+      
+    }
+
+    .alert-success {
+        background-color: #3e9f89 !important;
+        color: #FFFFFF !important;          
+        border: 1px solid #c3e6cb !important;
+        font-family: Montserrat, sans-serif !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        position: relative;
+        z-index: 1200;
+    }
+
+    .alert-danger {
+        background-color: rgb(192, 26, 26) !important; 
+        color: #FFFFFF !important;
+        border: 1px solid #c3e6cb !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        font-family: Montserrat, sans-serif !important;
+    }
+
+    .text-decoration-none:hover {
+        color: #28bc99 !important;
+    }
+
+    .btn-primary-login {
+        transition-duration: 0.4s !important;
+    }
+
+    .btn-primary-register {
+        transition-duration: 0.4s !important;
+    }
+
+    .btn-primary-login:hover {
+        background-color: #28bc99 !important;
+    }
+
+    .btn-primary-register:hover {
+        background-color: #44D7B5 !important;
+    }
+
+
+
+    
 </style>
