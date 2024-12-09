@@ -230,7 +230,8 @@
 
     @media (max-width: 480px) {
         div.card-register {
-            width: 400px;
+
+            width:360px;
             margin: 0 auto;
         }
 

@@ -13,13 +13,14 @@ class PropertyController extends Controller
 {
     public function propertyList()
     {
-        $properties = Property::all();
+        $properties = Property::simplePaginate(5)->withQueryString();
         return view('property', compact('properties'));
     }
 
-    public function propertyDetail()
+    public function propertyDetail($slug)
     {
-        return view('detailproperty');
+        $property = Property::where('slug', $slug)->firstOrFail();
+        return view('detailproperty', compact("property"));
     }
 
     public function agentProperty()

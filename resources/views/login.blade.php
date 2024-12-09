@@ -196,7 +196,9 @@
 
     @media (max-width: 480px) {
         div.card-login {
-            width: 400px;
+
+            width:360px;
+
             margin: 0 auto;
         }
 
