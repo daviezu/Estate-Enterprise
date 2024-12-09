@@ -1,5 +1,5 @@
 <div class="footer spacing"></div>
-<div class="mt-4 container footer-box d-flex justify-content-between gap-5 mb-2" style="z-index: 1000">
+<div class="mt-4 container footer-box d-flex justify-content-between gap-5 mb-2 " style="z-index: 1000; background-color: white !important">
     <div class="contact-info">
         <div class="spacing d-flex flex-column">
             <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
@@ -61,7 +61,9 @@
     .footer {
         border-top: solid;
         border-width: 1px;
+        z-index: 1000;
     }
+
 
     .text-end {
         text-align: right;

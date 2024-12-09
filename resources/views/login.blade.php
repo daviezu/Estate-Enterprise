@@ -1,93 +1,100 @@
 @extends('layout.master')
 @section('content')
-    {{-- displaying error  --}}
+    <div class="login__content">
+        {{-- displaying error  --}}
     @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 500px; text-align: center; margin-left: 1000px; border-radius: 10px;">
-            <strong>{{ session('success') }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
-        </div>
-    @endif
-
-    @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="width: 500px; text-align: center; margin-left: 1000px; border-radius: 10px;">
-            <strong>{{ session('error') }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
-    {{-- Assset  --}}
-    <div class="triangle-asset" style="height: 0px;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 15%; position: relative; left: 300px; bottom: 200px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 15%; position: relative; right: 630px; top: 200px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 15%; position: relative; left: -15px; top: 100px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 10%; position: relative; left: -300px; top: 550px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 15%; position: relative; left: 350px; top: 100px; z-index: 1;">
-        <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-            style="width: 10%; position: relative; right: -430px; top: 470px; z-index: 2;">   
-
+    <div class="alert alert-success alert-dismissible fade show position-absolute mx-auto p-3" role="alert" style="width: 80%;  border-radius: 10px; top:90; left:10%;">
+        <strong >{{ session('success') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
     </div>
+@endif
 
-    <!-- Card Login -->
-    <div class="col-md-6 d-flex justify-content-start align-items-start" style="margin: 200px 100px;">
-        <div class="card shadow p-4 d-flex flex-column justify-content-center align-items-center"
-            style="width: 500px; height: 380px; border-radius: 20px; font-family: Montserrat, sans-serif; border: none; margin-left: 335px; position: relative; z-index: 200;">
-            <h3 class="text-center mb-4"
-                style="height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 30px; color: #43D3B2; font-weight: bold;">
-                Login</h3>
-            <form action="{{ route('login.post') }}" method="POST" class="w-100 d-flex flex-column align-items-center">
-                @csrf
-                <div class="username-form">
-                    <input name="email" type="text" class="form-control"
-                        style="margin-top: 15px; margin-bottom: 20px; width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                        placeholder="Username" required>
-                </div>
-                <div class="password-form">
-                    <input name="password" type="password" class="form-control"
-                        style="margin-bottom:20px;  width: 290px; height: 40px; border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                        placeholder="Password" required>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mb-4" style="width: 283px;">
-
-                    <!-- "Ingat saya" -->
-                    <div class="form-check d-flex align-items-center" style="margin-top: -5px;">
-                        <input class="form-check-input me-2" style="border-color: #40C9A9; font-size: 20px; margin-left: -27px;" type="checkbox" id="rememberMe"
-                            name="rememberMe">
-                        <label class="form-check-label" style="font-size: 13px;" for="rememberMe">Ingat saya</label>
-                    </div>
-
-                    <!-- "Lupa Password?" -->
-                    <a href="#" class="text-decoration-none"
-                        style="margin-top: -6px; color: #44D7B5; font-size: 14px;">Lupa Password?</a>
-                </div>
-
-                {{-- Login Button --}}
-                <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
-                    <button type="submit" class="btn btn-primary-login"
-                        style="width: 106px; height: 32px; background-color: #44D7B5; border: none; border-radius: 5px; font-size: 15px; font-weight: bold; color: #FFFFFF">Login</button>
-                </div>
-            </form>
-        </div>
+@if (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show position-absolute mx-auto p-3" role="alert" style="width: 80%;  border-radius: 10px; top:90; left:10%;;">
+        <strong >{{ session('error') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
     </div>
+@endif
+<div class="spacing__content"></div>
+{{-- Assset  --}}
+<div class="triangle-asset" style="height: 0px;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 15%; position: relative; left: 300px; bottom: 200px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 15%; position: relative; right: 630px; top: 200px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 15%; position: relative; left: -15px; top: 100px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 10%; position: relative; left: -300px; top: 550px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 15%; position: relative; left: 350px; top: 100px; z-index: 1;">
+    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+        style="width: 12%; position: relative; right: -400px; top: 450px; z-index: 1;">
+
+</div>
+
+<!-- Card Login -->
+<div class="h-100 py-2 px-0 card-login position-relative z-2 mt-5">
+<div class="card shadow px-0 py-5 d-flex flex-column justify-content-center align-items-center w-100 mt-5"
+    style=" border-radius: 20px; font-family: Montserrat, sans-serif; border: none;">
+    <h3 class="text-center mb-4 fw-bold"
+        style="color: #43D3B2; ">
+        Login</h3>
+    <form action="{{ route('login.post') }}" method="POST" class="w-100 d-flex flex-column align-items-center gap-3 ">
+        @csrf
+        <div class="w-100 px-5">
+            <input name="email" type="text" class="form-control py-2"
+                style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                placeholder="Email" required>
+        </div>
+        <div class="w-100 px-5">
+            <input name="password" type="password" class="form-control py-2"
+                style="border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                placeholder="Password" required>
+        </div>
+        <div class="d-flex  w-100 px-5" >
+
+            <div class="d-flex flex-column gap-2">
+
+                <!-- "Ingat saya" -->
+                <div class="d-flex align-items-center" >
+                    <input class="form-check-input me-2" style="border-color: #40C9A9; font-size: 20px;"type="checkbox" id="rememberMe"
+                        name="rememberMe">
+                    <label class="form-check-label my-auto" style="font-size: 13px;" for="rememberMe">Ingat saya</label>
+                </div>
+
+                <a href={{ route('register.index') }} class="text-decoration-none register-small"
+                style="color:black;  ">Belum punya akun? <span style="color: #44D7B5; ">Daftar Sini</span></a>
+            </div>
+
+            <!-- "Lupa Password?" -->
+            <a href="#" class="text-decoration-none  ms-auto"
+                style="color: #44D7B5; font-size: 14px;">Lupa Password?</a>
+        </div>
+     
+        {{-- Login Button --}}
+        <div class="d-flex justify-content-end ms-auto px-5" >
+            <button type="submit" class="btn btn-primary-login px-5"
+                style="background-color: #44D7B5; border: none; border-radius: 5px; font-size: 15px; font-weight: bold; color: #FFFFFF">Login</button>
+        </div>
+    </form>
+</div>
+</div>
 
     {{-- Segitiga --}}
-    <div class="segitigacontainer">
+    <div class="position-absolute px-0 me-0" style="top:0; right:0; z-index:10; ">
         <div>
             <img src="{{ asset('images/SegitigaBackground.png') }}" alt="Background" class="segitiga">
         </div>
 
         {{-- isi Content --}}
-        <div class="content-section">
-            <h2 class="text-center mb-4"
-                style="margin-top: -45px; margin-bottom: 100px; color: #43D3B2; font-weight: bold; font-size: 25px;">Belum
+        <div class="content-section me-0 ">
+            <h2 class="text-center mb-4 font-content"
+                style="color: #43D3B2; font-weight: bold; ">Belum
                 punya akun?</h2>
-            <p>Daftar untuk mengakses akun Anda dan nikmati fitur-fitur terbaik kami.</p>
+            <p class="font-content-small">Daftar untuk mengakses akun Anda dan nikmati fitur-fitur terbaik kami.</p>
 
-            <div class="d-flex justify-content-end" style="width: 283px; margin-top: 50px;">
+            <div class="d-flex justify-content-end" style="width: 283px;">
                 <a href="{{ route('register.index') }}">
 
                     <button type="submit" class="btn btn-primary-register"
@@ -96,16 +103,98 @@
             </div>
 
         </div>
+</div>
+<div class="spacing__content"></div>
     </div>
+    
+
 @endsection
+
 
 
 {{-- Additional CSS --}}
 
 <style>
+    .segitiga {
+        width: 100%;
+        max-width: 640px;
+        object-fit: cover;
+    }
 
-    .body {
-        overflow-x: hidden !important;
+    .content-section {
+        font-family: 'Montserrat', sans-serif;
+        position: absolute;
+        right: 2%;
+        top: 22%;
+    }
+
+    .content-section h2.font-content {
+        font-size:25px;
+    }
+
+    .content-section p {
+        font-size: 14px;
+        color: #FFFFFF;
+        width: 280px;
+        margin-left: 25px;
+    }
+
+    .card-login {
+        width:450px;
+        height:380px;
+        margin-left:14%;
+
+    }
+
+    .card-login .d-flex .d-flex a.register-small {
+        display:none;
+        font-size: 14px;
+    }
+
+    .spacing__content{
+        margin-top: 50px;
+    }
+
+    .login__content {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    @media (max-width: 992px) {
+        .segitiga {
+            max-width:500px;
+        }
+    }
+    @media (max-width: 768px) {
+        .segitiga {
+           display:none;
+        }
+        div.card-login {
+            width:450px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            display:none;
+        }
+
+        .card-login .d-flex .d-flex a.register-small {
+            display: block;
+        }
+        
+    }
+
+    @media (max-width: 480px) {
+        div.card-login {
+            width:400px;
+            margin: 0 auto;
+        }
+
+        .card-login .d-flex .d-flex a.register-small {
+            font-size:12px;
+        }
+
+      
     }
 
     .alert-success {
@@ -147,35 +236,7 @@
         background-color: #44D7B5 !important;
     }
 
-    .segitigacontainer {
-        width: 100% !important;
-        position: absolute;
-        top: 73px;
-        right: 0;
-        display: flex;
-        justify-content: flex-end;
-        overflow: hidden !important;
-        z-index: 3;
-    }
-
-    .segitiga {
-        width: 100%;
-        max-width: 740px;
-        object-fit: cover;
-    }
-
-    .content-section {
-        font-family: 'Montserrat', sans-serif;
-        position: absolute;
-        right: 2%;
-        top: 22%;
-    }
 
 
-    .content-section p {
-        font-size: 14px;
-        color: #FFFFFF;
-        width: 280px;
-        margin-left: 25px;
-    }
+    
 </style>
