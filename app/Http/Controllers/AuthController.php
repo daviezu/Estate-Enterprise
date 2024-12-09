@@ -81,7 +81,7 @@ class AuthController extends Controller
 
         // email exist
         if ($email) {
-            return redirect()->back()->withErrors(['Email existed, please use other email'])->withInput();
+            return redirect()->back()->withErrors(['email' => 'Email existed, please use other email'])->withInput();
         }
 
         // email doesn't exist, continue with login
@@ -90,7 +90,6 @@ class AuthController extends Controller
             'password' => Hash::make($validate['password'])
         ];
 
-        dd("gold");
         $user = AppUser::create([
             // 'name' => $validate['firstName'] . ' ' . $validate['lastName'],
             'first_name' => $validate['firstName'],
