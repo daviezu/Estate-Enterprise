@@ -99,10 +99,10 @@ Route::middleware(Authenticate::class)->group(function () {
 // property
 Route::prefix('property')->group(function () {
     // Property List 
-    Route::get('/list', [PropertyController::class, 'propertyList'])->name('property.list');
+    Route::get('/', [PropertyController::class, 'propertyList'])->name('property.list');
 
     // Property Detail
-    Route::get('/detail', [PropertyController::class, 'propertyDetail'])->name('property.detail');
+    Route::get('/{slug}', [PropertyController::class, 'propertyDetail'])->name('property.detail');
 });
 
 // logout

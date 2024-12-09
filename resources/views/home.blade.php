@@ -119,12 +119,12 @@
             @foreach ($properties as $property)
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="{{ asset($property['image']) }}" class="card-img-top" alt="{{ $property['title'] }}">
+                        <img src="{{ asset('images/property/property10.png') }}" class="card-img-top" alt="{{ $property['title'] }}">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $property['title'] }}</h5>
                             <p class="card-text">{{ $property['description'] }}</p>
                             <div class="mt-auto text-end">
-                                <a href="#" class="btn btn-lg"
+                                <a href="{{ route('property.detail', $property->slug) }}" class="btn btn-lg"
                                     style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Detail</a>
                             </div>
                         </div>

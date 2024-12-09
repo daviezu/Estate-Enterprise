@@ -17,9 +17,10 @@ class PropertyController extends Controller
         return view('property', compact('properties'));
     }
 
-    public function propertyDetail()
+    public function propertyDetail($slug)
     {
-        return view('detailproperty');
+        $property = Property::where('slug', $slug)->firstOrFail();
+        return view('detailproperty', compact("property"));
     }
 
     public function agentProperty()
