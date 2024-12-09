@@ -105,9 +105,8 @@
     </div>
     </div>
     </div>
-    <div class="margin__spacing"></div>
 
-    <div class="container mt-4">
+    <div class="container ">
         <div class="mb-3">
             <h2 class="mb-1">Beberapa Pilihan</h2>
             <p class="mb-2">Real estate & Perumahan yang sedang dijual</p>
@@ -151,7 +150,7 @@
         </div>
     </div>
 
-    <div class="testimony">
+    {{-- <div class="testimony">
         <div class="testimony__card">
             <h5>Sarah - Pembeli Rumah</h5>
             <p>"EstateVerse mempermudah saya dalam mencari rumah impian. Platform ini intuitif dan saya bisa melihat banyak
@@ -183,7 +182,7 @@
             </p>
         </div>
 
-    </div>
+    </div> --}}
 
     {{-- images background --}}
 

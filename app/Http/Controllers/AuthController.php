@@ -100,7 +100,7 @@ class AuthController extends Controller
         ]);
 
         if ($user) {
-
+            session(['user_id' => $user->user_id, 'is_logged_in' => true, 'role' => $user->is_agent]);
             return redirect()->route('home')->with('success', 'Registration Success');
         }
     }
