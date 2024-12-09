@@ -78,6 +78,15 @@
                         id="username" placeholder="Username" name="username">
                 </div>
 
+                <div class="form__section">
+                    <div class="form-check mb-3 mt-3 ms-4">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Saya ingin mendaftar sebagai Agent
+                        </label>
+                      </div>
+                </div>
+
                 {{-- Button --}}
                 <div class="d-flex justify-content-end">
                     <a href="{{ route('profile.index') }}" class="btn btn-secondary me-4"
@@ -93,6 +102,12 @@
 @endsection
 
 <style>
+
+    .form-check-input:checked {
+            background-color: #44D7B5 !important; 
+            border-color: #44D7B5; 
+        }
+
     .form__section {
         display: flex;
         margin-bottom: 10px;
