@@ -63,12 +63,12 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validate = $request->validate([
-            'firstName' => 'required|string',
-            'lastName' => 'required|string',
-            'email' => 'required|string',
-            'password' => 'required|string',
-            'confirmPassword' => 'required|string',
-            'phoneNumber' => 'required|string'
+            'firstName' => 'required|string|max:50',
+            'lastName' => 'required|string|max:50',
+            'email' => 'required|email',
+            'password' => 'required|string|min:6',
+            'confirmPassword' => 'required|string|same:password',
+            'phoneNumber' => 'required|string|max:20'
         ]);
 
         // check password
@@ -90,6 +90,7 @@ class AuthController extends Controller
             'password' => Hash::make($validate['password'])
         ];
 
+        dd("gold");
         $user = AppUser::create([
             // 'name' => $validate['firstName'] . ' ' . $validate['lastName'],
             'first_name' => $validate['firstName'],
