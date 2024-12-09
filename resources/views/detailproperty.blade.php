@@ -1,5 +1,15 @@
 @extends('layout.master')
 @section('content')
+    <div class="container my-3">
+        <div class="row">
+
+            {{-- Parent Card & Image --}}
+            <div class="col-md-4 mb-4">
+                <div class="cardparent" style="width: 40.5rem; height: 22.875rem; border: none; border-radius: 20px;">
+                    <img class="imagessparent" src="{{ asset('images/property/property10.png') }}" class="card-img-fluid"
+                        alt="property">
+                </div>
+            </div>
 
 
 <div class="container my-3 pt-4">
@@ -47,9 +57,10 @@
                     <div class="bento-item" style=" height: 250px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
                         <img src="{{ asset('images/property/property10.png') }}" alt="Medium Item 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
+
                 </div>
             </div>
-        </div>
+
 
         {{-- Carousel --}}
         <div class="container my-5 carousel">
@@ -139,9 +150,11 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
+
         </div>
         
         <div class="container  map-container pb-4" >
@@ -187,6 +200,7 @@
                             <p class="fs-6 mb-0 ms-auto" style="font-family: Montserrat, sans-serif;">: {{$property->carport}} units</p>
                         </div>
                         
+
                     </div>
                 </div>
 
@@ -202,20 +216,35 @@
                   
                     
             </div>
+
         </div>
     
             
     </div>
 </div>
 
-    
-    
 
+
+            {{-- Section Property Map or Location --}}
+            <div class="section-location">
+                <h4 class="txt-specification"
+                    style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; margin-top: -269px; margin-left: 435px;">
+                    Location</h4>
+                <iframe class="g-maps"
+                    style="border-radius: 10px; margin-left: 435px; margin-top: 5px; margin-bottom: 55px;"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28228573789!2d106.74711712480918!3d-6.229569453346221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta!5e0!3m2!1sen!2sid!4v1733036106429!5m2!1sen!2sid"
+                    width="428" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
 @endsection
 
 
 
 <style>
+
 
     .text-price {
         text-align:end;
@@ -288,7 +317,8 @@
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.40);
     }
 
-    .btn-primary-call, .btn-primary-chat {
+    .btn-primary-call,
+    .btn-primary-chat {
         transition-duration: 0.4s !important;
     }
 
@@ -320,14 +350,13 @@
         object-fit: cover;
     }
 
-    .imagesschild{
+    .imagesschild {
         border: none;
         border-radius: 20px;
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    
 </style>
 
 
@@ -340,6 +369,7 @@
     ride: 'carousel' // Menentukan untuk berjalan otomatis
   });
 </script>
+
 
 
 
