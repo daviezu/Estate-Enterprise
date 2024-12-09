@@ -9,9 +9,15 @@
             @foreach ($properties as $p)
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card shadow-sm h-100" style="border-radius: 20px; border: none;">
-                        <img class="card-img-top" src="{{ asset('images/property/property1.png') }}" alt="property1">
+                        <a href="{{route("agent.detail", $p->PropertyToAgent->user_id)}}" class="agent-picture d-block" >
+                            <img src="{{ asset('images/agents/agent13.png')}}" alt="" class="w-100 h-100" style="object-fit: cover;">  
+                        </a>
+                        <div class="rounded-sm" style="height:195px; width:100%">
+                                <img class="w-100 h-100 rounded" src="{{ asset('images/property/property1.png') }}" style="background-position:center; object-fit:cover;" alt="property1">
+                        </div>
                         <div class="d-flex flex-column p-3 gap-1">
                             <div class="d-flex flex-column flex-grow-1">
+                                
                                 <h5 class="card-title mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px;">
                                     {{$p->property_name}}
                                 </h5>
@@ -50,4 +56,17 @@
             </div>
         </div>
     </div>
+
+<style>
+
+    .agent-picture {
+        border-radius:50%;
+        width:50px;
+        height:50px;
+        position:absolute;
+        border:0;
+        top:7px;
+        left:5px;
+    }
+</style>
 @endsection

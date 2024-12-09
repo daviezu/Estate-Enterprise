@@ -13,7 +13,11 @@ class PropertyController extends Controller
 {
     public function propertyList()
     {
-        $properties = Property::simplePaginate(5)->withQueryString();
+        $properties = Property::with('PropertyToAgent')
+        ->simplePaginate(5)
+        ->withQueryString();
+
+
         return view('property', compact('properties'));
     }
 

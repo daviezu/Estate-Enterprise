@@ -40,7 +40,9 @@
                 @foreach ($properties as $p)
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card shadow-sm h-100" style="border-radius: 20px; border: none;">
-                        <img class="card-img-top" src="{{ asset('images/property/property1.png') }}" alt="property1">
+                        <div class="" style="width:100%; height:195px;">
+                            <img class="w-100 h-100" src="{{ asset('images/property/property1.png') }}" alt="property1">
+                        </div>
                         <div class="d-flex flex-column p-3 gap-1">
                             <div class="d-flex flex-column flex-grow-1">
                                 <h5 class="card-title mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px;">
