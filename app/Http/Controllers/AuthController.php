@@ -19,7 +19,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validate = $request->validate([
-            'email' => 'required|string',
+            'email' => 'required|email',
             'password' => 'required|string'
         ]);
 
@@ -73,7 +73,7 @@ class AuthController extends Controller
 
         // check password
         if ($request->password != $request->confirmPassword) {
-            return redirect()->back()->withErrors(['Password do not match with confirm password'])->withInput();
+            return redirect()->back()->with(['error', 'Password do not match with confirm password'])->withInput();
         }
 
         // check IF email EXIST

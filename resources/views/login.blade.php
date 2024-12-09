@@ -49,11 +49,17 @@
                             style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
                             placeholder="Email" required>
                     </div>
+                    @error('email')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="w-100 px-5">
                         <input name="password" type="password" class="form-control py-2"
                             style="border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
                             placeholder="Password" required>
                     </div>
+                    @error('password')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="d-flex  w-100 px-5">
 
                         <div class="d-flex flex-column gap-2">
