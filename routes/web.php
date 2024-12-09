@@ -20,6 +20,9 @@ Route::post('/search-property-address', [HomeController::class, 'searchByAddress
 // Agent List
 Route::get('/agent/list', [AgentController::class, 'agentList'])->name('agent.list');
 
+// Agent Detail
+Route::get("/agent/{user_id}", [AgentController::class, "agentDetail"])->name("agent.detail");
+
 // User
 Route::prefix('user')->group(function () {
 

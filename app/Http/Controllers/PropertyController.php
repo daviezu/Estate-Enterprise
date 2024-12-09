@@ -38,6 +38,15 @@ class PropertyController extends Controller
         return redirect()->back()->with('error', 'You do not have permission to access this page.');
     }
 
+    public function getPropertyByAgent($user_id) : View
+    {
+        $agent = AppUser::where("user_id", $user_id)    ->where("is_agent", true)->firstOrFail();
+
+        $properties = $agent->UserToProperty();
+
+        return view("agentdetail", compact("properties", "agent"));
+    }
+
     public function editPropertyIndex()
     {
         return view('editmyproperty');
