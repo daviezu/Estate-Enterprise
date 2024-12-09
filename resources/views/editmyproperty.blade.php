@@ -29,8 +29,9 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('agent.property.create') }}" method="POST">
+            <form action="{{ route('agent.property.edit', $property_id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="container mt-4">
                     <div class="mb-3 ms-5">
                         <label for="formFileMultiple" class="form-label">Gambar</label>

@@ -85,7 +85,7 @@ Route::middleware(Authenticate::class)->group(function () {
 
                 // edit property
                 Route::prefix('edit')->group(function () {
-                    Route::get('/index', [PropertyController::class, 'editPropertyIndex'])->name('agent.property.edit.index');
+                    Route::get('/{id}', [PropertyController::class, 'editPropertyIndex'])->name('agent.property.edit.index');
                     Route::put('/{id}', [PropertyController::class, 'editProperty'])->name('agent.property.edit');
                 });
 
@@ -102,7 +102,7 @@ Route::prefix('property')->group(function () {
     Route::get('/list', [PropertyController::class, 'propertyList'])->name('property.list');
 
     // Property Detail
-    Route::get('/detail', [PropertyController::class, 'propertyDetail'])->name('property.detail');
+    Route::get('/{id}/detail', [PropertyController::class, 'propertyDetail'])->name('property.detail');
 });
 
 // logout
