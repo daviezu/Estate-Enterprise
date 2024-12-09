@@ -121,8 +121,8 @@
                     <div class="card h-100 shadow-sm">
                         <img src="{{ asset('images/property/property10.png') }}" class="card-img-top" alt="{{ $property['title'] }}">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">{{ $property['title'] }}</h5>
-                            <p class="card-text">{{ $property['description'] }}</p>
+                            <h5 class="card-title">{{ $property->property_name}}</h5>
+                            <p class="card-text">{{ $property->description}}</p>
                             <div class="mt-auto text-end">
                                 <a href="{{ route('property.detail', $property->slug) }}" class="btn btn-lg"
                                     style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Detail</a>

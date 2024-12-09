@@ -194,7 +194,7 @@
                     <div class="d-flex flex-column gap-2 h-100 ">
                         <h4 class="mb-0 location-map" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; ">Location</h4>
                         <iframe class="g-maps h-100" style="border-radius: 10px; " 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28228573789!2d106.74711712480918!3d-6.229569453346221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta!5e0!3m2!1sen!2sid!4v1733036106429!5m2!1sen!2sid"  style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        src="{{$property->location_link}}" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div> 
                 

@@ -18,7 +18,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/search-property-address', [HomeController::class, 'searchByAddress'])->name('search.property.address');
 
 // Agent List
-Route::get('/agent/list', [AgentController::class, 'agentList'])->name('agent.list');
+Route::get('/agents/list', [AgentController::class, 'agentList'])->name('agent.list');
+
+// Agent Detail
+Route::get("/agents/{user_id}", [AgentController::class, "agentDetail"])->name("agent.detail");
 
 // User
 Route::prefix('user')->group(function () {
@@ -85,8 +88,8 @@ Route::middleware(Authenticate::class)->group(function () {
 
                 // edit property
                 Route::prefix('edit')->group(function () {
-                    Route::get('/index', [PropertyController::class, 'editPropertyIndex'])->name('agent.property.edit.index');
-                    Route::put('/{id}', [PropertyController::class, 'editProperty'])->name('agent.property.edit');
+                    Route::get('/{property_index}', [PropertyController::class, 'editPropertyIndex'])->name('agent.property.edit.index');
+                    Route::put('/{property_index}', [PropertyController::class, 'editProperty'])->name('agent.property.edit');
                 });
 
                 // delete property
