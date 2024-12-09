@@ -1,45 +1,45 @@
 @extends('layout.master')
 @section('content')
-    <div class="container py-5">
-        <h2 class="tittle">Real estate & Perumahan untuk dijual</h2>
 
-        <p class="textawal text-start">Menampilkan 100+ hasil di pencarian</p>
-
-        <div class="row">
-            @foreach ($properties as $p)
-                <div class="col-md-4 mb-4">
-                    <div class="card" style="width: 26.25rem; border: none; border-radius: 20px">
-                        <img class="imagess" src="{{ asset('images/property/property1.png') }}" class="card-img-fluid"
-                            alt="property1">
-                        <div class="card-body">
-                            <h5 class="card-price"
-                                style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">
-                                {{ $p->price }}
-                            </h5>
-                            <h2 class="card-tittle"
-                                style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">
-                                {{ $p->property_name }}</h2>
-                            <h3 class="card-text"
-                                style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By
-                                {{ $p->owner }}</h3>
-                            <p class="card-text"
-                                style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
-                                {{ $p->location }}</p>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px;">2-4 KT, LT
-                                90-200
-                                m², LB 80-150 m²</p>
-                            <p class="card-text"
-                                style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
-                                Diperbarui 1 hari lalu</p>
-
-
-                            <a href="#" class="btn btn-primary"
-                                style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
-                                Detail</a>
+        <div class="container py-5 page-content">
+            <h2 class="tittle">Real estate & Perumahan untuk dijual</h2>
+    
+            <p class="textawal text-start">Menampilkan 100+ hasil di pencarian</p>
+    
+            <div class="row">
+                @foreach ($properties as $p)
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 100%; border: none; border-radius: 20px">
+                            <img class="imagess" src="{{ asset('images/property/property1.png') }}" class="card-img-fluid"
+                                alt="property1">
+                            <div class="card-body">
+                                <h5 class="card-price"
+                                    style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: 24px">
+                                    {{ $p->price }}
+                                </h5>
+                                <h2 class="card-tittle"
+                                    style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px">
+                                    {{ $p->property_name }}</h2>
+                                <h3 class="card-text"
+                                    style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 12px">By
+                                    {{ $p->owner }}</h3>
+                                <p class="card-text"
+                                    style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
+                                    {{ $p->location }}</p>
+                                <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px;">2-4 KT, LT
+                                    90-200
+                                    m², LB 80-150 m²</p>
+                                <p class="card-text"
+                                    style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
+                                    Diperbarui 1 hari lalu</p>
+    
+                                <a href="#" class="btn btn-primary"
+                                    style="color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 12px; float: right; margin-right: 16px;">Lihat
+                                    Detail</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
 
             {{-- Property 2 --}}
             <div class="col-md-4 mb-4">
@@ -168,6 +168,10 @@
 
 
 <style>
+    .page-content {
+        margin-top: calc(56px + 20px); /* Adjust 56px to the height of your navbar */
+    }
+
     .btn-primary {
         transition-duration: 0.4s !important;
     }
@@ -175,7 +179,6 @@
     .btn-primary:hover {
         background-color: #28bc99 !important;
     }
-
 
     .tittle {
         font-family: 'Monserrat', sans-serif;
@@ -194,7 +197,9 @@
     }
 
     .imagess {
-        width: 26.25rem;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
     }
 
     .page-link {
@@ -227,7 +232,6 @@
         outline: none;
         border-color: #44D7B5 !important;
     }
-
 
     .pagination {
         display: flex;
