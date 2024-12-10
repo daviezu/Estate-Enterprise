@@ -10,21 +10,22 @@ class AboutController extends Controller
     {
    
         $members = [
-            [
-                'name' => 'Nicholas Nelson',
-                'role' => 'Leader',
-                'umur' => '20',
-                'quotes'=>'Belajar pengembangan web saat kuliah ibarat menanam benih yang kelak tumbuh menjadi pohon karier yang kokoh dan berbuah manis.',
-                'link' => 'https://github.com/vnnico',
-                'image' => 'images/members/Nicholas.png'
-            ],
+            
             [
                 'name' => 'David',
-                'role' => 'Co-Leader',
+                'role' => 'Leader',
                 'umur' => '20',
                 'quotes'=>'Setiap baris kode yang kau tulis sebagai mahasiswa pengembang web bukan sekadar memenuhi tugas kuliah—itu adalah pondasi masa depan kariermu.',
                 'link' => 'https://github.com/daviezu',
                 'image' => 'images/members/Dapid.jpg'
+            ],
+            [
+                'name' => 'Nicholas Nelson',
+                'role' => 'Support',
+                'umur' => '20',
+                'quotes'=>'Belajar pengembangan web saat kuliah ibarat menanam benih yang kelak tumbuh menjadi pohon karier yang kokoh dan berbuah manis.',
+                'link' => 'https://github.com/vnnico',
+                'image' => 'images/members/Nicholas.png'
             ],
             [
                'name' => 'Kevin Hermanto',
