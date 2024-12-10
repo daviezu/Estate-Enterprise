@@ -14,13 +14,12 @@ return new class extends Migration
     {
         Schema::create('app_users', function (Blueprint $table) {
             $table->id('user_id');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('fullname');
             $table->string('email')->unique();
             $table->string("password");
             $table->string('phone_number');
             $table->string('remember_token', 100)->nullable();
-            $table->string('picture_path')->nullable();
+            $table->string('picture_path')->default('https://static.vecteezy.com/system/resources/previews/009/952/572/non_2x/male-profile-picture-vector.jpg');
             $table->boolean('is_agent')->default(false);
             $table->timestamps();
         });

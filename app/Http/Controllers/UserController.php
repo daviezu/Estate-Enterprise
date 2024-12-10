@@ -40,9 +40,7 @@ class UserController extends Controller
     public function updateProfileName(Request $request)
     {
         $validate = $request->validate([
-            'firstName' => 'required|string',
-            'lastName' => 'required|string',
-            'username' => 'nullable|string'
+            'fullname' => 'required|string|max:50',
         ]);
         
         // $mahasiswa->alamat = $validateData['alamat'];
@@ -54,12 +52,11 @@ class UserController extends Controller
         $user = AppUser::find($userID);
         if ($user) {
             $dataToUpdate = [
-                'first_name' => $validate['firstName'],
-                'last_name' => $validate['lastName'],
+                'fullname' => $validate['fullname'],
             ];
 
-            if (!empty($validate['username'])) {
-                $dataToUpdate['username'] = $validate['username'];
+            if (!empty($validate['fullname'])) {
+                $dataToUpdate['fullname'] = $validate['fullname'];
             }
 
             $user->update($dataToUpdate);

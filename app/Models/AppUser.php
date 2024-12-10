@@ -12,9 +12,7 @@ class AppUser extends Model
     protected $primaryKey = 'user_id';
 
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'username',
+        'fullname',
         'email',
         'password',
         'phone_number',

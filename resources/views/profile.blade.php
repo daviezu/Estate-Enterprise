@@ -41,28 +41,9 @@
                     <tr style="border-bottom: 2px solid #dee2e6;">
                         <th
                             style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px;">
-                            Nama Depan</th>
+                            Nama Lengkap</th>
                         <td style="font-size: 16px; font-family: Montserrat, sans-serif; padding-right: 83px;">
-                            {{ $user->first_name }}</td>
-                    </tr>
-
-                    <tr style="border-bottom: 2px solid #dee2e6;">
-                        <th
-                            style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px; padding-top: 21px;">
-                            Nama Belakang</th>
-                        <td
-                            style="font-size: 16px; font-family: Montserrat, sans-serif; padding-top: 21px; padding-left: -95px;">
-                            {{ $user->last_name }}</td>
-                    </tr>
-
-
-                    <tr style="border-bottom: 2px solid #dee2e6;">
-                        <th
-                            style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px; padding-top: 21px;">
-                            Username</th>
-                        <td
-                            style="font-size: 16px; font-family: Montserrat, sans-serif; padding-top: 21px; padding-left: -95px;">
-                            {{ $user->username }}</td>
+                            {{ $user->fullname }}</td>
                     </tr>
 
                     

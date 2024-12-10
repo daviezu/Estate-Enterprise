@@ -30,7 +30,7 @@
             <div class="mb-3 text-left" style="margin-left: 80px;">
 
                 <!-- Profile Picture -->
-                <img src="{{ asset('images/profiles/rose.png') }}" alt="Avatar" class="rounded-circle mb-3"
+                <img src="{{}}" alt="Avatar" class="rounded-circle mb-3"
                     style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #44D7B5; margin-left: -50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);">
 
                 {{-- Button --}}
@@ -60,16 +60,10 @@
                 @csrf
                 @method('PUT')
                 <div class="form__section">
-                    <p class="section__title" style="margin-left: 30px">Nama Depan</p>
+                    <p class="section__title" style="margin-left: 30px">Nama Lengkap</p>
                     <input type="text" class="form-control"
                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px; margin-left: 120px;"
-                        id="name" placeholder="Nama Depan" name="firstName" required>
-                </div>
-                <div class="form__section">
-                    <p class="section__title" style="margin-left: 30px">Nama Belakang</p>
-                    <input type="text" class="form-control"
-                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px; margin-left: 102px;"
-                        id="name" placeholder="Nama Belakang" name="lastName" required>
+                        id="name" placeholder="Nama Lengkap" name="fullname" required>
                 </div>
 
                 <div class="form__section">
