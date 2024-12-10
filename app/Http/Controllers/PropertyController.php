@@ -15,7 +15,7 @@ class PropertyController extends Controller
     public function propertyList()
     {
         $properties = Property::with('PropertyToAgent')
-        ->simplePaginate(5)
+        ->simplePaginate(9)
         ->withQueryString();
 
 

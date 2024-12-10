@@ -31,16 +31,16 @@
                              
                                     <img class="w-100 h-100 rounded" src="{{json_decode($p->picture_path, true)[0]}}" style="background-position:center; object-fit:cover;" alt="property1">
                             </div>
-                            <div class="d-flex flex-column p-3 gap-1">
-                                <div class="d-flex flex-column flex-grow-1 ">
+                            <div class="d-flex flex-column p-3 gap-1 h-100 ">
+                                <div class="d-flex flex-column flex-grow-1 text-truncate ">
                                     
-                                    <h5 class="card-title mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px;">
+                                    <h5 class="card-title mb-1 fs-5" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: clamp(12px, 3vw, 20px);">
                                         {{$p->property_name}}
                                     </h5>
-                                    <p class="text-secondary mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 16px;">
+                                    <p class="text-secondary mb-1 fs-6" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: clamp(10px, 3vw, 18px);">
                                         {{$p->property_owner}}
                                     </p>
-                                    <p class="card-price mb-1" style="font-weight: bold; font-family: Montserrat, sans-serif; ">
+                                    <p class="card-price mb-1 fs-6" style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: clamp(10px, 3vw, 18px); ">
                                         {{ 'Rp ' . number_format($p->price, 0, ',', '.') . ',00' }}
                                     </p>
                                     
@@ -48,7 +48,7 @@
                                         {{ $p->address }}
                                     </p>
                                     <p class="card-text mb-3" style="font-family: Montserrat, sans-serif; font-size: 12px;">
-                                       LT 90-200 m², LB 80-150 m²
+                                        LT {{$p->land_size}} m², LB {{$p->building_size}} 
                                     </p>
                                     <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
                                         Diperbarui {{$p->updated_at->diffForHumans()}}
@@ -61,7 +61,7 @@
                                     <a href="{{ route('agent.property.edit.index', $p->property_id) }}" class="btn  text-light btn-warning" >
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
-                                    <form action="{{ route('agent.property.delete', $p->slug) }}" method="POST"
+                                    <form action="{{ route('agent.property.delete', $p->property_id) }}" method="POST"
                                         onsubmit="return confirmDelete(event)">
 
                                         @csrf

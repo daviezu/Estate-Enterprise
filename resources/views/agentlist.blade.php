@@ -4,7 +4,7 @@
     <div class="container-md pt-5 mt-5 container">
       <div class="row">
         <div class="col-lg-3 col-md-4">
-          <p class="fs-2">Daftar Agent</p>
+          <p class="fs-2 fw-semibold">Daftar Agent</p>
         </div>
 
         {{-- Search Section --}}

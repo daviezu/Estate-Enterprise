@@ -136,8 +136,8 @@
                             <img src="{{$property->PropertyToAgent->picture_path}}" class="w-100 h-100 rounded" style="background-position:center; object-fit:cover;" >
                           </div>
                       <div class="d-flex flex-column  w-100 text-center">
-                            <p class="fs-6 fw-bold mb-0">Nicholas Nelson</p>
-                            <p class="fs-6 w-100 mb-1 text-secondary">+6281272940557</p>
+                            <p class="fs-6 fw-bold mb-0 ">{{$property->PropertyToAgent->fullname}}</p>
+                            <p class="fs-6 w-100 mb-1 text-secondary">{{$property->PropertyToAgent->phone_number}}</p>
                             <div class="pb-2 w-100">
                                 <a href="#" class="btn btn-sm"
                                     style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti </a>

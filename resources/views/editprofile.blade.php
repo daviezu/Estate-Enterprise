@@ -26,19 +26,23 @@
         @endif
 
         <div class="edit card mt-4 p-4" style="margin-bottom: 75px;">
-            <p class="fs-2">Gambar Profile</p>
-            <div class="mb-3 text-left d-flex gap-3" >
+            <p class="fs-2 fw-semibold">Gambar Profile</p>
+            <div class="mb-3 text-left d-flex gap-2" >
 
                 <!-- Profile Picture -->
-                <img src="{{$user->picture_path}}" alt="Avatar" class="rounded-circle mb-3"
-                    style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #44D7B5; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);">
+                <div class="d-flex" style="width:100px; height:100px;">
+                    <img src="{{$user->picture_path}}" alt="Avatar" class="rounded-circle mb-3 w-100 h-100"
+                        style="object-fit: cover; border: 3px solid #44D7B5; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);">
+                </div>
 
                 {{-- Button --}}
 
-                    <form action="{{ route('update.profile.picture') }}" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-2 pt-3">
+                <div class="d-flex ">
+
+                    <form action="{{ route('update.profile.picture') }}" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-2 pt-3 ms-5">
                         @csrf
                         @method('PUT')
-                        <input type="file" name="profilePicture"  required>
+                        <input type="file" name="profilePicture" class="w-100" required>
                         @error('profilePicture')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -47,6 +51,7 @@
                             Ganti Foto
                         </button>
                     </form>
+                </div>
             </div>
             {{-- Form Section --}}
             <form action="{{ route('update.profile.name') }}" method="POST">

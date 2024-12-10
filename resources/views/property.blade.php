@@ -15,8 +15,8 @@
                         <div class="rounded-sm" style="height:195px; width:100%">
                                 <img class="w-100 h-100 rounded" src="{{ asset('images/property/property1.png') }}" style="background-position:center; object-fit:cover;" alt="property1">
                         </div>
-                        <div class="d-flex flex-column p-3 gap-1">
-                            <div class="d-flex flex-column flex-grow-1">
+                        <div class="d-flex flex-column p-3 gap-1 h-100">
+                            <div class="d-flex flex-column flex-grow-1 text-truncate">
                                 
                                 <h5 class="card-title mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px;">
                                     {{$p->property_name}}
@@ -32,7 +32,7 @@
                                     {{ $p->address }}
                                 </p>
                                 <p class="card-text mb-3" style="font-family: Montserrat, sans-serif; font-size: 12px;">
-                                   LT 90-200 m², LB 80-150 m²
+                                   LT {{$p->land_size}} m², LB {{$p->building_size}} m²
                                 </p>
                                 <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
                                     Diperbarui {{$p->updated_at->diffForHumans()}}
