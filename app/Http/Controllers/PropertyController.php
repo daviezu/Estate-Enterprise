@@ -23,7 +23,9 @@ class PropertyController extends Controller
 
     public function propertyDetail($slug)
     {
-        $property = Property::where('slug', $slug)->firstOrFail();
+        $property = Property::with('PropertyToAgent')
+        ->where('slug', $slug)
+        ->firstOrFail();
         return view('detailproperty', compact("property"));
     }
 
