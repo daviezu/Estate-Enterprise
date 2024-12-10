@@ -34,45 +34,6 @@
     <div class="container-lg py-3">
 
 
-        {{--   herosection buat sambungin ke cssnya 
-        <div class="hero-section d-flex flex-column justify-content-between position-relative">
-            gambarbackground header
-            <div class="hero-background"></div>
-    
-            header
-            <div class="container pt-5 position-relative" style="z-index: 2;">
-                <div class="row">
-                    teksbagian header
-                    <div class="col-lg-6 offset-lg-6 text-white" style="padding-right: 50px;">
-                        <h1 class="display-4 fw-bold mb-0">Temukan Rumah Impian<br>Anda dengan <span
-                                class="text-green">Mudah.</span></h1>
-                        <p class="lead mt-3">Cari properti terbaik dengan EstateVerse.</p>
-                        <div class="d-flex justify-content-start mt-4 mb-5">
-                            <a href="{{ route('login.index') }}" class="btn btn-lg" 
-                               style="background-color: #44D7B5; border-color: #44D7B5; color: white;">
-                               About Us
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="container mb-4 position-relative" style="z-index: 2;">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="hero-search-container mx-auto">
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Cari alamat" aria-label="Search">
-                                <button class="btn" type="submit">
-                                    <img src="{{ asset('images/Search Icon.png') }}" alt="search">
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        {{-- estateverse 4x --}}
         <div class="container">
             <div class="row">
 
@@ -185,12 +146,7 @@
 
     </div>
 
-    {{-- images background --}}
 
-    {{-- <div class="images_testimony">
-            <img src={{asset('images/assets/house.png')}} class="testimony__image" alt="">
-            <img src={{asset('images/assets/laptop.png')}} class="testimony__image2" alt="">
-        </div> --}}
     </div>
 @endsection
 
@@ -230,16 +186,6 @@
         top: 0;
     }
 
-    /* .overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        position:relative;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-    } */
-
-
     .testimony {
         display: flex;
         gap: 100px;
@@ -266,14 +212,6 @@
         margin: 0;
         padding: 0;
     }
-
-    /* .hero-section {
-        position: relative;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        min-height: 476px;
-    } */
 
     .hero-background {
         position: absolute;
