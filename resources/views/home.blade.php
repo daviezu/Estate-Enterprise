@@ -34,49 +34,10 @@
     <div class="container-lg py-3">
 
 
-        {{--   herosection buat sambungin ke cssnya 
-        <div class="hero-section d-flex flex-column justify-content-between position-relative">
-            gambarbackground header
-            <div class="hero-background"></div>
-    
-            header
-            <div class="container pt-5 position-relative" style="z-index: 2;">
-                <div class="row">
-                    teksbagian header
-                    <div class="col-lg-6 offset-lg-6 text-white" style="padding-right: 50px;">
-                        <h1 class="display-4 fw-bold mb-0">Temukan Rumah Impian<br>Anda dengan <span
-                                class="text-green">Mudah.</span></h1>
-                        <p class="lead mt-3">Cari properti terbaik dengan EstateVerse.</p>
-                        <div class="d-flex justify-content-start mt-4 mb-5">
-                            <a href="{{ route('login.index') }}" class="btn btn-lg" 
-                               style="background-color: #44D7B5; border-color: #44D7B5; color: white;">
-                               About Us
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="container mb-4 position-relative" style="z-index: 2;">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="hero-search-container mx-auto">
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Cari alamat" aria-label="Search">
-                                <button class="btn" type="submit">
-                                    <img src="{{ asset('images/Search Icon.png') }}" alt="search">
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        {{-- estateverse 4x --}}
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-8 mt-5 estateverse__title">
+                <div class="col-lg-6 col-md-12 estateverse__title py-4 text-center">
                     <h1 class="text1">ESTATEVERSE</h1>
                     <h1 class="text2">ESTATEVERSE</h1>
                     <h1 class="text1">ESTATEVERSE</h1>
@@ -84,29 +45,53 @@
                 </div>
 
                 @if (!session('is_logged_in', false))
-                    <div class="col-lg-3 d-flex align-items-center" id="logincard">
-                        <div class="card shadow-lg p-4" style="border: none; border-radius: 12px;">
-                            <div class="row align-items-center">
-                                <div class="col-4 text-center">
-                                    <img src="{{ asset('images/Homecard.png') }}" alt="EstateVerse Logo" class="img-fluid"
-                                        width="80">
+                <div class="col-lg-6 col-md-12 h-100 my-auto ">
+                    <div class="d-flex shadow-lg rounded-4 h-100 gap-3 p-3 w-100">
+                        <div class="mb-0" style="width:210px; height:210px">
+                            <img src="{{ asset('images/Homecard.png') }}" alt="EstateVerse Logo" class=" w-100 h-100"
+                            >
+                        </div>
+                        <div class="d-flex flex-column my-auto py-5 w-100">
+                            <p class="fs-2 fw-semibold mb-0">Masuk dan Temukan </p>
+                            <p class="fs-4 fw-semibold" style="color:#44D7B5;">Rumah Impian <span class="text-black">Anda</span></p>
+                            <a href="{{ route('login.index') }}" class="btn btn-lg w-50 ms-auto mt-auto "
+                                        style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Login</a>
+                        </div>
+                    </div>
+                </div>
+             
                                 </div>
 
-                                <div class="col-8 text-left">
-                                    <p class="text__login">Masuk dan temukan <span class="highlighted">Rumah Impian</span>
-                                        Anda</p>
-                                    <a href="{{ route('login.index') }}" class="btn btn-lg"
-                                        style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @elseif (session('role', true))
+                <div class="col-lg-6 col-md-12 h-100 my-auto ">
+                    <div class="d-flex shadow-lg rounded-4 h-100 gap-3 p-3 w-100">
+                        <div class="mb-0" style="width:210px; height:210px">
+                            <img src="{{ asset('images/Homecard.png') }}" alt="EstateVerse Logo" class=" w-100 h-100"
+                            >
+                        </div>
+                        <div class="d-flex flex-column my-auto py-5 w-100">
+                            <p class="fs-3 fw-semibold mb-0">Gabung Menjadi </p>
+                            <p class="fs-2 fw-semibold" style="color:#44D7B5;">Agent Seller<span class="text-black"></span></p>
+                            <a href="{{ route('login.index') }}" class="btn btn-lg w-50 ms-auto mt-auto "
+                                        style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Klik disini</a>
+                        </div>
+                    </div>
+                </div>
+             
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @endif
-            </div>
-
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
 
-    <div class="container ">
+    <div class="container pt-3">
         <div class="mb-3">
             <h2 class="mb-1">Beberapa Pilihan</h2>
             <p class="mb-2">Real estate & Perumahan yang sedang dijual</p>
@@ -119,7 +104,7 @@
             @foreach ($properties as $property)
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="{{ asset('images/property/property10.png') }}" class="card-img-top" alt="{{ $property['title'] }}">
+                        <img src="{{json_decode($property->picture_path, true)[0]}}" class="card-img-top" alt="{{ $property['title'] }}">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{ $property->property_name}}</h5>
                             <p class="card-text">{{ $property->description}}</p>
@@ -142,13 +127,13 @@
         </a>
     </div>
 
-    <div class="margin__spacing"></div>
+    {{-- <div class="margin__spacing"></div>
     <div class="container mt-4">
         <div class="mb-5">
             <h1>Apa Kata Mereka Tentang <span><img src="{{ asset('images/EstateVerse Logo.png') }}" class="logo"
                         alt=""></span> ?</h1>
         </div>
-    </div>
+    </div> --}}
 
     {{-- <div class="testimony">
         <div class="testimony__card">
@@ -196,29 +181,22 @@
 
 
 <style>
-    @media (max-width: 992px) {
-        .estateverse__title h1 {
-            font-size: 90px;
-        }
-    }
 
-    @media (max-width: 768px) {
-        .estateverse__title h1 {
-            font-size: 80px;
-        }
+    .estateverse__title h1 {
+        font-size:90px;
     }
-
-    @media (max-width: 576px) {
+    @media (max-width: 1166px) {
         .estateverse__title h1 {
-            font-size: 70px;
+            font-size:70px;
         }
     }
 
     @media (max-width: 480px) {
         .estateverse__title h1 {
-            font-size: 50px;
+            font-size:55px;
         }
     }
+
 
     .hero-section {
         background-image: url('{{ asset('images/property/property3.png') }}');
