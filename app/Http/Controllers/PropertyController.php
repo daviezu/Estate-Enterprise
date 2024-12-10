@@ -15,8 +15,8 @@ class PropertyController extends Controller
     public function propertyList()
     {
         $properties = Property::with('PropertyToAgent')
-        ->simplePaginate(9)
-        ->withQueryString();
+            ->simplePaginate(9)
+            ->withQueryString();
 
 
         return view('property', compact('properties'));
@@ -25,8 +25,8 @@ class PropertyController extends Controller
     public function propertyDetail($slug)
     {
         $property = Property::with('PropertyToAgent')
-        ->where('slug', $slug)
-        ->firstOrFail();
+            ->where('slug', $slug)
+            ->firstOrFail();
         return view('detailproperty', compact("property"));
     }
 
@@ -47,9 +47,9 @@ class PropertyController extends Controller
         return redirect()->back()->with('error', 'You do not have permission to access this page.');
     }
 
-    public function getPropertyByAgent($user_id) : View
+    public function getPropertyByAgent($user_id): View
     {
-        $agent = AppUser::where("user_id", $user_id)    ->where("is_agent", true)->firstOrFail();
+        $agent = AppUser::where("user_id", $user_id)->where("is_agent", true)->firstOrFail();
 
         $properties = $agent->UserToProperty();
 
@@ -66,7 +66,7 @@ class PropertyController extends Controller
     {
         $validate = $request->validate([
             'property_name' => 'required|string|max:255',
-            'property_owner'=> 'required|string|max:255',
+            'property_owner' => 'required|string|max:255',
             'price' => 'required|numeric',
             'description' => 'required|string',
             'address' => 'required|string|max:255',
@@ -77,7 +77,8 @@ class PropertyController extends Controller
             'bedroom' => 'required|integer|min:0',
             'bathroom' => 'required|integer|min:0',
             'carport' => 'required|integer|min:0',
-            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'pictures' => 'required|array|min:6|max:6',
+            'pictures.*' => 'required|image|mimes:jpeg,png,jpg|max:5120',
         ]);
 
         // Find the property by ID
@@ -88,18 +89,42 @@ class PropertyController extends Controller
             return redirect()->back()->with('error', 'Property not found.');
         }
 
-        // Handle picture upload if a new picture is provided
+        $picturePaths = [];
+
+        // Check if the user has uploaded new pictures
+        if ($request->hasFile('pictures')) {
+            // Delete all old pictures (if any exist)
+            if (!empty($property->picture_paths)) {
+                foreach ($property->picture_paths as $oldPicture) {
+                    Cloudinary::destroy($oldPicture);
+                }
+            }
+
+            // Upload new pictures
+            foreach ($request->file('pictures') as $picture) {
+                $uploadedFileUrl = Cloudinary::upload($picture->getRealPath(), [
+                    'folder' => 'properties',
+                ])->getSecurePath();
+
+                $picturePaths[] = $uploadedFileUrl;
+            }
+
+            // Update the property picture paths
+            $validate['picture_paths'] = $picturePaths;
+        }
+
+        // Check if the user has uploaded a new main picture
         if ($request->hasFile('picture')) {
-            // Delete the old picture if it exists
+            // Delete the old main picture if it exists
             if ($property->picture_path && Storage::disk('public')->exists($property->picture_path)) {
                 Storage::disk('public')->delete($property->picture_path);
             }
 
-            // Store the new picture
+            // Upload the new main picture
             $picturePath = $request->file('picture')->store('images/properties', 'public');
             $validate['picture_path'] = $picturePath;
         } else {
-            // Retain the old picture path if no new picture is uploaded
+            // Retain the old main picture path if no new main picture is uploaded
             $validate['picture_path'] = $property->picture_path;
         }
 
@@ -154,7 +179,7 @@ class PropertyController extends Controller
     {
         $validate = $request->validate([
             'property_name' => 'required|string|max:255',
-            'property_owner'=> 'required|string|max:255',
+            'property_owner' => 'required|string|max:255',
             'price' => 'required|numeric',
             'description' => 'required|string',
             'address' => 'required|string|max:255',
@@ -166,21 +191,20 @@ class PropertyController extends Controller
             'bathroom' => 'required|integer|min:0',
             'carport' => 'required|integer|min:0',
             'pictures' => 'required|array|min:6|max:6',
-            'pictures.*' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'pictures.*' => 'required|image|mimes:jpeg,png,jpg|max:5120',
         ]);
-        
+
         $picturePaths = [];
 
         if ($request->hasFile('pictures')) {
             foreach ($request->file('pictures') as $picture) {
                 $uploadedFileUrl = Cloudinary::upload($picture->getRealPath(), [
-                    'folder' => 'properties', 
+                    'folder' => 'properties',
                 ])->getSecurePath();
 
                 $picturePaths[] = $uploadedFileUrl;
             }
         }
-
         $userId = session('user_id');
 
         // Create a new property
@@ -198,7 +222,7 @@ class PropertyController extends Controller
             'bedroom' => $validate['bedroom'],
             'bathroom' => $validate['bathroom'],
             'carport' => $validate['carport'],
-            'picture_path' => json_encode($picturePaths), 
+            'picture_path' => json_encode($picturePaths),
         ]);
 
         // Redirect to a success page or back
