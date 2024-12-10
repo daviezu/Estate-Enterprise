@@ -168,7 +168,7 @@ class PropertyController extends Controller
             'pictures' => 'required|array|min:6|max:6',
             'pictures.*' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-
+        
         $picturePaths = [];
 
         if ($request->hasFile('pictures')) {
