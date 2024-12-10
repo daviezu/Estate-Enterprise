@@ -29,7 +29,18 @@ class UserController extends Controller
 
     public function indexEditProfileName()
     {
-        return view('editprofile');
+
+        // retrieve user ID 
+        $userID = session('user_id');
+
+        // find user
+        $user = AppUser::find($userID);
+
+        if ($user) {
+            return view('editprofile', ['user' => $user]);
+        } else {
+            return redirect()->route('login.index')->with('error', 'User not found. Please log in');
+        }
     }
 
     public function indexEditPassword()

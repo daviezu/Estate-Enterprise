@@ -25,49 +25,42 @@
             </div>
         @endif
 
-        <div class="edit card mt-4" style="margin-bottom: 75px;">
-            <p style="margin-left: 30px">Gambar Profile</p>
-            <div class="mb-3 text-left" style="margin-left: 80px;">
+        <div class="edit card mt-4 p-4" style="margin-bottom: 75px;">
+            <p class="fs-2">Gambar Profile</p>
+            <div class="mb-3 text-left d-flex gap-3" >
 
                 <!-- Profile Picture -->
-                <img src="{{}}" alt="Avatar" class="rounded-circle mb-3"
-                    style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #44D7B5; margin-left: -50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);">
+                <img src="{{$user->picture_path}}" alt="Avatar" class="rounded-circle mb-3"
+                    style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #44D7B5; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);">
 
                 {{-- Button --}}
-                <form action="{{ route('delete.profile.picture') }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-primary-delete mt-2 mb-3"
-                        style="margin-left: 80px; position: absolute; top: 85px; background-color: #c6c6c6; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #ffffff; padding: 5px;">
-                        Hapus Foto
-                    </button>
-                </form>
-                <form action="{{ route('update.profile.picture') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                    <input type="file" name="profilePicture" style="margin-left: -48px;"  required>
-                    @error('profilePicture')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                    <button type="submit" class="btn btn-primary-change mt-2 mb-3"
-                        style="margin-left: -10px; position: absolute; top: 85px; font-weight: 500; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #FFFFFF; padding: 5px;">
-                        Ganti Foto
-                    </button>
-                </form>
+
+                    <form action="{{ route('update.profile.picture') }}" method="POST" enctype="multipart/form-data" class="d-flex flex-column gap-2 pt-3">
+                        @csrf
+                        @method('PUT')
+                        <input type="file" name="profilePicture"  required>
+                        @error('profilePicture')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <button type="submit" class="btn btn-primary-change mt-2 "
+                            style=" font-weight: 500; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 15px; width: 135px; height: 33px; border-radius: 10px; color: #FFFFFF; padding: 5px;">
+                            Ganti Foto
+                        </button>
+                    </form>
             </div>
             {{-- Form Section --}}
             <form action="{{ route('update.profile.name') }}" method="POST">
                 @csrf
                 @method('PUT')
-                <div class="form__section">
-                    <p class="section__title" style="margin-left: 30px">Nama Lengkap</p>
+                <div class="form__section d-flex gap-3">
+                    <p class="section__title mt-2 " >Nama Lengkap</p>
                     <input type="text" class="form-control"
-                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px; margin-left: 120px;"
-                        id="name" placeholder="Nama Lengkap" name="fullname" required>
+                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 70%; height: 40px; "
+                        id="name" placeholder="Nama Lengkap" name="fullname" value="{{$user->fullname}}" required>
                 </div>
 
                 <div class="form__section">
-                    <div class="form-check mb-3 mt-3 ms-4">
+                    <div class="form-check mb-3">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
                           Saya ingin mendaftar sebagai Agent
@@ -76,10 +69,10 @@
                 </div>
 
                 {{-- Button --}}
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-end me-0">
                     <a href="{{ route('profile.index') }}" class="btn btn-secondary me-4"
                         style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; background-color: #c9c9c9; border:none; ">Batal</a>
-                    <button type="submit" class="btn btn-primary-save me-5"
+                    <button type="submit" class="btn btn-primary-save "
                         style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; color: #ffffff; background-color: #44D7B5; border: 2px solid #44D7B5; border: none;">Save
                     </button>
             </form> 
