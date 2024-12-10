@@ -7,11 +7,21 @@ use Illuminate\Http\Request;
 
 class AgentController extends Controller
 {
-    public function agentList()
+    public function agentList(Request $request)
     {
-        $agents = AppUser::where('is_agent', true)->get();
-        return view('agentlist', compact('agents'));
+        $search = $request->input('search');
+
+       
+        $agents = AppUser::where('is_agent', true)
+            ->when($search, function ($query, $search) {
+                $query->where('fullname', 'like', '%' . $search . '%'); 
+            })
+            ->simplePaginate(8) 
+            ->withQueryString(); 
+
+        return view('agentlist', compact('agents', 'search'));
     }
+
 
     public function agentDetail($user_id) 
     {

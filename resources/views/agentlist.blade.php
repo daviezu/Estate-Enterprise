@@ -42,8 +42,19 @@
                           </div>
                       </div>
                   </div>
+                  {{-- Pagination --}}
+            
            
               @endforeach
+
+                  <div class="col-12 py-4">
+
+                    <div class="row pt-4 text-center">
+                      <div class="col">
+                          {{$agents->links()}}
+                      </div>
+                    </div>
+                  </div>
           </div>
       </div>
 
