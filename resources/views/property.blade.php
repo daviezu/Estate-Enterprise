@@ -13,7 +13,7 @@
                             <img src="{{$p->PropertyToAgent->picture_path}}" alt="" class="w-100 h-100 " style="object-fit: cover; border-radius:50%;">  
                         </a>
                         <div class="rounded-sm" style="height:195px; width:100%">
-                                <img class="w-100 h-100 rounded" src="{{ asset('images/property/property1.png') }}" style="background-position:center; object-fit:cover;" alt="property1">
+                                <img class="w-100 h-100 rounded" src="{{json_decode($p->picture_path, true)[0]}}" style="background-position:center; object-fit:cover;" alt="property1">
                         </div>
                         <div class="d-flex flex-column p-3 gap-1 h-100">
                             <div class="d-flex flex-column flex-grow-1 text-truncate">

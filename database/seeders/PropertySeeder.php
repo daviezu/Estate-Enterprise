@@ -199,7 +199,7 @@ class PropertySeeder extends Seeder
                 'price' => 6000000000,
                 'address' => 'Jl. Raya Puncak, Bogor',
                 'location_link' => 'https://maps.example.com/puncak',
-                'picture_path' => null,
+                'picture_path' => ["https:\/\/res.cloudinary.com\/dbrhqkgsm\/image\/upload\/v1733830385\/properties\/dr1jmq7eab5uujexozkm.jpg","https:\/\/res.cloudinary.com\/dbrhqkgsm\/image\/upload\/v1733830388\/properties\/tllifndfyxy6kjdxsxwz.jpg","https:\/\/res.cloudinary.com\/dbrhqkgsm\/image\/upload\/v1733830389\/properties\/elh8talnyhny5gjvoebd.jpg","https:\/\/res.cloudinary.com\/dbrhqkgsm\/image\/upload\/v1733830392\/properties\/xg7i25lqoxvkxtyvjhpg.jpg","https:\/\/res.cloudinary.com\/dbrhqkgsm\/image\/upload\/v1733830395\/properties\/cowhl1dpawpgxv0knosr.jpg","https:\/\/res.cloudinary.com\/dbrhqkgsm\/image\/upload\/v1733830397\/properties\/a4bs0huuuq283eaatznm.jpg"],
                 'description' => 'Villa mewah tepi sungai dengan view pegunungan.',
                 'building_size' => 250,
                 'land_size' => 500,
