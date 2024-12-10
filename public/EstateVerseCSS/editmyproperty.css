@@ -1,0 +1,71 @@
+.titlePage {
+  font-size: 25px;
+  font-weight: 600;
+  color: #44D7B5;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.description {
+  margin-left: 10%;
+}
+
+.property__photos {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  justify-content: center;
+  row-gap: 25px;
+}
+
+.property__photos img{
+  border-radius: 10px;
+  width: 250px;
+}
+
+.addPhotos {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  background-color: #E5E5E5;
+  height: 165px;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  color: white;
+  margin-left: 100px;
+}
+
+.addPhotos img{
+  margin-bottom: 10px;
+  width: 50px;
+}
+
+.form {
+  font-size: 13px; 
+  opacity: 0.8; 
+  border: 2px solid #43D2B1; 
+  border-radius: 12px; 
+  font-family: Montserrat, sans-serif; 
+  width: 420px; 
+  height: 40px; 
+  margin-left: 10%;
+}
+
+.form__section {
+  margin-top: 20px;
+}
+
+.save__button {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  float: right;
+  margin-right: 10%;
+  color: white;
+  background-color: #44D7B5; 
+  border: none; 
+  font-family: Montserrat, sans-serif; 
+  font-size: 16px; 
+  margin-bottom: 100px;
+}

@@ -1,81 +1,90 @@
-<nav class="navbar navbar-expand pt-3" style="background-color: #ffffff; z-index: 1000;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" style="z-index: 1000;">
     <div class="container">
-        <a class="navbar-brand nav-link active" aria-current="page" href="{{ '' }}">
-            <img src="{{ asset('images/EstateVerse Logo.png') }}" alt="Logo" width='200px'>
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <img src="{{ asset('images/EstateVerse Logo.png') }}" class="logo mt-2" alt="Logo" width="200px">
         </a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Properti Dijual</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Properti Disewa</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Team Kami</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Hubungi Kami</a>
-            </li>
-            <div class="search-container">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit">
-                        <img src="{{ asset('images/Search Icon.png') }}" alt="search">
-                    </button>
-                </form>
-            </div>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sign In</a>
-            </li>
-        </ul>
+        <!-- Button Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border:none;">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+
+        <!-- Nav Items -->
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto"> <!-- ms-auto agar menu ke kanan -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('property.list') }}">Properti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('about.index') }}">Team Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('agent.list') }}">Agent Seller</a>
+                </li>
+
+                @if (session('is_logged_in', false))
+                    @if (session('role', true))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('agent.property') }}">Properti Saya</a>
+                        </li>
+                    @endif
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('profile.index') }}">Profile</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn text-light" style="background-color:#44D7B5">Sign Out</button>
+                        </form>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login.index') }}">Sign In</a>
+                    </li>
+                @endif
+            </ul>
+        </div>
     </div>
 </nav>
 
 <style>
-    
-    
-    .navbar{
-        border-bottom: solid;
+    @media (max-width: 992px) {
+      
+
+
+    }
+
+    @media (max-width: 768px) {
+        .logo {
+            width: 150px;
+        }
+    }
+
+    @media (max-width: 576px) {
+       
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .navbar {
+        width: 100%;
         border-width: 1px;
         padding-bottom: 16px;
-    }
-    
-    .search-container{
-        width: 300px;
-        height: 40px;
-        border: solid;
-        border-width: 1px;
-        border-color: rgb(168, 168, 168);
-        border-radius: 10px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-
-    .form-control.me-2{
-        color: rgb(0, 0, 0);
-        border: none;
-        font-size: 15px;
-        margin-left: 10px;
-    }
-    
-    .form-control:focus{
-        outline: none;
-        box-shadow: none;
+        margin-bottom: 0px;
     }
 
     .nav-link {
-        color: #44D7B5
+        color: #44D7B5;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
     }
 
     nav {
         font-family: "Inter", sans-serif;
-    }
-
-    .nav-link {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 15px;
     }
 </style>
