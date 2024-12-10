@@ -71,11 +71,14 @@
                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px; margin-left: 102px;"
                         id="name" placeholder="Nama Belakang" name="lastName" required>
                 </div>
+
                 <div class="form__section">
-                    <p class="section__title" style="margin-left: 30px">Username</p>
-                    <input type="text" class="form-control"
-                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px; margin-left: 140px;"
-                        id="username" placeholder="Username" name="username">
+                    <div class="form-check mb-3 mt-3 ms-4">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Saya ingin mendaftar sebagai Agent
+                        </label>
+                      </div>
                 </div>
 
                 {{-- Button --}}
@@ -93,6 +96,12 @@
 @endsection
 
 <style>
+
+    .form-check-input:checked {
+            background-color: #44D7B5 !important; 
+            border-color: #44D7B5; 
+        }
+
     .form__section {
         display: flex;
         margin-bottom: 10px;

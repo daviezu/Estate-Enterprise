@@ -25,69 +25,24 @@
 
         <div class="container mt-2">
           <div class="row ">
-              {{-- @foreach ($properties as $property) --}}
+              @foreach ($agents as $agent)
                   <div class="col-lg-3 col-md-4 col-sm-6 mb-4 " style="height:100%;">
                       <div class="h-100 shadow-sm d-flex flex-column py-2 px-1 w-100 ">
                         <div class="image-container mx-auto mb-auto  w-100 h-100">
                           <img src="{{ asset('images/agents/agent13.png')}}" class="w-100" >
                         </div>
                         <div class="d-flex flex-column  w-100">
-                              <p class="fs-6 fw-bold mb-0">Nicholas Nelson</p>
-                              <p class="fs-6 w-100 mb-1 text-secondary">+6281272940557</p>
-                              <div class="pb-2 w-100">
-                                  <a href="#" class="btn btn-sm"
-                                      style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti <span class="bg-warning px-1 rounded  text-light">15</span></a>
+                              <p class="fs-6 fw-bold mb-0">{{$agent->first_name}}</p>
+                              <p class="fs-6 w-100 mb-1 text-secondary">{{$agent->phone_number}}</p>
+                              <div class="pb-2 w-100 py-2">
+                                  <a href="{{route("agent.detail", $agent->user_id)}}" class="btn btn-lg"
+                                      style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti </a>
                               </div>
                           </div>
                       </div>
                   </div>
-                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 " style="height:100%;">
-                      <div class="h-100 shadow-sm d-flex flex-column py-2 px-1 w-100 ">
-                        <div class="image-container mx-auto mb-auto  w-100 h-100">
-                          <img src="{{ asset('images/agents/agent13.png')}}" class="w-100" >
-                        </div>
-                        <div class="d-flex flex-column  w-100">
-                              <p class="fs-6 fw-bold mb-0">Nicholas Nelson</p>
-                              <p class="fs-6 w-100 mb-1 text-secondary">+6281272940557</p>
-                              <div class="pb-2 w-100">
-                                  <a href="#" class="btn btn-sm"
-                                      style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti <span class="bg-warning px-1 rounded  text-light fw-bold">15</span></a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 " style="height:100%;">
-                      <div class="h-100 shadow-sm d-flex flex-column py-2 px-1 w-100 ">
-                        <div class="image-container mx-auto mb-auto  w-100 h-100">
-                          <img src="{{ asset('images/agents/agent13.png')}}" class="w-100" >
-                        </div>
-                        <div class="d-flex flex-column  w-100">
-                              <p class="fs-6 fw-bold mb-0">Nicholas Nelson</p>
-                              <p class="fs-6 w-100 mb-1 text-secondary">+6281272940557</p>
-                              <div class="pb-2 w-100">
-                                  <a href="#" class="btn btn-sm"
-                                      style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti <span class="bg-warning px-1 rounded  text-light">15</span></a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4 " style="height:100%;">
-                      <div class="h-100 shadow-sm d-flex flex-column py-2 px-1 w-100 ">
-                        <div class="image-container mx-auto mb-auto  w-100 h-100">
-                          <img src="{{ asset('images/agents/agent13.png')}}" class="w-100" >
-                        </div>
-                        <div class="d-flex flex-column  w-100">
-                              <p class="fs-6 fw-bold mb-0">Nicholas Nelson</p>
-                              <p class="fs-6 w-100 mb-1 text-secondary">+6281272940557</p>
-                              <div class="pb-2 w-100">
-                                  <a href="#" class="btn btn-sm"
-                                      style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti <span class="bg-warning px-1 rounded  text-light">15</span></a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-              {{-- @endforeach --}}
+           
+              @endforeach
           </div>
       </div>
 

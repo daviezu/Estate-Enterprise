@@ -30,8 +30,10 @@
                     <p class="mt-2 text" style="font-size: 16px; font-family: Montserrat, sans-serif;">Gambar Profile</p>
                     {{-- <img src="{{ asset('images/profiles/rose.png') }}" alt="Profile Image" clgitass="profile-image"
                         style="margin-bottom: 30px;"> --}}
-                    <img src="{{ asset($user->picture_path) }}" alt="Profile Image" clgitass="profile-image"
-                        style="margin-bottom: 30px;">
+                    <div class="profile__picture">
+                        <img src="{{ asset($user->picture_path) }}" alt="Profile Image" clgitass="profile-image"
+                            style="margin-bottom: 30px;">
+                    </div>
                 </div>
 
                 <table class="table" style="margin-bottom: 50px;">
@@ -53,6 +55,7 @@
                             {{ $user->last_name }}</td>
                     </tr>
 
+
                     <tr style="border-bottom: 2px solid #dee2e6;">
                         <th
                             style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px; padding-top: 21px;">
@@ -62,8 +65,12 @@
                             {{ $user->username }}</td>
                     </tr>
 
+                    
+
                 </table>
 
+
+                
 
                 <div class="button">
                     <a href="{{ route('profile.edit.name.index') }}" class="btn btn-primary"
@@ -122,6 +129,14 @@
 
 
     <style>
+
+       
+        .profile__picture img {
+            border-radius: 50px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
 
         .alert-danger {
             background-color: rgb(192, 26, 26) !important; 

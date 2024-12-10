@@ -66,9 +66,8 @@
     </div>
     </div>
     </div>
-    <div class="margin__spacing"></div>
 
-    <div class="container mt-4">
+    <div class="container ">
         <div class="mb-3">
             <h2 class="mb-1">Beberapa Pilihan</h2>
             <p class="mb-2">Real estate & Perumahan yang sedang dijual</p>
@@ -81,12 +80,12 @@
             @foreach ($properties as $property)
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="{{ asset($property['image']) }}" class="card-img-top" alt="{{ $property['title'] }}">
+                        <img src="{{ asset('images/property/property10.png') }}" class="card-img-top" alt="{{ $property['title'] }}">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">{{ $property['title'] }}</h5>
-                            <p class="card-text">{{ $property['description'] }}</p>
+                            <h5 class="card-title">{{ $property->property_name}}</h5>
+                            <p class="card-text">{{ $property->description}}</p>
                             <div class="mt-auto text-end">
-                                <a href="#" class="btn btn-lg"
+                                <a href="{{ route('property.detail', $property->slug) }}" class="btn btn-lg"
                                     style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Detail</a>
                             </div>
                         </div>
@@ -112,7 +111,7 @@
         </div>
     </div>
 
-    <div class="testimony">
+    {{-- <div class="testimony">
         <div class="testimony__card">
             <h5>Sarah - Pembeli Rumah</h5>
             <p>"EstateVerse mempermudah saya dalam mencari rumah impian. Platform ini intuitif dan saya bisa melihat banyak
@@ -144,7 +143,7 @@
             </p>
         </div>
 
-    </div>
+    </div> --}}
 
 
     </div>

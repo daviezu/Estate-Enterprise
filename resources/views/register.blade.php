@@ -2,112 +2,138 @@
 @section('content')
     <div class="register__content">
         {{-- displaying error  --}}
-    @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show position-absolute mx-auto p-3" role="alert" style="width: 80%;  border-radius: 10px; top:90; left:10%;">
-        <strong >{{ session('success') }}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
-    </div>
-    @endif
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show position-absolute mx-auto p-3" role="alert"
+                style="width: 80%;  border-radius: 10px; top:90; left:10%;">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
-    @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show position-absolute mx-auto p-3" role="alert" style="width: 80%;  border-radius: 10px; top:90; left:10%;;">
-            <strong >{{ session('error') }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
-        </div>
-    @endif
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show position-absolute mx-auto p-3" role="alert"
+                style="width: 80%;  border-radius: 10px; top:90; left:10%;;">
+                <strong>{{ session('error') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
-{{-- Assset  --}}
-<div class="triangle-asset" style="height: 0px;">
-    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-        style="width: 15%; position: relative; left: 300px; bottom: 200px; z-index: 1;">
-    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-        style="width: 15%; position: relative; right: 630px; top: 200px; z-index: 1;">
-    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-        style="width: 15%; position: relative; left: -15px; top: 100px; z-index: 1;">
-    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-        style="width: 10%; position: relative; left: -300px; top: 550px; z-index: 1;">
-    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-        style="width: 15%; position: relative; left: 350px; top: 100px; z-index: 1;">
-    <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
-        style="width: 12%; position: relative; right: -400px; top: 450px; z-index: 1;">
+        {{-- Assset  --}}
+        <div class="triangle-asset" style="height: 0px;">
+            <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+                style="width: 15%; position: relative; left: 300px; bottom: 200px; z-index: 1;">
+            <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+                style="width: 15%; position: relative; right: 630px; top: 200px; z-index: 1;">
+            <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+                style="width: 15%; position: relative; left: -15px; top: 100px; z-index: 1;">
+            <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+                style="width: 10%; position: relative; left: -300px; top: 550px; z-index: 1;">
+            <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+                style="width: 15%; position: relative; left: 350px; top: 100px; z-index: 1;">
+            <img src="{{ asset('images/Triangle.png') }}" alt="triangleasset"
+                style="width: 12%; position: relative; right: -400px; top: 450px; z-index: 1;">
 
-</div>
-
-<!-- Card Register -->
-<div class="h-100 py-2 px-0 card-register position-relative z-2 mt-5" style="margin-bottom: 100px; margin-left:10%">
-    <div class="card shadow px-0 py-5 d-flex flex-column justify-content-center align-items-center w-100 mt-5"
-    style=" border-radius: 20px; font-family: Montserrat, sans-serif; border: none;">
-        <h3 class="text-center mb-4"
-            style="height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 30px; color: #43D3B2; font-weight: bold;">
-            Sign Up</h3>
-        <form action="{{ route('register.post') }}" method="POST" class="w-100 d-flex flex-column align-items-center">
-            @csrf
-            <div class="w-100 px-5">
-                <input name="firstName" type="text" class="form-control py-2"
-                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                    placeholder="Nama Depan" required>
-            </div>
-            <div class="w-100 px-5">
-                <input name="lastName" type="text" class="form-control py-2"
-                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                    placeholder="Nama Belakang" required>
-            </div>
-            <div class="w-100 px-5">
-                <input name="email" type="email" class="form-control py-2"
-                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                    placeholder="Email" required>
-            </div>
-            <div class="w-100 px-5">
-                <input name="phoneNumber" type="number" class="form-control py-2"
-                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                    placeholder="Nomor telepon" required>
-            </div>
-            <div class="w-100 px-5">
-                <input name="password" type="password" class="form-control py-2"
-                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                    placeholder="Kata sandi" required>
-            </div>
-            <div class="w-100 px-5">
-                <input name="confirmPassword" type="password" class="form-control py-2"
-                    style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                    placeholder="Konfirmasi Kata sandi" required>
-            </div>
-
-            {{-- Register Button --}}
-            <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
-                <button type="submit" class="btn btn-primary-register"
-                    style="width: 106px; height: 32px; background-color: #44D7B5; color: #FFFFFF; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Register</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-    {{-- Segitiga --}}
-    <div class="segitigacontainer">
-        <div>
-            <img src="{{ asset('images/SegitigaBackground.png') }}" alt="Background" class="segitiga">
         </div>
 
-        {{-- isi Content --}}
-        <div class="content-section">
-            <h2 class="text-center mb-4"
-                style="margin-top: -45px; margin-bottom: 100px; color: #43D3B2; font-weight: bold; font-size: 25px">Sudah
-                punya akun?</h2>
-            <p>Masuk untuk mengakses akun Anda dan nikmati fitur-fitur terbaik kami.</p>
+        <!-- Card Register -->
+        <div class="h-100 py-2 px-0 card-register position-relative z-2 mt-5" style="margin-bottom: 100px; margin-left:10%">
+            <div class="card shadow px-0 py-5 d-flex flex-column justify-content-center align-items-center w-100 mt-5"
+                style=" border-radius: 20px; font-family: Montserrat, sans-serif; border: none;">
+                <h3 class="text-center mb-4"
+                    style="height: 24px; margin-top: 30px; margin-bottom: 100px; font-size: 30px; color: #43D3B2; font-weight: bold;">
+                    Sign Up</h3>
+                <form action="{{ route('register.post') }}" method="POST"
+                    class="w-100 d-flex flex-column align-items-center">
+                    @csrf
+                    <div class="w-100 px-5">
+                        <input name="firstName" type="text" class="form-control py-2"
+                            style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                            placeholder="Nama Depan" required>
+                    </div>
+                    @error('firstName')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
 
-            <div class="d-flex justify-content-end" style="width: 283px; margin-top: 50px;">
-                <a href="{{ route('login.index') }}">
+                    <div class="w-100 px-5">
+                        <input name="lastName" type="text" class="form-control py-2"
+                            style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                            placeholder="Nama Belakang" required>
+                    </div>
+                    @error('lastName')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
 
-                    <button type="submit" class="btn btn-primary-login"
-                        style="width: 106px; height: 32px; background-color: black; color: #FFFFFF;  border-color:#44D7B5; border-radius: 5px; font-size: 12px; font-weight: bold;">Login</button>
-                </a>
+                    <div class="w-100 px-5">
+                        <input name="email" type="email" class="form-control py-2"
+                            style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                            placeholder="Email" required>
+                    </div>
+                    @error('email')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    <div class="w-100 px-5">
+                        <input name="phoneNumber" type="number" class="form-control py-2"
+                            style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                            placeholder="Nomor telepon" required>
+                    </div>
+
+                    @error('phoneNumber')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    <div class="w-100 px-5">
+                        <input name="password" type="password" class="form-control py-2"
+                            style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                            placeholder="Kata sandi" required>
+                    </div>
+                    @error('password')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    <div class="w-100 px-5">
+                        <input name="confirmPassword" type="password" class="form-control py-2"
+                            style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
+                            placeholder="Konfirmasi Kata sandi" required>
+                    </div>
+                    @error('confirmPassword')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    {{-- Register Button --}}
+                    <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
+                        <button type="submit" class="btn btn-primary-register"
+                            style="width: 106px; height: 32px; background-color: #44D7B5; color: #FFFFFF; border: none; border-radius: 5px; font-size: 12px; font-weight: bold;">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {{-- Segitiga --}}
+        <div class="segitigacontainer">
+            <div>
+                <img src="{{ asset('images/SegitigaBackground.png') }}" alt="Background" class="segitiga">
             </div>
 
-        </div>
-</div>
-    </div>
-    
+            {{-- isi Content --}}
+            <div class="content-section">
+                <h2 class="text-center mb-4"
+                    style="margin-top: -45px; margin-bottom: 100px; color: #43D3B2; font-weight: bold; font-size: 25px">
+                    Sudah
+                    punya akun?</h2>
+                <p>Masuk untuk mengakses akun Anda dan nikmati fitur-fitur terbaik kami.</p>
 
+                <div class="d-flex justify-content-end" style="width: 283px; margin-top: 50px;">
+                    <a href="{{ route('login.index') }}">
+
+                        <button type="submit" class="btn btn-primary-login"
+                            style="width: 106px; height: 32px; background-color: black; color: #FFFFFF;  border-color:#44D7B5; border-radius: 5px; font-size: 12px; font-weight: bold;">Login</button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
 @endsection
 
 
@@ -115,23 +141,22 @@
 {{-- Additional CSS --}}
 
 <style>
-
     .card-register {
-        width:450px;
-        height:380px;
-        margin-left:14%;
+        width: 450px;
+        height: 380px;
+        margin-left: 14%;
 
     }
 
     .card-register .d-flex .d-flex a.register-small {
-        display:none;
+        display: none;
         font-size: 14px;
     }
 
     input.form-control {
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
     }
-    
+
     .btn-primary-register {
         transition-duration: 0.4s !important;
     }
@@ -179,44 +204,47 @@
 
     @media (max-width: 992px) {
         .segitiga {
-            max-width:500px;
+            max-width: 500px;
         }
     }
+
     @media (max-width: 768px) {
         .segitiga {
-           display:none;
+            display: none;
         }
+
         div.card-register {
-            width:450px;
+            width: 450px;
             margin: 0 auto;
         }
 
         .content-section {
-            display:none;
+            display: none;
         }
 
         .card-register .d-flex .d-flex a.register-small {
             display: block;
         }
-        
+
     }
 
     @media (max-width: 480px) {
         div.card-register {
-            width:400px;
+
+            width:360px;
             margin: 0 auto;
         }
 
         .card-register .d-flex .d-flex a.register-small {
-            font-size:12px;
+            font-size: 12px;
         }
 
-      
+
     }
 
     .alert-success {
         background-color: #3e9f89 !important;
-        color: #FFFFFF !important;          
+        color: #FFFFFF !important;
         border: 1px solid #c3e6cb !important;
         font-family: Montserrat, sans-serif !important;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
@@ -225,7 +253,7 @@
     }
 
     .alert-danger {
-        background-color: rgb(192, 26, 26) !important; 
+        background-color: rgb(192, 26, 26) !important;
         color: #FFFFFF !important;
         border: 1px solid #c3e6cb !important;
         border-radius: 10px !important;
@@ -252,8 +280,4 @@
     .btn-primary-register:hover {
         background-color: #44D7B5 !important;
     }
-
-
-
-    
 </style>

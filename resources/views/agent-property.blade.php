@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('EstateVerseCSS/my-property.css') }}">
-</head>
-
-
-<body>
     @extends('layout.master')
     @section('content')
-        <div class="container mt-4">
+        <div class="container mt-4 py-5">
             {{-- displaying error  --}}
             @if (session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -27,66 +16,75 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 50px;">
-                <h2 class="tittlePage">Properti Saya</h2>
-                <a href="{{ route('agent.property.create.index') }}" class="btn btn-success-add"
-                    style="font-family: 'Montserrat', sans-serif; background-color: #44D7B5; color: #FFFFFF; font-size: 16px; font-weight: 600; border-radius: 5px;">Tambah</a>
+            <div class="d-flex gap-2 ">
+                <h2 class="tittlePage my-auto">Properti Saya</h2>
+                <a href="{{ route('agent.property.create.index') }}" class="btn btn-lg mt-2"
+                    style="font-family: 'Montserrat', sans-serif; color: #44D7B5; font-weight: 600; border-radius: 5px;"><i class="bi bi-plus-circle-dotted fs-2 mt-2"></i></a>
             </div>
 
-            <div class="card table-responsive mt-3">
+            <div class="row py-2">
+                @foreach ($properties as $p)
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card shadow-sm h-100" style="border-radius: 20px; border: none;">
+                          
+                            <div class="rounded-sm" style="height:195px; width:100%">
+                                    <img class="w-100 h-100 rounded" src="{{ asset('images/property/property1.png') }}" style="background-position:center; object-fit:cover;" alt="property1">
+                            </div>
+                            <div class="d-flex flex-column p-3 gap-1">
+                                <div class="d-flex flex-column flex-grow-1 ">
+                                    
+                                    <h5 class="card-title mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px;">
+                                        {{$p->property_name}}
+                                    </h5>
+                                    <p class="text-secondary mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 16px;">
+                                        {{$p->property_owner}}
+                                    </p>
+                                    <p class="card-price mb-1" style="font-weight: bold; font-family: Montserrat, sans-serif; ">
+                                        {{ 'Rp ' . number_format($p->price, 0, ',', '.') . ',00' }}
+                                    </p>
+                                    
+                                    <p class="card-text mb-1" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
+                                        {{ $p->address }}
+                                    </p>
+                                    <p class="card-text mb-3" style="font-family: Montserrat, sans-serif; font-size: 12px;">
+                                       LT 90-200 m², LB 80-150 m²
+                                    </p>
+                                    <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
+                                        Diperbarui {{$p->updated_at->diffForHumans()}}
+                                    </p>
+                                </div>
+                                <div class="d-flex mt-auto ms-auto gap-2 ">
+                                    <a href="{{ route('property.detail', $p->slug) }}" class="btn  text-light" style="background-color:#44D7B5">
+                                        <i class="bi bi-eye-fill"></i>
+                                    </a>
+                                    <a href="{{ route('agent.property.edit.index', $p->property_id) }}" class="btn  text-light btn-warning" >
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
+                                    <form action="{{ route('agent.property.delete', $p->slug) }}" method="POST"
+                                        onsubmit="return confirmDelete(event)">
 
-                <table class="table table-borderless">
-                    <thead class="thead-light">
-                        <tr>
-                            <th class="txt-gambar">Gambar</th>
-                            <th class="txt-judul">Judul</th>
-                            <th class="txt-deskripsi">Deskripsi</th>
-                            <th class="txt-lokasi">Lokasi</th>
-                            <th class="txt-action">Action</th>
-                        </tr>
-                    </thead>
-
-                    {{-- Table Pembungkus --}}
-                    <tbody>
-
-                        {{-- Table Row from backend --}}
-                        @foreach ($properties as $p)
-                            <tr class="row-1">
-                                <td>
-                                    <img src="route{{ $p->picture_path }}" alt="Property Image" class="img-fluid-property1">
-                                    {{-- <img src="{{ asset('images/property/property1.png') }}" alt="Property Image"
-                                        class="img-fluid-property1"> --}}
-                                </td>
-                                <td class="txt-judulrow1">{{ $p->property_name }}</td>
-                                <td class="txt-deskripsirow1">{{ $p->description }}</td>
-                                <td class="txt-lokasirow1">{{ $p->address }}</td>
-                                <td>
-                                    <a href="{{ route('property.detail'), $p->property_id }}" class="btn btn-primary btn-sm"
-                                        style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #44A8D7; border: none;">Lihat</a>
-                                    <a href="{{ route('agent.property.edit.index') }}" class="btn btn-warning btn-sm"
-                                        style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #D7CB44; border: none; ">Edit</a>
-                                    <form action="{{ route('agent.property.delete', $p->property_id) }}" method="POST"
-                                        class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm"
-                                            style="font-family: 'Montserrat', sans-serif; color: #ffffff; background-color: #D74446; border: none;">Hapus</button>
+                                        <button class="btn  text-light btn-danger" >
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
                                     </form>
-                                </td>
-                            </tr>
-
-                            {{-- Spacing between row --}}
-                            <tr class="spacer-row">
-                                <td colspan="5"></td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
+
+            
         </div>
+
+    <script>
+            function confirmDelete(event) {
+                // Tampilkan konfirmasi ke pengguna
+                return confirm('Apa kamu yakin akan menghapus properti ini?');
+            }
+    </script>
     @endsection
 
 
-</body>
-
-</html>

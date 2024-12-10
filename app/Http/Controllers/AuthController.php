@@ -19,7 +19,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validate = $request->validate([
-            'email' => 'required|string',
+            'email' => 'required|email',
             'password' => 'required|string'
         ]);
 
@@ -63,17 +63,17 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validate = $request->validate([
-            'firstName' => 'required|string',
-            'lastName' => 'required|string',
-            'email' => 'required|string',
-            'password' => 'required|string',
-            'confirmPassword' => 'required|string',
-            'phoneNumber' => 'required|string'
+            'firstName' => 'required|string|max:50',
+            'lastName' => 'required|string|max:50',
+            'email' => 'required|email',
+            'password' => 'required|string|min:6',
+            'confirmPassword' => 'required|string|same:password',
+            'phoneNumber' => 'required|string|max:20'
         ]);
 
         // check password
         if ($request->password != $request->confirmPassword) {
-            return redirect()->back()->withErrors(['Password do not match with confirm password'])->withInput();
+            return redirect()->back()->with(['error', 'Password do not match with confirm password'])->withInput();
         }
 
         // check IF email EXIST
@@ -81,7 +81,7 @@ class AuthController extends Controller
 
         // email exist
         if ($email) {
-            return redirect()->back()->withErrors(['Email existed, please use other email'])->withInput();
+            return redirect()->back()->withErrors(['email' => 'Email existed, please use other email'])->withInput();
         }
 
         // email doesn't exist, continue with login
@@ -100,7 +100,7 @@ class AuthController extends Controller
         ]);
 
         if ($user) {
-
+            session(['user_id' => $user->user_id, 'is_logged_in' => true, 'role' => $user->is_agent]);
             return redirect()->route('home')->with('success', 'Registration Success');
         }
     }
