@@ -63,8 +63,8 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validate = $request->validate([
-            'firstName' => 'required|string|max:50',
-            'lastName' => 'required|string|max:50',
+
+            'fullname' => 'required|string|max:50',
             'email' => 'required|email',
             'password' => 'required|string|min:6',
             'confirmPassword' => 'required|string|same:password',
@@ -92,8 +92,8 @@ class AuthController extends Controller
 
         $user = AppUser::create([
             // 'name' => $validate['firstName'] . ' ' . $validate['lastName'],
-            'first_name' => $validate['firstName'],
-            'last_name' => $validate['lastName'],
+        
+            'fullname' => $validate['fullname'],
             'email' => $validate['email'],
             'password' => $credentials['password'],
             'phone_number' => $validate['phoneNumber']

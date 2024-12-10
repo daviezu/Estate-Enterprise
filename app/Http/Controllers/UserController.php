@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use Cloudinary;
 
 class UserController extends Controller
 {
@@ -29,20 +30,40 @@ class UserController extends Controller
 
     public function indexEditProfileName()
     {
-        return view('editprofile');
+
+        // retrieve user ID 
+        $userID = session('user_id');
+
+        // find user
+        $user = AppUser::find($userID);
+
+        if ($user) {
+            return view('editprofile', ['user' => $user]);
+        } else {
+            return redirect()->route('login.index')->with('error', 'User not found. Please log in');
+        }
     }
 
     public function indexEditPassword()
     {
-        return view('editpassword');
+        
+        // retrieve user ID 
+        $userID = session('user_id');
+
+        // find user
+        $user = AppUser::find($userID);
+
+        if ($user) {
+            return view('editpassword', ['user' => $user]);
+        } else {
+            return redirect()->route('login.index')->with('error', 'User not found. Please log in');
+        }
     }
 
     public function updateProfileName(Request $request)
     {
         $validate = $request->validate([
-            'firstName' => 'required|string',
-            'lastName' => 'required|string',
-            'username' => 'nullable|string'
+            'fullname' => 'required|string|max:50',
         ]);
         
         // $mahasiswa->alamat = $validateData['alamat'];
@@ -54,12 +75,11 @@ class UserController extends Controller
         $user = AppUser::find($userID);
         if ($user) {
             $dataToUpdate = [
-                'first_name' => $validate['firstName'],
-                'last_name' => $validate['lastName'],
+                'fullname' => $validate['fullname'],
             ];
 
-            if (!empty($validate['username'])) {
-                $dataToUpdate['username'] = $validate['username'];
+            if (!empty($validate['fullname'])) {
+                $dataToUpdate['fullname'] = $validate['fullname'];
             }
 
             $user->update($dataToUpdate);
@@ -109,43 +129,35 @@ class UserController extends Controller
 
         $userID = session('user_id');
 
-        // find user
         $user = AppUser::find($userID);
         if ($user) {
-
-            if (!file_exists(public_path('images/profiles'))) {
-                mkdir(public_path('images/profiles'), 0755, true);
-            }
-
             if ($request->hasFile('profilePicture')) {
-                // Storage Path
-                $directory = public_path('images/profiles');
+                // Upload gambar ke Cloudinary
+                try {
+                    $uploadedFileUrl = Cloudinary::upload($request->file('profilePicture')->getRealPath(), [
+                        'folder' => 'profiles', 
+                        'public_id' => 'user_' . $userID, 
+                        'overwrite' => true, 
+                    ])->getSecurePath();
 
-                // Generate a unique file name
-                $filename = Str::random(20) . '.' . $request->file('profilePicture')->getClientOriginalExtension();
+                    // Hapus gambar lama di Cloudinary  
+                    // Cloudinary::destroy('profiles/' . $user->old_picture_public_id);
 
-                $request->file('profilePicture')->move($directory, $filename);
+                    $user->picture_path = $uploadedFileUrl;
 
-                // $image = Image::make($request->file('profilePicture'))->resize(900, 600)->save($directory . '/' . $filename);
-
-                // delete the old picture if exists
-                if ($user->picture_path && file_exists(public_path($user->picture_path))) {
-                    unlink(public_path($user->picture_path));
-                }
-
-                $path = 'images/profiles/' . $filename;
-                $user->picture_path = $path;
-                // $user->picture_path ="TEST URL PICTURE";
-                $user->save();
-
-                if ($user->save()) {
-                    return redirect()->route('profile.index')->with('success', 'Profile picture updated successfully.');
-                } else {
-                    return redirect()->back()->with(['error' => 'Failed to update profile picture in the database.']);
+                    if ($user->save()) {
+                        return redirect()->route('profile.index')->with('success', 'Profile picture updated successfully.');
+                    } else {
+                        return redirect()->back()->with(['error' => 'Failed to update profile picture in the database.']);
+                    }
+                } catch (\Exception $e) {
+                    return redirect()->back()->with(['error' => 'Failed to upload image to Cloudinary: ' . $e->getMessage()]);
                 }
             }
+
             return redirect()->back()->with(['error' => 'No file uploaded.']);
         }
+
         return redirect()->back()->with(['error' => 'User not exist.']);
     }
 

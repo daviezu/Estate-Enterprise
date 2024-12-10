@@ -1,67 +1,56 @@
 @extends('layout.master')
 @section('content')
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>EstateVerse</title>
-    </head>
-
-    <body>
-        <div class="edit__content">
-            <div class="infoHeader">
-                <h4 class="fw-bold text-center mt-4"
+ 
+    <div class="container mt-5 pt-5">
+            <div class="d-flex">
+                <h4 class="fw-bold text-center  "
                     style="color: #44D7B5; font-size: 24px; font-family: Montserrat, sans-serif; margin-bottom: 40px;">
                     Privasi dan Keamanan</h4>
                 <img src="{{ asset('images/low-vision-regular-240 1.png') }}" class="icon" alt="Low Vision Icon">
             </div>
 
             <div class="container">
-                <div class="edit card mt-4" style="margin-bottom: 75px;">
-                    <form action="#" method="POST">
-                        <div class="mb-3 text-left" style="margin-left: 80px;">
+                <div class=" p-3 border-4 rounded-4 shadow mt-4" style="margin-bottom: 75px;">
+                    <form action="#" method="POST" class="d-flex">
+                        <div class="d-flex flex-column p-4 w-100" >
 
                             {{-- Form Section --}}
-                            <div class="form__primary">
+                            <div class="d-flex w-100">
                                 <div class="title">
-                                    {{-- <p class="section__title" style="margin-left: 30px">Email</p> --}}
-                                    <p class="section__title" style="margin-left: 30px">Nomor telepon</p>
-                                    <p class="section__title" style="margin-left: 30px">Password saat ini</p>
-                                    <p class="section__title" style="margin-left: 30px">Password baru</p>
-                                    <p class="section__title" style="margin-left: 30px">Konfirmasi password</p>
+                               
+                                    <p class="section__title" >Nomor telepon</p>
+                                    <p class="section__title" >Password saat ini</p>
+                                    <p class="section__title" >Password baru</p>
+                                    <p class="section__title" >Konfirmasi password</p>
                                 </div>
                                 <div>
-                                    {{-- <input class="input__section" type="text" class="form-control"
-                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                        id="name" placeholder="Email" required> --}}
+                                 
+                                <div class="d-flex flex-column w-100 gap-4">
 
+                                    <input class="w-100 px-3" type="text" class="form-control"
+                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif;  height: 40px;"
+                                        id="name" placeholder="Nomor Telepon" name="phoneNumber" value="{{$user->phone_number}}">
 
-                                    <input class="input__section" type="text" class="form-control"
-                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
-                                        id="name" placeholder="Nomor Telepon" name="phoneNumber">
-
-                                    <input class="input__section" type="password" class="form-control"
-                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
+                                    <input class="w-100 px-3" type="password" class="form-control"
+                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif;  height: 40px;"
                                         id="password" placeholder="Password saat ini" name="currentPassword" required>
 
 
-                                    <input class="input__section" type="password" class="form-control"
-                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
+                                    <input class="input__section w-100 px-3" type="password" class="form-control"
+                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif;height: 40px;"
                                         id="password" placeholder="Password baru" name="newPassword" required>
 
 
-                                    <input class="input__section" type="password" class="form-control"
-                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 420px; height: 40px;"
+                                    <input class="input__section w-100 px-3" type="password" class="form-control"
+                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; height: 40px;"
                                         id="password" placeholder="Konfirmasi password" name="confirmNewPassword" required>
+                                </div>
                                 </div>
                             </div>
 
                             {{-- Button --}}
-                            <div class="d-flex justify-content-end">
-                                <a href="{{ route('profile.index') }}" class="btn btn-secondary me-4"
+                            <div class="d-flex ms-auto mt-auto gap-3">
+                                <a href="{{ route('profile.index') }}" class="btn btn-secondary"
                                     style="font-weight: 500; margin-top: 30px; width: 123px; height: 42px; font-family: Montserrat, sans-serif; font-size: 15px; border-radius: 10px; padding: 9px; background-color: #c9c9c9; border:none; ">Batal</a>
                                 <form action="{{ route('update.password') }}" method="POST">
                                     @csrf
@@ -78,7 +67,7 @@
             </div>
 
 
-    </html>
+    
 
     <style>
         .title p {
@@ -104,12 +93,6 @@
         .form__primary {
             display: flex;
             margin-top: 10px;
-        }
-
-        .input__section {
-            margin-left: 200px;
-            padding: 0 0 0 10px;
-            margin-bottom: 20px;
         }
 
         .infoHeader {

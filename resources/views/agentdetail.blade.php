@@ -13,13 +13,13 @@
             <div class="d-flex w-100 gap-4 py-4 mx-auto">
 
                 <div class="agent-picture" >
-                    <img src="{{ asset('images/agents/agent13.png')}}" alt="" class="w-100 h-100">
+                    <img src="{{$agent->picture_path}}" alt="" class="w-100 h-100 rounded" style="background-position:center; object-fit:cover;" >
                 </div>
 
                 <div class="d-flex flex-column gap-0">
 
                     
-                    <h1 class=" fs-1">{{$agent->first_name}} <span>{{$agent->last_name}}</span></h1>
+                    <h1 class=" fs-1">{{$agent->fullname}} </h1>
                     <div class="d-flex gap-2 ">
                         <i class="bi bi-envelope"></i>
                         <p class="fs-6">{{$agent->email}}</p>

@@ -23,57 +23,68 @@
             </div>
 
             <div class="row py-2">
-                @foreach ($properties as $p)
-                    <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="card shadow-sm h-100" style="border-radius: 20px; border: none;">
-                          
-                            <div class="rounded-sm" style="height:195px; width:100%">
-                                    <img class="w-100 h-100 rounded" src="{{ asset('images/property/property1.png') }}" style="background-position:center; object-fit:cover;" alt="property1">
-                            </div>
-                            <div class="d-flex flex-column p-3 gap-1">
-                                <div class="d-flex flex-column flex-grow-1 ">
-                                    
-                                    <h5 class="card-title mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 20px;">
-                                        {{$p->property_name}}
-                                    </h5>
-                                    <p class="text-secondary mb-1" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 16px;">
-                                        {{$p->property_owner}}
-                                    </p>
-                                    <p class="card-price mb-1" style="font-weight: bold; font-family: Montserrat, sans-serif; ">
-                                        {{ 'Rp ' . number_format($p->price, 0, ',', '.') . ',00' }}
-                                    </p>
-                                    
-                                    <p class="card-text mb-1" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
-                                        {{ $p->address }}
-                                    </p>
-                                    <p class="card-text mb-3" style="font-family: Montserrat, sans-serif; font-size: 12px;">
-                                       LT 90-200 m², LB 80-150 m²
-                                    </p>
-                                    <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
-                                        Diperbarui {{$p->updated_at->diffForHumans()}}
-                                    </p>
-                                </div>
-                                <div class="d-flex mt-auto ms-auto gap-2 ">
-                                    <a href="{{ route('property.detail', $p->slug) }}" class="btn  text-light" style="background-color:#44D7B5">
-                                        <i class="bi bi-eye-fill"></i>
-                                    </a>
-                                    <a href="{{ route('agent.property.edit.index', $p->property_id) }}" class="btn  text-light btn-warning" >
-                                        <i class="bi bi-pencil-fill"></i>
-                                    </a>
-                                    <form action="{{ route('agent.property.delete', $p->slug) }}" method="POST"
-                                        onsubmit="return confirmDelete(event)">
+                @if ($properties->isEmpty())
+                    <div class="col text-center h-full py-5">
+                        <div class="h-100 m-auto p-4 rounded-3" style="background-color:#44D7B5; max-width:45rem;">
 
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn  text-light btn-danger" >
-                                            <i class="bi bi-trash-fill"></i>
-                                        </button>
-                                    </form>
+                            <h4 class="text-light">Anda belum menambahkan properti!</h4>
+                        </div>
+                    </div>
+                @else
+
+                    @foreach ($properties as $p)
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="card shadow-sm h-100" style="border-radius: 20px; border: none;">
+                            
+                                <div class="rounded-sm" style="height:195px; width:100%">
+                                
+                                        <img class="w-100 h-100 rounded" src="{{json_decode($p->picture_path, true)[0]}}" style="background-position:center; object-fit:cover;" alt="property1">
+                                </div>
+                                <div class="d-flex flex-column p-3 gap-1 h-100 ">
+                                    <div class="d-flex flex-column flex-grow-1 text-truncate ">
+                                        
+                                        <h5 class="card-title mb-1 fs-5" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: clamp(12px, 3vw, 20px);">
+                                            {{$p->property_name}}
+                                        </h5>
+                                        <p class="text-secondary mb-1 fs-6" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: clamp(10px, 3vw, 18px);">
+                                            {{$p->property_owner}}
+                                        </p>
+                                        <p class="card-price mb-1 fs-6" style="font-weight: bold; font-family: Montserrat, sans-serif; font-size: clamp(10px, 3vw, 18px); ">
+                                            {{ 'Rp ' . number_format($p->price, 0, ',', '.') . ',00' }}
+                                        </p>
+                                        
+                                        <p class="card-text mb-1" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7;">
+                                            {{ $p->address }}
+                                        </p>
+                                        <p class="card-text mb-3" style="font-family: Montserrat, sans-serif; font-size: 12px;">
+                                            LT {{$p->land_size}} m², LB {{$p->building_size}} 
+                                        </p>
+                                        <p class="card-text" style="font-family: Montserrat, sans-serif; font-size: 12px; opacity: 0.7; margin-top: -10px;">
+                                            Diperbarui {{$p->updated_at->diffForHumans()}}
+                                        </p>
+                                    </div>
+                                    <div class="d-flex mt-auto ms-auto gap-2 ">
+                                        <a href="{{ route('property.detail', $p->slug) }}" class="btn  text-light" style="background-color:#44D7B5">
+                                            <i class="bi bi-eye-fill"></i>
+                                        </a>
+                                        <a href="{{ route('agent.property.edit.index', $p->property_id) }}" class="btn  text-light btn-warning" >
+                                            <i class="bi bi-pencil-fill"></i>
+                                        </a>
+                                        <form action="{{ route('agent.property.delete', $p->property_id) }}" method="POST"
+                                            onsubmit="return confirmDelete(event)">
+
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn  text-light btn-danger" >
+                                                <i class="bi bi-trash-fill"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
             </div>
 
             

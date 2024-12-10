@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('address');
             $table->string('location_link');
-            $table->string('picture_path')->nullable();
+            $table->json('picture_path')->nullable();
             $table->text('description');
             $table->double("building_size");
             $table->double("land_size");

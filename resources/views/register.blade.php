@@ -45,21 +45,13 @@
                 <form action="{{ route('register.post') }}" method="POST"
                     class="w-100 d-flex flex-column align-items-center">
                     @csrf
+              
                     <div class="w-100 px-5">
-                        <input name="firstName" type="text" class="form-control py-2"
+                        <input name="fullname" type="text" class="form-control py-2"
                             style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                            placeholder="Nama Depan" required>
+                            placeholder="Nama Lengkap" required>
                     </div>
-                    @error('firstName')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-
-                    <div class="w-100 px-5">
-                        <input name="lastName" type="text" class="form-control py-2"
-                            style=" border-color: #43D2B1; border-radius: 10px; background-color: #F2F2F2; font-size: 15px"
-                            placeholder="Nama Belakang" required>
-                    </div>
-                    @error('lastName')
+                    @error('fullname')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 

@@ -7,12 +7,12 @@
 
         {{-- Bento Grid --}}
         <div class="container my-5 bento-grid">
-    
+            
             <div class="row g-4">
                 <!-- Large item -->
                 <div class="col-md-8">
                     <div class="bento-item" style=" height: 400px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
-                        <img src="{{ asset('images/property/property10.png') }}" alt="Large Item" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="{{json_decode($property->picture_path, true)[0]}}" alt="Large Item" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                 </div>
                 <!-- Two small items -->
@@ -20,12 +20,12 @@
                     <div class="row g-4">
                         <div class="col-12">
                             <div class="bento-item" style="height: 200px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
-                                <img src="{{ asset('images/property/property10.png') }}" alt="Small Item 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                <img src="{{json_decode($property->picture_path, true)[1]}}" alt="Small Item 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="bento-item" style="height: 200px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
-                                <img src="{{ asset('images/property/property10.png') }}" alt="Small Item 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                <img src="{{json_decode($property->picture_path, true)[2]}}" alt="Small Item 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             </div>
                         </div>
                     </div>
@@ -33,19 +33,19 @@
                 <!-- Medium item -->
                 <div class="col-md-4">
                     <div class="bento-item" style=" height: 250px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: black; text-align: center; overflow: hidden;">
-                        <img src="{{ asset('images/property/property10.png') }}" alt="Medium Item 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="{{json_decode($property->picture_path, true)[3]}}" alt="Medium Item 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                 </div>
                 <!-- Medium item -->
                 <div class="col-md-4">
                     <div class="bento-item" style=" height: 250px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: black; text-align: center; overflow: hidden;">
-                        <img src="{{ asset('images/property/property10.png') }}" alt="Medium Item 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="{{json_decode($property->picture_path, true)[4]}}" alt="Medium Item 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                 </div>
                 <!-- Medium item -->
                 <div class="col-md-4">
                     <div class="bento-item" style=" height: 250px; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; overflow: hidden;">
-                        <img src="{{ asset('images/property/property10.png') }}" alt="Medium Item 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <img src="{{json_decode($property->picture_path, true)[5]}}" alt="Medium Item 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                 </div>
             </div>
@@ -55,22 +55,27 @@
         <div class="container my-5 carousel">
             <div id="starryCarousel" class="carousel slide" data-bs-ride="carousel">
               
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100" >
+                <div class="carousel-inner rounded">
+                  <div class="carousel-item active" style="height:293px;">
+                    <img src="{{json_decode($property->picture_path, true)[0]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100">
+                  <div class="carousel-item active" style="height:293px;">
+                    <img src="{{json_decode($property->picture_path, true)[1]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100" >
+                  <div class="carousel-item active" style="height:293px;">
+                    <img src="{{json_decode($property->picture_path, true)[2]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100" >
+                  <div class="carousel-item active" style="height:293px;">
+                    <img src="{{json_decode($property->picture_path, true)[3]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('images/property/property10.png') }}" class="d-block w-100" >
+                  <div class="carousel-item active" style="height:293px;">
+                    <img src="{{json_decode($property->picture_path, true)[4]}}" class="d-block w-100 h-100" >
                   </div>
+                  <div class="carousel-item active" style="height:293px;">
+                    <img src="{{json_decode($property->picture_path, true)[5]}}" class="d-block w-100 h-100" >
+                  </div>
+             
+               
                 </div>
                 <a class="carousel-control-prev" href="#starryCarousel" role="button" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -127,15 +132,15 @@
                 {{-- Section Agent--}}
                 <div class="col-lg-3 col-md-4 mb-4 p-2 agent-card" style="height:100%;">
                     <div class="h-100 shadow-sm d-flex flex-column py-2 px-1 w-100 ">
-                      <div class="image-container mx-auto mb-auto  w-100 h-100">
-                        <img src="{{ asset('images/agents/agent13.png')}}" class="w-100" >
-                      </div>
+                        <div class="mx-auto mb-auto w-100 " style="height:295px; width:100%">
+                            <img src="{{$property->PropertyToAgent->picture_path}}" class="w-100 h-100 rounded" style="background-position:center; object-fit:cover;" >
+                          </div>
                       <div class="d-flex flex-column  w-100 text-center">
-                            <p class="fs-6 fw-bold mb-0">Nicholas Nelson</p>
-                            <p class="fs-6 w-100 mb-1 text-secondary">+6281272940557</p>
+                            <p class="fs-6 fw-bold mb-0 ">{{$property->PropertyToAgent->fullname}}</p>
+                            <p class="fs-6 w-100 mb-1 text-secondary">{{$property->PropertyToAgent->phone_number}}</p>
                             <div class="pb-2 w-100">
                                 <a href="#" class="btn btn-sm"
-                                    style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti <span class="bg-warning px-1 rounded  text-light">15</span></a>
+                                    style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti </a>
                             </div>
                         </div>
                     </div>
@@ -194,8 +199,9 @@
                     <div class="d-flex flex-column gap-2 h-100 ">
                         <h4 class="mb-0 location-map" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; ">Location</h4>
                         <iframe class="g-maps h-100" style="border-radius: 10px; " 
-                        src="{{$property->location_link}}" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d67104.69874664755!2d106.71605971471642!3d-6.160167019642912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7c9d110d719%3A0x300c5e82dd4b8a0!2sJakarta%20Barat%2C%20Kec.%20Kb.%20Jeruk%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e1!3m2!1sid!2sid!4v1733832422206!5m2!1sid!2sid" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
+                  
                     </div> 
                 
                 </div>
