@@ -15,13 +15,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('property.list') }}">Properti</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about.index') }}">Team Kami</a>
-                </li>
+             
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('agent.list') }}">Agent Seller</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('about.index') }}">Team Kami</a>
+                </li>
                 @if (session('is_logged_in', false))
                     @if (session('role', true))
                         <li class="nav-item">
@@ -32,6 +33,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('profile.index') }}">Profile</a>
                     </li>
+
+                    
 
                     <li class="nav-item ">
                         <form action="{{ route('logout') }}" method="POST" class="d-inline">
