@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Cloudinary;
 
 class PropertyController extends Controller
 {
@@ -151,7 +152,6 @@ class PropertyController extends Controller
 
     public function addProperty(Request $request)
     {
-        // Validate the request data
         $validate = $request->validate([
             'property_name' => 'required|string|max:255',
             'property_owner'=> 'required|string|max:255',
@@ -165,15 +165,24 @@ class PropertyController extends Controller
             'bedroom' => 'required|integer|min:0',
             'bathroom' => 'required|integer|min:0',
             'carport' => 'required|integer|min:0',
-            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'pictures' => 'required|array|min:6|max:6',
+            'pictures.*' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        // Store the picture if uploaded
-        $picturePath = null;
-        if ($request->hasFile('picture')) {
-            $picturePath = $request->file('picture')->store('images/properties', 'public');
+        $picturePaths = [];
+
+        if ($request->hasFile('pictures')) {
+            foreach ($request->file('pictures') as $picture) {
+                $uploadedFileUrl = Cloudinary::upload($picture->getRealPath(), [
+                    'folder' => 'properties', 
+                ])->getSecurePath();
+
+                $picturePaths[] = $uploadedFileUrl;
+            }
         }
+
         $userId = session('user_id');
+
         // Create a new property
         Property::create([
             'user_id' => $userId,
@@ -189,8 +198,9 @@ class PropertyController extends Controller
             'bedroom' => $validate['bedroom'],
             'bathroom' => $validate['bathroom'],
             'carport' => $validate['carport'],
-            'picture_path' => $picturePath,
+            'picture_path' => json_encode($picturePaths), 
         ]);
+
         // Redirect to a success page or back
         return redirect()->route('agent.property')->with('success', 'Property added successfully!');
     }

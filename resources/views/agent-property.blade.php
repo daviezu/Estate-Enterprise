@@ -28,7 +28,8 @@
                         <div class="card shadow-sm h-100" style="border-radius: 20px; border: none;">
                           
                             <div class="rounded-sm" style="height:195px; width:100%">
-                                    <img class="w-100 h-100 rounded" src="{{ asset('images/property/property1.png') }}" style="background-position:center; object-fit:cover;" alt="property1">
+                             
+                                    <img class="w-100 h-100 rounded" src="{{json_decode($p->picture_path, true)[0]}}" style="background-position:center; object-fit:cover;" alt="property1">
                             </div>
                             <div class="d-flex flex-column p-3 gap-1">
                                 <div class="d-flex flex-column flex-grow-1 ">
