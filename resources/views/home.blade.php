@@ -66,11 +66,11 @@
                         </div>
                     </div>
                 </div>
-                @elseif (session('role', true))
+                @elseif (session('role') == 0)
                 <div class="col-lg-6 col-md-12 h-100 my-auto ">
                     <div class="d-flex shadow-lg rounded-4 h-100 gap-3 p-3 w-100">
                         <div class="mb-0" style="width:210px; height:210px">
-                            <img src="{{ asset('images/Homecard.png') }}" alt="EstateVerse Logo" class=" w-100 h-100"
+                            <img src="{{ asset('images/AgentSeller.png') }}" alt="EstateVerse Logo" class=" w-100 h-100"
                             >
                         </div>
                         <div class="d-flex flex-column my-auto py-5 w-100">
@@ -127,60 +127,122 @@
         </a>
     </div>
 
-    {{-- <div class="margin__spacing"></div>
+    <div class="margin__spacing"></div>
     <div class="container mt-4">
         <div class="mb-5">
             <h1>Apa Kata Mereka Tentang <span><img src="{{ asset('images/EstateVerse Logo.png') }}" class="logo"
                         alt=""></span> ?</h1>
         </div>
-    </div> --}}
+    </div>
 
-    {{-- <div class="testimony">
-        <div class="testimony__card">
-            <h5>Sarah - Pembeli Rumah</h5>
-            <p>"EstateVerse mempermudah saya dalam mencari rumah impian. Platform ini intuitif dan saya bisa melihat banyak
-                pilihan properti dalam waktu singkat. Agen yang bekerja sama juga sangat responsif dan profesional."</p>
+    <div class="testimony">
+        <div class="images_testimony">
+            <img src="{{ asset('images/assets/house.png') }}" class="testimony__image" alt="House">
+            <img src="{{ asset('images/assets/laptop.png') }}" class="testimony__image2" alt="Laptop">
         </div>
-        <div class="testimony__card">
-            <h5>Rizal - Agen Properti</h5>
-            <p>"EstateVerse memberikan akses kepada lebih banyak calon pembeli yang serius. Dalam beberapa minggu saja, saya
-                berhasil menjual beberapa properti melalui platform ini. Sistemnya memudahkan saya untuk mengelola listing
-                dan berinteraksi dengan pembeli."</p>
-        </div>
-        <div class="testimony__card">
-            <h5>Lisa - Penyewa Apartemen</h5>
-            <p>"Saya sangat terbantu dengan EstateVerse saat mencari apartemen untuk disewa. Filter pencarian yang detail
-                membantu saya menemukan unit yang sesuai dengan kebutuhan dan anggaran saya. Prosesnya cepat dan tanpa
-                ribet!"</p>
+
+        <div class="row g-5 justify-content-center align-items-stretch">
+
+            <div class="col-sm-6 d-flex align-items-stretch justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sarah - Pembeli Rumah</h5>
+                        <p class="card-text">"EstateVerse mempermudah saya dalam mencari rumah impian. Platform ini intuitif dan saya bisa melihat banyak pilihan properti dalam waktu singkat. Agen yang bekerja sama juga sangat responsif dan profesional."</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-sm-6 d-flex align-items-stretch justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Rizal - Agen Properti</h5>
+                        <p class="card-text">"EstateVerse memberikan akses kepada lebih banyak calon pembeli yang serius. Dalam beberapa minggu saja, saya berhasil menjual beberapa properti melalui platform ini. Sistemnya memudahkan saya untuk mengelola listing dan berinteraksi dengan pembeli."</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-sm-6 d-flex align-items-stretch justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Lisa - Penyewa Apartemen</h5>
+                        <p class="card-text">"Saya sangat terbantu dengan EstateVerse saat mencari apartemen untuk disewa. Filter pencarian yang detail membantu saya menemukan unit yang sesuai dengan kebutuhan dan anggaran saya. Prosesnya cepat dan tanpa ribet!"</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-sm-6 d-flex align-items-stretch justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Aivid - Agen Properti</h5>
+                        <p class="card-text">"Sebagai investor properti, saya selalu mencari peluang terbaik. EstateVerse membantu saya menemukan properti baru di lokasi-lokasi strategis dengan mudah. Platform ini sangat informatif dan mendukung kebutuhan saya."</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="testimony2">
-        <div class="testimony__card">
-            <h5>Budi - Pemilik Properti</h5>
-            <p>"Saya merasa EstateVerse sangat memudahkan saya untuk memasarkan properti saya kepada calon pembeli. Tidak
-                perlu repot-repot mempromosikan sendiri, platform ini sudah melakukan semuanya untuk saya."</p>
-        </div>
-        <div class="testimony__card">
-            <h5>Dina - Investor Properti</h5>
-            <p>"Sebagai investor properti, saya selalu mencari peluang terbaik. EstateVerse membantu saya menemukan properti
-                baru di lokasi-lokasi strategis dengan mudah. Platform ini sangat informatif dan mendukung kebutuhan saya."
-            </p>
-        </div>
 
-    </div> --}}
 
-    {{-- images background --}}
-
-    {{-- <div class="images_testimony">
-            <img src={{asset('images/assets/house.png')}} class="testimony__image" alt="">
-            <img src={{asset('images/assets/laptop.png')}} class="testimony__image2" alt="">
-        </div> --}}
-    </div>
 @endsection
 
 
 
 <style>
+
+.testimony {
+    position: relative;
+    z-index: 1;
+    padding: 50px; 
+}
+
+.images_testimony {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; 
+}
+
+.testimony__image {
+    position: absolute;
+    top: 54.5%;
+    left: 0%;
+    width: 500px;
+    animation: floating 10s infinite ease-in-out;
+}
+
+.testimony__image2 {
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    width: 250px;
+    animation: floating2 10s infinite ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
     .estateverse__title h1 {
         font-size:90px;
@@ -197,6 +259,26 @@
         }
     }
 
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        transition: .5s ease-in-out;
+        border-radius: 20px !important;
+        padding: 15px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+        scale: 1.02;
+    }
 
     .hero-section {
         background-image: url('{{ asset('images/property/property3.png') }}');
