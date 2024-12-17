@@ -262,6 +262,10 @@
         .estateverse__title h1 {
             font-size:55px;
         }
+
+        .images_testimony {
+            display: none;
+        }
     }
 
     .row {

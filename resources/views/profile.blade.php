@@ -19,7 +19,7 @@
 
         <div class="container-fluid mt-5 pt-5">
 
-            <div class="profile-section" >
+            <div class="profile-section  " >
     
                 <!-- Info Dasar -->
                 <i class="bi bi-info-circle"
@@ -38,7 +38,7 @@
                         </div>
                     </div>
     
-                    <table class="table" style="margin-bottom: 50px;">
+                    <table class="table" style="margin-bottom: 20px;">
     
                         <tr style="border-bottom: 2px solid #dee2e6;">
                             <th
@@ -61,9 +61,9 @@
     
                     </table>
     
-                    <div class="button mt-auto ms-auto">
+                    <div class="button ms-auto  ">
                         <a href="{{ route('profile.edit.name.index') }}" class="btn btn-primary"
-                            style="font-weight: bold; color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 16px;  width: 145px; height: 48px; border-radius: 10px; padding-top: 14px; margin-top: -5px;">Edit
+                            style="font-weight: bold; color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 16px;  width: 145px; height: 48px; border-radius: 10px; padding-top: 14px; ">Edit
                             Profile</a>
                     </div>
     
