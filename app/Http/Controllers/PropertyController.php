@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Cloudinary;
+use App\Utils\Helper;
 use App\Models\AppUser;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use Cloudinary;
 
 class PropertyController extends Controller
 {
@@ -128,6 +129,18 @@ class PropertyController extends Controller
             $validate['picture_path'] = $property->picture_path;
         }
 
+        // Google Map Embed Link
+        $embedURL = null;
+        if (!empty($validate['location_link'])) {
+            $embedURL = Helper::convertMapLinkToIFrame($validate['location_link']);
+
+            if (!$embedURL) {
+                return redirect()->back()
+                    ->withErrors(['location_link' => 'Link Google Maps tidak valid. Harap masukkan link yang benar.'])
+                    ->withInput();
+            }
+        }
+
         // Update the property data
         $property->update([
             'property_name' => $validate['property_name'],
@@ -135,7 +148,7 @@ class PropertyController extends Controller
             'price' => $validate['price'],
             'description' => $validate['description'],
             'address' => $validate['address'],
-            'location_link' => $validate['location_link'],
+            'location_link' => $embedURL,
             'building_size' => $validate['building_size'],
             'land_size' => $validate['land_size'],
             'certificate' => $validate['certificate'],
@@ -207,6 +220,20 @@ class PropertyController extends Controller
         }
         $userId = session('user_id');
 
+        // Google Map Embed Link
+        $embedURL = null;
+        if (!empty($validate['location_link'])) {
+            $embedURL = Helper::convertMapLinkToIFrame($validate['location_link']);
+
+            if (!$embedURL) {
+                return redirect()->back()
+                    ->withErrors(['location_link' => 'Link Google Maps tidak valid. Harap masukkan link yang benar.'])
+                    ->withInput();
+            }
+        }
+
+        dd($embedURL);
+
         // Create a new property
         Property::create([
             'user_id' => $userId,
@@ -215,7 +242,7 @@ class PropertyController extends Controller
             'description' => $validate['description'],
             'address' => $validate['address'],
             'price' => $validate['price'],
-            'location_link' => $validate['location_link'],
+            'location_link' => $embedURL,
             'building_size' => $validate['building_size'],
             'land_size' => $validate['land_size'],
             'certificate' => $validate['certificate'],
