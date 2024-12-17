@@ -138,8 +138,8 @@
                       <div class="d-flex flex-column  w-100 text-center">
                             <p class="fs-6 fw-bold mb-0 ">{{$property->PropertyToAgent->fullname}}</p>
                             <p class="fs-6 w-100 mb-1 text-secondary">{{$property->PropertyToAgent->phone_number}}</p>
-                            <div class="pb-2 w-100">
-                                <a href="http://wa.me/{{$property->PropertyToAgent->phoneNumber}}" class="btn btn-sm"
+                            <div class="p-2 w-100">
+                                <a href="http://wa.me/{{$property->PropertyToAgent->phone_number}}" class="btn btn-sm"
                                     style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Hubungi Agent</a>
                             </div>
                         </div>

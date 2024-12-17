@@ -13,14 +13,20 @@ use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
 {
-    public function propertyList()
+    public function propertyList(Request $request)
     {
+        $search = $request->input('search');
+
         $properties = Property::with('PropertyToAgent')
-            ->simplePaginate(9)
-            ->withQueryString();
+            ->when($search, function ($query, $search) {
+                $query->where('address', 'like', '%' . $search . '%'); 
+            })
+            ->orderBy('updated_at', 'desc')
+            ->simplePaginate(5) 
+            ->withQueryString(); 
 
 
-        return view('property', compact('properties'));
+        return view('property', compact('properties', 'search'));
     }
 
     public function propertyDetail($slug)
@@ -174,8 +180,20 @@ class PropertyController extends Controller
         if ($property->user_id != session('user_id') && !$role) {
             return redirect()->back()->with('error', 'You do not have permission to delete this property.');
         }
-        if ($property->picture_path && Storage::exists($property->picture_path)) {
-            Storage::delete($property->picture_path);
+     
+
+        if (!empty($property->picture_path)) {
+            // Decode JSON string into an array
+            $picturePaths = json_decode($property->picture_path, true);
+
+            if (is_array($picturePaths)) {
+                foreach ($picturePaths as $oldPicture) {
+                    Cloudinary::destroy($oldPicture);
+                }
+            } else {
+              
+                \Log::error('Failed to decode picture_path for property ID: ' . $property->id);
+            }
         }
 
         // // Delete the property
@@ -232,7 +250,7 @@ class PropertyController extends Controller
             }
         }
 
-        dd($embedURL);
+        
 
         // Create a new property
         Property::create([
