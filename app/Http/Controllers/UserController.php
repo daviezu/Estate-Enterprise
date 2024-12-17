@@ -181,4 +181,24 @@ class UserController extends Controller
         }
         return redirect()->back()->with(['error' => 'No profile picture to delete.']);
     }
+
+    public function updateRole(Request $request){
+        $userID = session('user_id');
+
+        // find user
+        $user = AppUser::find($userID);
+        if (!$user) {
+            return redirect()->back()->withErrors(['error' => 'User not exist.']);
+        }
+
+
+        $user->is_agent = true;
+        $user->save();
+
+        session(['user_id' => $user->user_id, 'is_logged_in' => true, 'role' => $user->is_agent]);
+
+        return redirect()->back()->with(['success' => 'User role updated successfully.']);
+
+       
+    }
 }

@@ -67,6 +67,7 @@
                     </div>
                 </div>
                 @elseif (session('role') == 0)
+                
                 <div class="col-lg-6 col-md-12 h-100 my-auto ">
                     <div class="d-flex shadow-lg rounded-4 h-100 gap-3 p-3 w-100">
                         <div class="mb-0" style="width:210px; height:210px">
@@ -76,8 +77,12 @@
                         <div class="d-flex flex-column my-auto py-5 w-100">
                             <p class="fs-3 fw-semibold mb-0">Gabung Menjadi </p>
                             <p class="fs-2 fw-semibold" style="color:#44D7B5;">Agent Seller<span class="text-black"></span></p>
-                            <a href="{{ route('login.index') }}" class="btn btn-lg w-50 ms-auto mt-auto "
-                                        style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Klik disini</a>
+                            <form action="{{route('update.role')}}" method="POST" class="h-100 w-100"> 
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn btn-lg w-80 ms-auto mt-auto h-100 "
+                                style="background-color: #44D7B5; border-color: #44D7B5; color: white;" onclick="return confirm('Apakah anda yakin ingin melanjutkannya?')"  >Klik Disini</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -128,7 +133,7 @@
     </div>
 
     <div class="margin__spacing"></div>
-    <div class="container mt-4">
+    <div class="container mt-4 text-center">
         <div class="mb-5">
             <h1>Apa Kata Mereka Tentang <span><img src="{{ asset('images/EstateVerse Logo.png') }}" class="logo"
                         alt=""></span> ?</h1>
