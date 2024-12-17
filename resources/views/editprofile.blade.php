@@ -63,15 +63,14 @@
                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 70%; height: 40px; "
                         id="name" placeholder="Nama Lengkap" name="fullname" value="{{$user->fullname}}" required>
                 </div>
-
-                <div class="form__section">
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Saya ingin mendaftar sebagai Agent
-                        </label>
-                      </div>
+                <div class="form__section d-flex gap-3">
+                    <p class="section__title mt-2 " >Nomor Telepon</p>
+                    <input type="text" class="form-control"
+                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif; width: 70%; height: 40px; "
+                        id="phoneNumber" placeholder="Nomor telepon" name="phoneNumber" value="{{$user->phone_number}}" required>
                 </div>
+
+                
 
                 {{-- Button --}}
                 <div class="d-flex justify-content-end me-0">
