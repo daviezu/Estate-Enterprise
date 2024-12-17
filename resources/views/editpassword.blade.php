@@ -18,7 +18,7 @@
                             <div class="d-flex w-100">
                                 <div class="title">
                                
-                                    <p class="section__title" >Nomor telepon</p>
+                                   
                                     <p class="section__title" >Password saat ini</p>
                                     <p class="section__title" >Password baru</p>
                                     <p class="section__title" >Konfirmasi password</p>
@@ -27,9 +27,6 @@
                                  
                                 <div class="d-flex flex-column w-100 gap-4">
 
-                                    <input class="w-100 px-3" type="text" class="form-control"
-                                        style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif;  height: 40px;"
-                                        id="name" placeholder="Nomor Telepon" name="phoneNumber" value="{{$user->phone_number}}">
 
                                     <input class="w-100 px-3" type="password" class="form-control"
                                         style="font-size: 13px; opacity: 0.8; border: 2px solid #43D2B1; border-radius: 12px; font-family: Montserrat, sans-serif;  height: 40px;"

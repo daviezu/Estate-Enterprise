@@ -86,6 +86,30 @@ class AppUserSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'user_id' => 7,
+                'fullname' => 'Hansen Huang',
+                'email' => 'hansen.huang@gmail.com',
+                'password' => bcrypt('secret'),
+                'phone_number' => '08117316325',
+                'remember_token' => null,
+                'picture_path' => '',
+                'is_agent' => false,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'user_id' => 8,
+                'fullname' => 'Wilson Hermanto',
+                'email' => 'wilson.hermanto@gmail.com',
+                'password' => bcrypt('secret'),
+                'phone_number' => '08117755521',
+                'remember_token' => null,
+                'picture_path' => '',
+                'is_agent' => false,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
       
         ]);
     }

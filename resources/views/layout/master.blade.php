@@ -27,6 +27,8 @@
 
     {{-- Custom Cursor Styles --}}
     <style>
+
+
         body {
             margin: 0;
             cursor: none;
@@ -43,6 +45,12 @@
             pointer-events: none;
             z-index: 99999999; /* so that it stays on top of all other elements */
         }
+
+        @media (max-width: 768px) {
+        .circle {
+            display: none;
+        }
+    }
     </style>
 </head>
 

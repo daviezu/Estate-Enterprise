@@ -4,6 +4,15 @@
         <h2 class="tittle">Real estate & Perumahan untuk dijual</h2>
         <p class="textawal text-start">Menampilkan 100+ hasil di pencarian</p>
 
+        {{-- Search Section --}}
+        <div class="col-lg-9 col-md-8 mb-4">
+            <form action="" class="d-flex py-2 gap-2">
+                <input type="text" class="form-control form-control-sm rounded border-0" style="background-color:#F2F2F2;" 
+               name="search" placeholder="Cari Alamat Properti..." value={{$search?? ""}}  > 
+                <button class="btn rounded text-light"  style="background-color: #44D7B5;" >Search</button>
+            </form>
+        </div>
+
         {{-- Card Property --}}
         <div class="row">
             @foreach ($properties as $p)

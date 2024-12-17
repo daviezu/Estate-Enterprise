@@ -3,7 +3,7 @@
 
     <div class="container-md pt-5 mt-5 container">
       <div class="row">
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-9 col-md-8">
           <p class="fs-2 fw-semibold">Daftar Agent</p>
         </div>
 

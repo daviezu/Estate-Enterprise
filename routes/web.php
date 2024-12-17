@@ -67,6 +67,9 @@ Route::prefix('user')->group(function () {
                 Route::get('/', [UserController::class, 'indexEditPassword'])->name('profile.edit.password.index');
                 Route::put('/', [UserController::class, 'updatePassword'])->name('update.password');
             });
+
+            // change Role
+            Route::put('/role/update', [UserController::class, 'updateRole'])->name('update.role');
         });
     });
 });

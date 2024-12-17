@@ -14,15 +14,7 @@
                     <form action="{{ route('agent.property.create') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="container mt-4">
-                            <div class="mb-3 ">
-                                <label for="pictures" class="form-label">Gambar <span class="text-secondary">( Masukkan 6
-                                        Gambar )</span></label>
-                                <input class="form-control border-2 rounded" name="pictures[]"style="border-color: #44D7B5;"
-                                    type="file" id="pictures" multiple required>
-                                @error('pictures')
-                                    <p class="fs-6 text-danger">{{ $message }}</p>
-                                @enderror
-                            </div>
+                           
                             <div class="mb-3 ">
                                 <label for="property_name" class="form-label">Nama Properti</label>
                                 <input type="text" class="form-control rounded border-2" style="border-color: #44D7B5;"
@@ -116,12 +108,21 @@
                                     <p class="fs-6 text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
-                            <div class="mb-5 ">
+                            <div class="mb-3 ">
                                 <label for="carport" class="form-label">Carport</label>
                                 <input type="number" class="form-control rounded border-2"
                                     style="border-color: #44D7B5;" name="carport" id="carport" min="0"
                                     placeholder="Ex: 4">
                                 @error('carport')
+                                    <p class="fs-6 text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="pictures" class="form-label">Gambar <span class="text-secondary">( Masukkan 6
+                                        Gambar )</span></label>
+                                <input class="form-control border-2 rounded" name="pictures[]"style="border-color: #44D7B5;"
+                                    type="file" id="pictures" multiple required>
+                                @error('pictures')
                                     <p class="fs-6 text-danger">{{ $message }}</p>
                                 @enderror
                             </div>

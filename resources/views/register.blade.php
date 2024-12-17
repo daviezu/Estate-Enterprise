@@ -92,6 +92,13 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
+                    <div class="d-flex flex-column gap-2">
+                        
+                        <a href={{ route('login.index') }} class="text-decoration-none register-small"
+                        style="color:black;  ">Sudah punya akun? <span style="color: #44D7B5; ">Masuk
+                            Sini</span></a>
+                    </div>
+
                     {{-- Register Button --}}
                     <div class="d-flex justify-content-end" style="width: 283px; margin-top: 5px;">
                         <button type="submit" class="btn btn-primary-register"

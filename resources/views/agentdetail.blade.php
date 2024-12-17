@@ -28,6 +28,10 @@
                         <i class="bi bi-telephone"></i>
                         <p class="fs-6">{{$agent->phone_number}}</p>
                     </div>
+                    <div class="d-flex gap-2 pb-2 w-100">
+                        <a href="http://wa.me/{{$agent->phone_number}}" class="btn btn-lg"
+                            style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Hubungi Agent</a>
+                    </div>
                     
                 </div>
             </div>
@@ -35,7 +39,12 @@
         </div>
 
         <div class="col-12 ">
+            @if ($properties->count() == 0 )
+            <p class="fs-2" style="font-weight: 600; font-family: Montserrat, sans-serif;" >Belum memiliki properti</p>
+            @else
             <p class="fs-2" style="font-weight: 600; font-family: Montserrat, sans-serif;" >Properti yang dimiliki : {{$properties->count()}}</p>
+
+            @endif
             <div class="row">
                 @foreach ($properties as $p)
                 <div class="col-md-4 col-sm-6 mb-4">
