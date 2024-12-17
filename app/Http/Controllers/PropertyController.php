@@ -22,7 +22,7 @@ class PropertyController extends Controller
                 $query->where('address', 'like', '%' . $search . '%'); 
             })
             ->orderBy('updated_at', 'desc')
-            ->simplePaginate(5) 
+            ->simplePaginate(8) 
             ->withQueryString(); 
 
 
@@ -135,18 +135,7 @@ class PropertyController extends Controller
             $validate['picture_path'] = $property->picture_path;
         }
 
-        // Google Map Embed Link
-        $embedURL = null;
-        if (!empty($validate['location_link'])) {
-            $embedURL = Helper::convertMapLinkToIFrame($validate['location_link']);
-
-            if (!$embedURL) {
-                return redirect()->back()
-                    ->withErrors(['location_link' => 'Link Google Maps tidak valid. Harap masukkan link yang benar.'])
-                    ->withInput();
-            }
-        }
-
+      
         // Update the property data
         $property->update([
             'property_name' => $validate['property_name'],
@@ -154,7 +143,7 @@ class PropertyController extends Controller
             'price' => $validate['price'],
             'description' => $validate['description'],
             'address' => $validate['address'],
-            'location_link' => $embedURL,
+            'location_link' => $validate['location_link'],
             'building_size' => $validate['building_size'],
             'land_size' => $validate['land_size'],
             'certificate' => $validate['certificate'],
@@ -182,19 +171,19 @@ class PropertyController extends Controller
         }
      
 
-        if (!empty($property->picture_path)) {
-            // Decode JSON string into an array
-            $picturePaths = json_decode($property->picture_path, true);
+        // if (!empty($property->picture_path)) {
+        //     // Decode JSON string into an array
+        //     $picturePaths = json_decode($property->picture_path, true);
 
-            if (is_array($picturePaths)) {
-                foreach ($picturePaths as $oldPicture) {
-                    Cloudinary::destroy($oldPicture);
-                }
-            } else {
+        //     if (is_array($picturePaths)) {
+        //         foreach ($picturePaths as $oldPicture) {
+        //             Cloudinary::destroy($oldPicture);
+        //         }
+        //     } else {
               
-                \Log::error('Failed to decode picture_path for property ID: ' . $property->id);
-            }
-        }
+        //         \Log::error('Failed to decode picture_path for property ID: ' . $property->id);
+        //     }
+        // }
 
         // // Delete the property
         $property->delete();
