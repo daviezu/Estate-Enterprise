@@ -146,9 +146,9 @@
             <img src="{{ asset('images/assets/laptop.png') }}" class="testimony__image2" alt="Laptop">
         </div>
 
-        <div class="row g-5 justify-content-center align-items-stretch">
+        <div class="row g-5 justify-content-center align-items-stretch ">
 
-            <div class="col-sm-6 d-flex align-items-stretch justify-content-center">
+            <div class="col-sm-6 d-flex align-items-stretch justify-content-center  ">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Sarah - Pembeli Rumah</h5>

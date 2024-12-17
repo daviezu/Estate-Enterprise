@@ -59,19 +59,19 @@
                   <div class="carousel-item active" style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[0]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[1]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[2]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[3]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[4]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[5]}}" class="d-block w-100 h-100" >
                   </div>
              
@@ -342,7 +342,7 @@
   // Inisialisasi carousel agar berjalan otomatis (autoplay)
   var myCarousel = document.getElementById('starryCarousel');
   var carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 2000, // Menentukan interval 2 detik untuk pergantian slide otomatis
-    ride: 'carousel' // Menentukan untuk berjalan otomatis
+    interval: 1000, 
+    ride: 'carousel' 
   });
 </script>
