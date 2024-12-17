@@ -47,6 +47,15 @@
                             <td style="font-size: 16px; font-family: Montserrat, sans-serif; ">
                                 {{ $user->fullname }}</td>
                         </tr>
+                        <tr style="border-bottom: 2px solid #dee2e6;">
+                            <th
+                                style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px;">
+                                Role
+                            </th>
+                            <td style="font-size: 16px; font-family: Montserrat, sans-serif;">
+                                {{ $user->is_agent == 1 ? 'Agent' : 'User' }}
+                            </td>
+                        </tr>
     
                         
     
