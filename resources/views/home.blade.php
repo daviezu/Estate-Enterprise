@@ -258,7 +258,7 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 576px) {
         .estateverse__title h1 {
             font-size:55px;
         }
