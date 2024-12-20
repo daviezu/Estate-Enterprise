@@ -2,24 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Cloudinary;
+use App\Utils\Helper;
 use App\Models\AppUser;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use Cloudinary;
 
 class PropertyController extends Controller
 {
-    public function propertyList()
+    public function propertyList(Request $request)
     {
+        $search = $request->input('search');
+
         $properties = Property::with('PropertyToAgent')
-            ->simplePaginate(9)
-            ->withQueryString();
+            ->when($search, function ($query, $search) {
+                $query->where('address', 'like', '%' . $search . '%'); 
+            })
+            ->orderBy('updated_at', 'desc')
+            ->simplePaginate(8) 
+            ->withQueryString(); 
 
 
-        return view('property', compact('properties'));
+        return view('property', compact('properties', 'search'));
     }
 
     public function propertyDetail($slug)
@@ -128,6 +135,7 @@ class PropertyController extends Controller
             $validate['picture_path'] = $property->picture_path;
         }
 
+      
         // Update the property data
         $property->update([
             'property_name' => $validate['property_name'],
@@ -161,9 +169,21 @@ class PropertyController extends Controller
         if ($property->user_id != session('user_id') && !$role) {
             return redirect()->back()->with('error', 'You do not have permission to delete this property.');
         }
-        if ($property->picture_path && Storage::exists($property->picture_path)) {
-            Storage::delete($property->picture_path);
-        }
+     
+
+        // if (!empty($property->picture_path)) {
+        //     // Decode JSON string into an array
+        //     $picturePaths = json_decode($property->picture_path, true);
+
+        //     if (is_array($picturePaths)) {
+        //         foreach ($picturePaths as $oldPicture) {
+        //             Cloudinary::destroy($oldPicture);
+        //         }
+        //     } else {
+              
+        //         \Log::error('Failed to decode picture_path for property ID: ' . $property->id);
+        //     }
+        // }
 
         // // Delete the property
         $property->delete();
@@ -207,6 +227,20 @@ class PropertyController extends Controller
         }
         $userId = session('user_id');
 
+        // Google Map Embed Link
+        $embedURL = null;
+        if (!empty($validate['location_link'])) {
+            $embedURL = Helper::convertMapLinkToIFrame($validate['location_link']);
+
+            if (!$embedURL) {
+                return redirect()->back()
+                    ->withErrors(['location_link' => 'Link Google Maps tidak valid. Harap masukkan link yang benar.'])
+                    ->withInput();
+            }
+        }
+
+        
+
         // Create a new property
         Property::create([
             'user_id' => $userId,
@@ -215,7 +249,7 @@ class PropertyController extends Controller
             'description' => $validate['description'],
             'address' => $validate['address'],
             'price' => $validate['price'],
-            'location_link' => $validate['location_link'],
+            'location_link' => $embedURL,
             'building_size' => $validate['building_size'],
             'land_size' => $validate['land_size'],
             'certificate' => $validate['certificate'],

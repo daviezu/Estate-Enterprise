@@ -19,7 +19,7 @@
 
         <div class="container-fluid mt-5 pt-5">
 
-            <div class="profile-section" >
+            <div class="profile-section " >
     
                 <!-- Info Dasar -->
                 <i class="bi bi-info-circle"
@@ -30,15 +30,14 @@
                 <div class="profile-card-info d-flex flex-column" style="margin-bottom: 70px;">
                     <div class="text-center my-3">
                         <p class="mt-2 text" style="font-size: 16px; font-family: Montserrat, sans-serif;">Gambar Profile</p>
-                        {{-- <img src="{{ asset('images/profiles/rose.png') }}" alt="Profile Image" clgitass="profile-image"
-                            style="margin-bottom: 30px;"> --}}
+                      
                         <div class="profile__picture">
                             <img src="{{ asset($user->picture_path) }}" alt="Profile Image" clgitass="profile-image"
                                 style="margin-bottom: 30px;">
                         </div>
                     </div>
     
-                    <table class="table" style="margin-bottom: 50px;">
+                    <table class="table" style="margin-bottom: 20px;">
     
                         <tr style="border-bottom: 2px solid #dee2e6;">
                             <th
@@ -46,6 +45,13 @@
                                 Nama Lengkap</th>
                             <td style="font-size: 16px; font-family: Montserrat, sans-serif; ">
                                 {{ $user->fullname }}</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid #dee2e6;">
+                            <th
+                                style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px;">
+                                Nomor Telepon</th>
+                            <td style="font-size: 16px; font-family: Montserrat, sans-serif; ">
+                                {{ $user->phone_number }}</td>
                         </tr>
                         <tr style="border-bottom: 2px solid #dee2e6;">
                             <th
@@ -61,10 +67,11 @@
     
                     </table>
     
-                    <div class="button mt-auto ms-auto">
-                        <a href="{{ route('profile.edit.name.index') }}" class="btn btn-primary"
-                            style="font-weight: bold; color: #FFFFFF; background-color: #44D7B5; border: none; font-family: Montserrat, sans-serif; font-size: 16px;  width: 145px; height: 48px; border-radius: 10px; padding-top: 14px; margin-top: -5px;">Edit
-                            Profile</a>
+                    <div class="button ">
+                        <a href="{{ route('profile.edit.name.index') }}" class="btn btn-primary mt-auto text-center "
+                            style="font-weight: bold; color: #FFFFFF; background-color: #44D7B5; border: none; 
+                            font-family: Montserrat, sans-serif; font-size: 16px; width: 145px; height: 48px; 
+                            border-radius: 10px; text-align:justify">Edit Profile</a>
                     </div>
     
                 </div>
@@ -86,13 +93,7 @@
                             <td style="font-size: 16px; font-family: Montserrat, sans-serif;">
                                 {{ $user->email }}</td>
                         </tr>
-                        <tr style="border-bottom: 2px solid #dee2e6;">
-                            <th
-                                style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px;">
-                                Nomor Telepon</th>
-                            <td style="font-size: 16px; font-family: Montserrat, sans-serif; ">
-                                {{ $user->phone_number }}</td>
-                        </tr>
+                        
                         <tr style="border-bottom: 2px solid #dee2e6;">
                             <th
                                 style="font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 400; padding-bottom: 19px;">
@@ -157,13 +158,40 @@
         }
 
         .profile-card-info {
-            width: 100%;
-            height: 420px;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between;
+            height: auto; 
             border: 1px solid #dee2e6;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.20);
+            position: relative;
+            overflow: hidden; 
         }
+
+        .button {
+            display: flex; 
+            justify-content: flex-end; 
+            margin-top: 20px; 
+        }
+
+        .btn-primary {
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #44D7B5;
+            border: none;
+            font-family: Montserrat, sans-serif;
+            font-size: 16px;
+            width: 145px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
 
         .profile-card-privacy {
             width: 100%;
@@ -181,4 +209,6 @@
             object-fit: cover;
             border: 5px solid #44D7B5;
         }
+
+      
     </style>

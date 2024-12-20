@@ -59,19 +59,19 @@
                   <div class="carousel-item active" style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[0]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[1]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[2]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[3]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[4]}}" class="d-block w-100 h-100" >
                   </div>
-                  <div class="carousel-item active" style="height:293px;">
+                  <div class="carousel-item " style="height:293px;">
                     <img src="{{json_decode($property->picture_path, true)[5]}}" class="d-block w-100 h-100" >
                   </div>
              
@@ -138,9 +138,9 @@
                       <div class="d-flex flex-column  w-100 text-center">
                             <p class="fs-6 fw-bold mb-0 ">{{$property->PropertyToAgent->fullname}}</p>
                             <p class="fs-6 w-100 mb-1 text-secondary">{{$property->PropertyToAgent->phone_number}}</p>
-                            <div class="pb-2 w-100">
-                                <a href="#" class="btn btn-sm"
-                                    style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Lihat Properti </a>
+                            <div class="p-2 w-100">
+                                <a href="http://wa.me/{{$property->PropertyToAgent->phone_number}}" class="btn btn-sm"
+                                    style="background-color: #44D7B5; border-color: #44D7B5; color: white;">Hubungi Agent</a>
                             </div>
                         </div>
                     </div>
@@ -194,12 +194,12 @@
                         
                     </div>
                 </div>
-
+                
                 <div class="col-lg-8 col-md-7 h-100" >
                     <div class="d-flex flex-column gap-2 h-100 ">
                         <h4 class="mb-0 location-map" style="font-weight: 600; font-family: Montserrat, sans-serif; font-size: 28px; ">Location</h4>
                         <iframe class="g-maps h-100" style="border-radius: 10px; " 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d67104.69874664755!2d106.71605971471642!3d-6.160167019642912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7c9d110d719%3A0x300c5e82dd4b8a0!2sJakarta%20Barat%2C%20Kec.%20Kb.%20Jeruk%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e1!3m2!1sid!2sid!4v1733832422206!5m2!1sid!2sid" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        src="{{$property->location_link}}" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                   
                     </div> 
@@ -342,7 +342,7 @@
   // Inisialisasi carousel agar berjalan otomatis (autoplay)
   var myCarousel = document.getElementById('starryCarousel');
   var carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 2000, // Menentukan interval 2 detik untuk pergantian slide otomatis
-    ride: 'carousel' // Menentukan untuk berjalan otomatis
+    interval: 1000, 
+    ride: 'carousel' 
   });
 </script>

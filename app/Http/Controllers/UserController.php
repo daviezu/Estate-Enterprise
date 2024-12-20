@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AppUser;
+use Cloudinary;
 use App\Models\User;
+use App\Utils\Helper;
+use App\Models\AppUser;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
-use Cloudinary;
 
 class UserController extends Controller
 {
@@ -64,6 +65,7 @@ class UserController extends Controller
     {
         $validate = $request->validate([
             'fullname' => 'required|string|max:50',
+            'phoneNumber' => 'nullable|string',
         ]);
         
         // $mahasiswa->alamat = $validateData['alamat'];
@@ -76,10 +78,21 @@ class UserController extends Controller
         if ($user) {
             $dataToUpdate = [
                 'fullname' => $validate['fullname'],
+                'phone_number' => $validate['phoneNumber']
             ];
 
             if (!empty($validate['fullname'])) {
                 $dataToUpdate['fullname'] = $validate['fullname'];
+            }
+            if (!empty($validate['phoneNumber'])) {
+                $formattedPhoneNumber = Helper::convertPhoneNumberFormat($validate['phoneNumber']);
+    
+                if (!$formattedPhoneNumber) {
+                    return redirect()->back()
+                        ->withErrors(['phoneNumber' => 'Nomor telepon tidak valid. Harap masukkan nomor telepon yang benar.'])
+                        ->withInput();
+                }
+                $dataToUpdate['phone_number'] = $formattedPhoneNumber;
             }
 
             $user->update($dataToUpdate);
@@ -90,7 +103,7 @@ class UserController extends Controller
     public function updatePassword(Request $request)
     {
         $validate = $request->validate([
-            'phoneNumber' => 'nullable|string',
+            
             'currentPassword' => 'required|string',
             'newPassword' => 'required|string',
             'confirmNewPassword' => 'required|string'
@@ -113,9 +126,9 @@ class UserController extends Controller
             'password' => Hash::make($validate['newPassword']),
         ];
 
-        if (!empty($validate['phoneNumber'])) {
-            $dataToUpdate['phone_number'] = $validate['phoneNumber'];
-        }
+        
+
+
 
         $user->update($dataToUpdate);
         return redirect()->route('profile.index')->with('success', 'User password updated successfully');
@@ -180,5 +193,25 @@ class UserController extends Controller
             return redirect()->route('profile.index')->with('success', 'Profile pictured deleted successfully');
         }
         return redirect()->back()->with(['error' => 'No profile picture to delete.']);
+    }
+
+    public function updateRole(Request $request){
+        $userID = session('user_id');
+
+        // find user
+        $user = AppUser::find($userID);
+        if (!$user) {
+            return redirect()->back()->withErrors(['error' => 'User not exist.']);
+        }
+
+
+        $user->is_agent = true;
+        $user->save();
+
+        session(['user_id' => $user->user_id, 'is_logged_in' => true, 'role' => $user->is_agent]);
+
+        return redirect()->back()->with(['success' => 'User role updated successfully.']);
+
+       
     }
 }

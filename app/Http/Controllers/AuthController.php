@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Utils\Helper;
 use App\Models\AppUser;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cookie;
 
 class AuthController extends Controller
 {
@@ -76,6 +77,17 @@ class AuthController extends Controller
             return redirect()->back()->with(['error', 'Password do not match with confirm password'])->withInput();
         }
 
+        // Konversi nomor telepon ke format internasional
+        $formattedPhoneNumber = Helper::convertPhoneNumberFormat($validate['phoneNumber']);
+
+        if (!$formattedPhoneNumber) {
+            return redirect()->back()
+                ->withErrors(['phoneNumber' => 'Nomor telepon tidak valid. Harap masukkan nomor telepon yang benar.'])
+                ->withInput();
+        }
+
+        
+
         // check IF email EXIST
         $email = AppUser::where('email', $validate['email'])->first();
 
@@ -96,7 +108,7 @@ class AuthController extends Controller
             'fullname' => $validate['fullname'],
             'email' => $validate['email'],
             'password' => $credentials['password'],
-            'phone_number' => $validate['phoneNumber']
+            'phone_number' => $formattedPhoneNumber
         ]);
 
         if ($user) {

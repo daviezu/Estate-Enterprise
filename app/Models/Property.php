@@ -42,11 +42,27 @@ class Property extends Model
         parent::boot();
 
         static::creating(function ($property) {
-            $property->slug = Str::slug($property->property_name);
+            $property->slug = self::createUniqueSlug($property->property_name);
         });
 
         static::updating(function ($property) {
-            $property->slug = Str::slug($property->property_name);
+            $property->slug = self::createUniqueSlug($property->property_name, $property->property_id);
         });
+    }
+
+    public static function createUniqueSlug($propertyName, $propertyId = 0)
+    {
+        // Membuat slug dasar dari nama properti
+        $slug = Str::slug($propertyName);
+        $originalSlug = $slug;
+        $count = 1;
+
+        // Periksa apakah slug sudah ada di database, kecuali untuk properti yang sedang diperbarui
+        while (self::where('slug', $slug)->where('property_id', '!=', $propertyId)->exists()) {
+            // Jika sudah ada, tambahkan angka ke slug
+            $slug = $originalSlug . '-' . $count++;
+        }
+
+        return $slug;
     }
 }

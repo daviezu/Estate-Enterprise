@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("property_owner");
             $table->bigInteger('price');
             $table->string('address');
-            $table->string('location_link');
+            $table->text('location_link');
             $table->json('picture_path')->nullable();
             $table->text('description');
             $table->double("building_size");

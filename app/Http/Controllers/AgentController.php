@@ -16,7 +16,7 @@ class AgentController extends Controller
             ->when($search, function ($query, $search) {
                 $query->where('fullname', 'like', '%' . $search . '%'); 
             })
-            ->simplePaginate(8) 
+            ->simplePaginate(4) 
             ->withQueryString(); 
 
         return view('agentlist', compact('agents', 'search'));

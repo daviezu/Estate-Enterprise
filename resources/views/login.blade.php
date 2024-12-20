@@ -79,8 +79,8 @@
                         </div>
 
                         <!-- "Lupa Password?" -->
-                        <a href="#" class="text-decoration-none  ms-auto"
-                            style="color: #44D7B5; font-size: 14px;">Lupa Password?</a>
+                        {{-- <a href="#" class="text-decoration-none  ms-auto"
+                            style="color: #44D7B5; font-size: 14px;">Lupa Password?</a> --}}
                     </div>
 
                     {{-- Login Button --}}

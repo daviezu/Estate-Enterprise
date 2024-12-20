@@ -13,7 +13,7 @@ class Member extends Model
         return [
             [
                 'name' => 'Nicholas Nelson',
-                'role' => 'Leader',
+                'role' => 'Support',
                 'umur' => '20',
                 'quotes'=>'Belajar pengembangan web saat kuliah ibarat menanam benih yang kelak tumbuh menjadi pohon karier yang kokoh dan berbuah manis.',
                 'link' => 'https://github.com/vnnico',
@@ -21,7 +21,7 @@ class Member extends Model
             ],
             [
                 'name' => 'David',
-                'role' => 'Co-Leader',
+                'role' => 'Leader',
                 'umur' => '20',
                 'quotes'=>'Setiap baris kode yang kau tulis sebagai mahasiswa pengembang web bukan sekadar memenuhi tugas kuliah—itu adalah pondasi masa depan kariermu.',
                 'link' => 'https://github.com/daviezu',
